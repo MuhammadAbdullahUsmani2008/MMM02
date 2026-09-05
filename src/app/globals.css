@@ -6,6 +6,7 @@
  * Muslim Medical Mission crescent logo. The navy scale carries the structure.
  * ------------------------------------------------------------------ */
 @theme {
+  --breakpoint-xs: 400px;
   --color-navy-950: #0A1020;
   --color-navy-900: #0D2B4D;
   --color-navy-800: #003475;
@@ -134,7 +135,7 @@
 }
 
 @utility shell-header {
-  width: min(1280px, calc(100% - clamp(1.5rem, 4vw, 3.5rem)));
+  width: min(1280px, calc(100% - clamp(1rem, 3.5vw, 3.5rem)));
   margin-inline: auto;
 }
 

@@ -162,21 +162,21 @@ function SearchPanel({ onClose }: { onClose: () => void }) {
 
   return (
     <div className="animate-drift-up border-b border-slate-200 bg-white shadow-xl">
-      <div className="shell-wide py-6">
-        <label className="flex items-center gap-3 border-b-2 border-slate-200 pb-3 focus-within:border-[#046BD2]">
-          <SearchIcon className="h-5 w-5 shrink-0 text-[#046BD2]" />
+      <div className="shell-wide py-4 sm:py-6">
+        <label className="flex items-center gap-2 sm:gap-3 border-b-2 border-slate-200 pb-2.5 sm:pb-3 focus-within:border-[#046BD2]">
+          <SearchIcon className="h-4.5 w-4.5 sm:h-5 sm:w-5 shrink-0 text-[#046BD2]" />
           <span className="sr-only">Search this site</span>
           <input
             ref={inputRef}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search programmes, flood camps, Gaza relief, Zakat, reports..."
-            className="w-full bg-transparent font-display text-[1.1rem] font-bold text-[#333333] outline-none placeholder:font-normal placeholder:text-slate-400"
+            placeholder="Search programmes, flood camps, Gaza, Zakat..."
+            className="w-full bg-transparent font-display text-[0.95rem] sm:text-[1.1rem] font-bold text-[#333333] outline-none placeholder:font-normal placeholder:text-xs sm:placeholder:text-sm placeholder:text-slate-400"
           />
           <button
             type="button"
             onClick={onClose}
-            className="shrink-0 rounded-md px-3 py-1 font-display text-[0.85rem] font-bold text-[#7A7A7A] transition-colors hover:bg-slate-100 hover:text-[#333333]"
+            className="shrink-0 rounded-md px-2.5 py-1 font-display text-[0.8rem] sm:text-[0.85rem] font-bold text-[#7A7A7A] transition-colors hover:bg-slate-100 hover:text-[#333333]"
           >
             Esc / Close
           </button>
@@ -273,9 +273,9 @@ export function Header() {
       >
         {/* Top Utility Row (Simple Light Strip) */}
         <div className="border-b border-[#DCE2EA] bg-[#F5F7FA] text-xs text-[#4B5563] backdrop-blur-sm">
-          <div className="shell-header flex h-[34px] items-center justify-between">
+          <div className="shell-header flex h-[34px] items-center justify-between text-[0.72rem] sm:text-xs">
             {/* Left: Contact Information */}
-            <div className="flex items-center gap-6">
+            <div className="flex shrink-0 items-center gap-4 sm:gap-6">
               <a
                 href={org.phoneHref}
                 className="flex items-center gap-1.5 font-medium transition-colors hover:text-[#075BD6]"
@@ -293,16 +293,16 @@ export function Header() {
             </div>
 
             {/* Right: Quick Links */}
-            <div className="flex items-center gap-4">
+            <div className="flex shrink-0 items-center gap-3 sm:gap-4">
               <span className="hidden text-[#6B7280] md:inline">
                 Bank Transfer: UBL 0635338617189
               </span>
               <span className="hidden h-3 w-px bg-[#DCE2EA] md:inline" aria-hidden />
               <Link
                 href="/get-involved"
-                className="font-semibold text-[#075BD6] transition-colors hover:text-[#0649B8] hover:underline"
+                className="font-semibold text-[#075BD6] transition-colors hover:text-[#0649B8] hover:underline whitespace-nowrap"
               >
-                Become a Volunteer
+                <span className="hidden min-[380px]:inline">Become a </span>Volunteer
               </Link>
             </div>
           </div>
@@ -310,23 +310,23 @@ export function Header() {
 
         {/* Main Navigation Bar (Clean Light Modern Design with Balanced Width) */}
         <div className="border-b border-[#DCE2EA] bg-white/95 shadow-[0_2px_12px_rgba(10,16,32,0.04)] backdrop-blur-md">
-          <div className="shell-header flex h-[78px] sm:h-[84px] md:h-[88px] items-center justify-between gap-3 xl:gap-6">
-            {/* Logo + Brand Lockup (Enlarged circle emblem + prominent typography) */}
+          <div className="shell-header flex h-[68px] sm:h-[84px] md:h-[88px] items-center justify-between gap-1.5 xs:gap-2 sm:gap-4 xl:gap-6">
+            {/* Logo + Brand Lockup (Responsive emblem + balanced typography) */}
             <Link
               href="/"
               aria-label={`${org.name}, home`}
-              className="group flex shrink-0 items-center gap-3 sm:gap-3.5 transition-transform duration-200"
+              className="group flex min-w-0 shrink items-center gap-2 xs:gap-2.5 sm:gap-3.5 transition-transform duration-200"
             >
               <img
                 src="/media/brand/circle-logo.png"
                 alt={org.name}
-                className="h-11 w-11 sm:h-12 sm:w-12 md:h-14 md:w-14 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-[38px] w-[38px] xs:h-[42px] xs:w-[42px] sm:h-12 sm:w-12 md:h-14 md:w-14 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105"
               />
-              <div className="flex flex-col justify-center">
-                <span className="font-display text-[1.12rem] sm:text-[1.28rem] md:text-[1.42rem] font-black tracking-tight text-[#0A1020] group-hover:text-[#075BD6] transition-colors leading-[1.08]">
+              <div className="flex min-w-0 flex-col justify-center">
+                <span className="truncate font-display text-[0.92rem] xs:text-[1.04rem] sm:text-[1.28rem] md:text-[1.42rem] font-black tracking-tight text-[#0A1020] group-hover:text-[#075BD6] transition-colors leading-[1.08]">
                   Muslim Medical Mission
                 </span>
-                <span className="mt-1 font-display text-[0.68rem] sm:text-[0.76rem] md:text-[0.82rem] font-bold tracking-tight text-[#EF3B19] leading-none">
+                <span className="mt-0.5 hidden font-display text-[0.68rem] sm:text-[0.76rem] md:text-[0.82rem] font-bold tracking-tight text-[#EF3B19] leading-none sm:block">
                   Wisdom, Action, Service for Allah for Right
                 </span>
               </div>
@@ -415,28 +415,29 @@ export function Header() {
             </nav>
 
             {/* Right Side Actions: Search, Donate, Mobile Menu Trigger */}
-            <div className="flex shrink-0 items-center gap-2.5 sm:gap-3">
+            <div className="flex shrink-0 items-center gap-1 xs:gap-1.5 sm:gap-2.5 md:gap-3">
               {/* Search Toggle */}
               <button
                 type="button"
                 onClick={() => setSearchOpen((s) => !s)}
                 aria-label="Search programmes and field reports"
-                className={`flex h-10 w-10 items-center justify-center rounded-full transition-colors ${
+                className={`flex h-8 w-8 xs:h-9 xs:w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full transition-colors ${
                   searchOpen
                     ? "bg-[#F3F7FF] text-[#075BD6]"
                     : "text-[#4B5563] hover:bg-[#F5F7FA] hover:text-[#075BD6]"
                 }`}
               >
-                <SearchIcon className="h-[18px] w-[18px]" />
+                <SearchIcon className="h-4 w-4 xs:h-[18px] xs:w-[18px]" />
               </button>
 
               {/* Direct Donate Button (UNDA Royal/Electric Blue Style) */}
               <Link
                 href="/donate"
-                className="inline-flex items-center gap-2 rounded-full bg-[#075BD6] px-5 py-2.5 font-display text-[0.88rem] font-bold text-white shadow-[0_4px_14px_rgba(7,91,214,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#0649B8] hover:shadow-[0_6px_18px_rgba(6,73,184,0.35)] active:scale-95"
+                className="inline-flex shrink-0 items-center gap-1 xs:gap-1.5 sm:gap-2 rounded-full bg-[#075BD6] px-3 py-1.5 xs:px-3.5 xs:py-2 sm:px-5 sm:py-2.5 font-display text-[0.78rem] xs:text-[0.82rem] sm:text-[0.88rem] font-bold text-white shadow-[0_4px_14px_rgba(7,91,214,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#0649B8] hover:shadow-[0_6px_18px_rgba(6,73,184,0.35)] active:scale-95 whitespace-nowrap"
               >
-                <span>Donate Now</span>
-                <HeartIcon className="h-3.5 w-3.5" />
+                <span>Donate</span>
+                <span className="hidden md:inline">Now</span>
+                <HeartIcon className="h-3 w-3 xs:h-3.5 xs:w-3.5" />
               </Link>
 
               {/* Mobile Drawer Button */}
@@ -444,7 +445,7 @@ export function Header() {
                 type="button"
                 onClick={() => setDrawer(true)}
                 aria-label="Open navigation menu"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-[#334155] transition-colors hover:bg-slate-100 lg:hidden"
+                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-slate-200 text-[#334155] transition-colors hover:bg-slate-100 lg:hidden"
               >
                 <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.2">
                   <path d="M4 6h16M4 12h16M4 18h16" strokeLinecap="round" />
@@ -480,14 +481,14 @@ export function Header() {
           }`}
         >
           {/* Drawer Header */}
-          <div className="flex items-center justify-between border-b border-slate-200/80 px-5 py-4">
-            <Link href="/" onClick={() => setDrawer(false)} className="flex items-center gap-3">
-              <img src="/media/brand/circle-logo.png" alt={org.name} className="h-11 w-11 shrink-0 object-contain" />
-              <div className="flex flex-col">
-                <span className="font-display text-[1.08rem] font-black text-[#0A1020] leading-tight">
+          <div className="flex items-center justify-between border-b border-slate-200/80 px-4 py-3.5 sm:px-5 sm:py-4">
+            <Link href="/" onClick={() => setDrawer(false)} className="flex min-w-0 items-center gap-2.5 sm:gap-3">
+              <img src="/media/brand/circle-logo.png" alt={org.name} className="h-10 w-10 sm:h-11 sm:w-11 shrink-0 object-contain" />
+              <div className="flex min-w-0 flex-col">
+                <span className="truncate font-display text-[1rem] sm:text-[1.08rem] font-black text-[#0A1020] leading-tight">
                   Muslim Medical Mission
                 </span>
-                <span className="mt-0.5 font-display text-[0.66rem] font-bold text-[#EF3B19] leading-none">
+                <span className="mt-0.5 truncate font-display text-[0.64rem] sm:text-[0.66rem] font-bold text-[#EF3B19] leading-none">
                   Wisdom, Action, Service for Allah for Right
                 </span>
               </div>
@@ -496,11 +497,26 @@ export function Header() {
               type="button"
               onClick={() => setDrawer(false)}
               aria-label="Close menu"
-              className="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 text-[#334155] transition-colors hover:bg-slate-100"
+              className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-slate-200 text-[#334155] transition-colors hover:bg-slate-100 ml-2"
             >
               <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
                 <path d="M6 6l12 12M18 6L6 18" />
               </svg>
+            </button>
+          </div>
+
+          {/* Drawer Search Quick Bar */}
+          <div className="border-b border-slate-100 bg-slate-50/70 px-4 py-2.5 sm:px-5 sm:py-3">
+            <button
+              type="button"
+              onClick={() => {
+                setDrawer(false);
+                setSearchOpen(true);
+              }}
+              className="flex w-full items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs sm:text-sm font-medium text-slate-500 shadow-xs transition-colors hover:border-[#075BD6] hover:text-[#0A1020]"
+            >
+              <SearchIcon className="h-4 w-4 shrink-0 text-[#075BD6]" />
+              <span>Search programmes, reports, Zakat...</span>
             </button>
           </div>
 
