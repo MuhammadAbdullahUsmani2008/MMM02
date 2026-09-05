@@ -12,8 +12,6 @@ type Slide = {
   badge: string;
   image: string;
   alt: string;
-  quote: string;
-  quoteSource: string;
   headline: string;
   highlight: string;
   subtext: string;
@@ -31,11 +29,9 @@ const slides: Slide[] = [
     badge: "Mercy in Motion",
     image: "/media/field/free-medical-camp-medicines.jpg",
     alt: "Muslim Medical Mission doctors providing free consultations and medicine at a rural outpatient medical camp with official banner",
-    quote: "Whoever saves a life, it is as if he had saved all mankind.",
-    quoteSource: "Surah Al-Ma'idah (5:32)",
     headline: "Mercy in Motion:",
     highlight: "Free healthcare for those in need.",
-    subtext: "Free medical camps, welfare clinics and surgical care delivered to the doorstep of those who need it most — without discrimination of race, religion or region.",
+    subtext: "Free Medical Camps, Welfare Clinics and Surgical Care delivered to the doorstep of those who need it most — without discrimination of Race, Religion or Region.",
     primaryCta: { label: "Explore Relief Work", href: "/what-we-do" },
     secondaryCta: { label: "Donate to Camps", href: "/donate" },
     operation: "Free Medical Camps",
@@ -48,11 +44,9 @@ const slides: Slide[] = [
     badge: "MMM Academy",
     image: "/media/field/national-conference-stage.jpg",
     alt: "Audience and delegates gathered at the Muslim Medical Mission National Medical Conference with grand official stage banner",
-    quote: "The seeking of knowledge is an obligation upon every Muslim.",
-    quoteSource: "Prophetic Tradition",
     headline: "Building Tomorrow's Healers",
     highlight: "with clinical excellence & ethics.",
-    subtext: "Conferences, CME seminars, hands-on emergency training with Punjab Emergency Service (Rescue 1122), and scholarships cultivating compassionate healthcare leaders.",
+    subtext: "Conferences, CME Seminars, Hands-on Emergency Training with Punjab Emergency Service (Rescue 1122), and Scholarships Cultivating Compassionate Healthcare Leaders.",
     primaryCta: { label: "Discover MMM Academy", href: "/what-we-do/training" },
     secondaryCta: { label: "Join as Member", href: "/get-involved" },
     operation: "National Medical Conferences",
@@ -65,8 +59,6 @@ const slides: Slide[] = [
     badge: "First to Reach",
     image: "/media/field/hero-disaster-response.jpg",
     alt: "Muslim Medical Mission emergency rapid response team navigating flood waters with banner on rescue boat",
-    quote: "The believer's shade on the Day of Resurrection will be his charity.",
-    quoteSource: "Prophet Muhammad ﷺ (Tirmidhi)",
     headline: "When Calamity Strikes,",
     highlight: "we are already moving.",
     subtext: "From the 2005 Kashmir earthquake to the floods and droughts of today, MMM's emergency teams are pre-trained to deploy within hours, not days.",
@@ -82,11 +74,9 @@ const slides: Slide[] = [
     badge: "Life Support Training",
     image: "/media/field/bls-rescue-1122.jpg",
     alt: "Basic Life Support and First Responder Training in collaboration with Punjab Emergency Service Rescue 1122 and Muslim Medical Mission banner",
-    quote: "The best of people are those that bring the most benefit to the rest of mankind.",
-    quoteSource: "Prophetic Tradition (Daraqutni)",
     headline: "Equipping First Responders",
     highlight: "in collaboration with Rescue 1122.",
-    subtext: "Hands-on basic life support, trauma response, haemorrhage control and disaster triage certifying everyday volunteers as frontline community lifesavers.",
+    subtext: "Hands-on Basic Life Support, Trauma Response, Haemorrhage Control and Disaster Triage Certifying Everyday Volunteers as Frontline Community Lifesavers.",
     primaryCta: { label: "Explore Responder Courses", href: "/what-we-do/training" },
     secondaryCta: { label: "Volunteer with Us", href: "/get-involved" },
     operation: "BLS & Responders Training",
@@ -99,11 +89,9 @@ const slides: Slide[] = [
     badge: "Gaza Relief",
     image: "/media/gaza-water/gaza-water-01.jpg",
     alt: "Muslim Medical Mission clean drinking water distribution tanker in Gaza",
-    quote: "The best form of charity is giving water to drink.",
-    quoteSource: "Prophet Muhammad ﷺ (Abu Dawud)",
     headline: "Gaza Relief Mission:",
     highlight: "Clean water & daily lifeline aid.",
-    subtext: "Operating community water tankers, emergency nutrition packages, hot meals and tented field clinics to sustain displaced families in Gaza.",
+    subtext: "Operating community Water Tankers, Emergency Nutrition Packages, Hot Meals and Tented Field Clinics to sustain displaced families in Gaza.",
     primaryCta: { label: "Support Gaza Relief", href: "/donate" },
     secondaryCta: { label: "Gaza Operations", href: "/what-we-do/gaza-field-clinics" },
     operation: "Water for Life & Clinics",
@@ -183,7 +171,8 @@ export function Hero() {
             {/* Slide Text Content */}
             <div className="absolute inset-0 flex items-center pt-28 pb-24 sm:pt-36 sm:pb-28">
               <div className="shell-wide">
-                <div className="max-w-2xl">
+                {/* Subtle Translucent Navy Hero Text Panel */}
+                <div className="w-full max-w-[580px] rounded-[14px] border border-white/25 bg-[rgba(5,18,35,0.68)] p-5.5 sm:p-7 md:py-[28px] md:px-[32px] backdrop-blur-[3px]">
                   {/* Pillar Category Badge */}
                   <div className="mb-3.5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-[#0A1020]/80 px-3 py-1 backdrop-blur-md shadow-sm">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#EF3B19] animate-pulse" />
@@ -196,18 +185,8 @@ export function Hero() {
                     </span>
                   </div>
 
-                  {/* Islamic Teaching / Quranic Quote with Red Accent (Newsreader font) */}
-                  <div className="border-l-2 border-[#EF3B19] pl-3.5 sm:pl-4">
-                    <p className="font-quote text-[1.12rem] sm:text-[1.28rem] lg:text-[1.42rem] leading-snug italic font-normal text-white [text-shadow:0_2px_14px_rgba(0,0,0,0.9)]">
-                      "{s.quote}"
-                    </p>
-                    <span className="mt-1 block text-xs sm:text-[0.84rem] font-bold uppercase tracking-wider text-slate-300 [text-shadow:0_1px_8px_rgba(0,0,0,0.8)]">
-                      — {s.quoteSource}
-                    </span>
-                  </div>
-
                   {/* Headline with Brand Red Highlight (Noto Serif font) */}
-                  <h1 className="mt-5 font-display text-[clamp(2.35rem,4.4vw,3.75rem)] font-black leading-[1.08] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.85)]">
+                  <h1 className="mt-4 sm:mt-5 font-display text-[clamp(2.15rem,4vw,3.5rem)] font-black leading-[1.08] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.85)]">
                     {s.headline}{" "}
                     <span className="text-[#EF3B19] drop-shadow-[0_2px_14px_rgba(239,59,25,0.45)]">
                       {s.highlight}
@@ -215,25 +194,25 @@ export function Hero() {
                   </h1>
 
                   {/* Subtext (Noto Sans font) */}
-                  <p className="mt-4 max-w-2xl text-[1.04rem] sm:text-[1.14rem] leading-relaxed text-slate-100 [text-shadow:0_1px_12px_rgba(0,0,0,0.85)]">
+                  <p className="mt-3.5 sm:mt-4 text-[1.02rem] sm:text-[1.12rem] leading-relaxed text-slate-100 [text-shadow:0_1px_12px_rgba(0,0,0,0.85)]">
                     {s.subtext}
                   </p>
 
-                  {/* Dual Call To Actions (UNDA Electric Blue + Glass Outline) */}
-                  <div className="mt-8 flex flex-wrap items-center gap-3.5">
+                  {/* Dual Call To Actions (Both on the same line) */}
+                  <div className="mt-6 sm:mt-7 flex items-center gap-2 xs:gap-2.5 sm:gap-3.5">
                     <Link
                       href={s.primaryCta.href}
-                      className="group inline-flex items-center gap-2 rounded-full bg-[#075BD6] px-7 py-3.5 font-display text-[0.98rem] font-bold text-white shadow-[0_12px_24px_-8px_rgba(7,91,214,0.7)] transition-all duration-300 hover:bg-[#0649B8] hover:shadow-[0_14px_28px_-6px_rgba(6,73,184,0.8)] sm:px-8"
+                      className="group inline-flex shrink-0 items-center justify-center gap-1.5 xs:gap-2 rounded-full bg-[#075BD6] px-3.5 py-2.5 xs:px-5 xs:py-3 sm:px-6 sm:py-3.5 font-display text-[0.80rem] xs:text-[0.86rem] sm:text-[0.94rem] font-bold text-white shadow-[0_12px_24px_-8px_rgba(7,91,214,0.7)] transition-all duration-300 hover:bg-[#0649B8] hover:shadow-[0_14px_28px_-6px_rgba(6,73,184,0.8)] whitespace-nowrap"
                     >
                       <span>{s.primaryCta.label}</span>
-                      <Arrow className="transition-transform duration-300 ease-out group-hover:translate-x-1.5" />
+                      <Arrow className="h-3.5 w-3.5 xs:h-4 xs:w-4 transition-transform duration-300 ease-out group-hover:translate-x-1.5" />
                     </Link>
                     <Link
                       href={s.secondaryCta.href}
-                      className="group inline-flex items-center gap-2 rounded-full border border-white/50 bg-black/35 px-6 py-3.5 font-display text-[0.98rem] font-bold text-white backdrop-blur-md transition-all duration-300 hover:border-white hover:bg-white/20 sm:px-7"
+                      className="group inline-flex shrink-0 items-center justify-center gap-1.5 xs:gap-2 rounded-full border border-white/50 bg-black/35 px-3 py-2.5 xs:px-4.5 xs:py-3 sm:px-5.5 sm:py-3.5 font-display text-[0.80rem] xs:text-[0.86rem] sm:text-[0.94rem] font-bold text-white backdrop-blur-md transition-all duration-300 hover:border-white hover:bg-white/20 whitespace-nowrap"
                     >
                       <span>{s.secondaryCta.label}</span>
-                      <Arrow className="transition-transform duration-300 ease-out group-hover:translate-x-1.5" />
+                      <Arrow className="h-3.5 w-3.5 xs:h-4 xs:w-4 transition-transform duration-300 ease-out group-hover:translate-x-1.5" />
                     </Link>
                   </div>
                 </div>
