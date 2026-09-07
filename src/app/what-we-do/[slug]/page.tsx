@@ -80,19 +80,19 @@ export default async function ProgramPage({ params }: Params) {
             </div>
 
             <Reveal delay={120}>
-              <div className="mt-10 flex flex-wrap gap-4">
+              <div className="mt-10 flex flex-wrap gap-3 sm:gap-4">
                 <Link
                   href="/donate"
-                  className="group inline-flex items-center gap-2.5 rounded-full bg-[#046BD2] px-7 py-3.5 font-display font-bold text-white shadow-sm transition-all duration-250 hover:-translate-y-0.5 hover:bg-[#e53935]"
+                  className="group inline-flex items-center justify-center gap-2 xs:gap-2.5 rounded-full bg-[#046BD2] px-5 py-2.5 xs:px-6 xs:py-3 sm:px-7 sm:py-3.5 font-display text-[0.84rem] xs:text-[0.9rem] sm:text-[0.95rem] font-bold text-white whitespace-nowrap min-h-[44px] shadow-sm transition-all duration-250 hover:-translate-y-0.5 hover:bg-[#e53935]"
                 >
-                  Fund this programme
-                  <Arrow className="transition-transform duration-300 group-hover:translate-x-1" />
+                  <span>Fund this programme</span>
+                  <Arrow className="shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
                 <Link
                   href="/get-involved"
-                  className="inline-flex items-center gap-2.5 rounded-full border-2 border-slate-300 px-7 py-3.5 font-display font-bold text-[#003475] transition-all duration-250 hover:border-[#e53935] hover:bg-[#e53935] hover:text-white"
+                  className="inline-flex items-center justify-center gap-2 xs:gap-2.5 rounded-full border-2 border-slate-300 px-5 py-2.5 xs:px-6 xs:py-3 sm:px-7 sm:py-3.5 font-display text-[0.84rem] xs:text-[0.9rem] sm:text-[0.95rem] font-bold text-[#003475] whitespace-nowrap min-h-[44px] transition-all duration-250 hover:border-[#e53935] hover:bg-[#e53935] hover:text-white"
                 >
-                  Join a deployment
+                  <span>Join a deployment</span>
                 </Link>
               </div>
             </Reveal>
@@ -135,10 +135,10 @@ export default async function ProgramPage({ params }: Params) {
               <span className="h-px flex-1 bg-slate-200" aria-hidden />
               <Link
                 href="/what-we-do"
-                className="group inline-flex items-center gap-2 font-display text-[0.9rem] font-bold text-[#046BD2]"
+                className="group inline-flex items-center gap-1.5 xs:gap-2 font-display text-[0.85rem] xs:text-[0.9rem] font-bold text-[#046BD2] whitespace-nowrap shrink-0 min-h-[36px]"
               >
                 <span className="link-underline">See all</span>
-                <Arrow className="transition-transform duration-300 group-hover:translate-x-1" />
+                <Arrow className="shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
           </Reveal>

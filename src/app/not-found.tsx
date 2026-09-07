@@ -16,7 +16,7 @@ export default function NotFound() {
         <p className="mt-5 max-w-xl text-[1.05rem] leading-relaxed text-[#334155]">
           The page you were looking for has moved or never existed. The work carries on either way.
         </p>
-        <div className="mt-9 flex flex-wrap gap-4">
+        <div className="mt-9 flex flex-wrap gap-3 sm:gap-4">
           <Button href="/" variant="primary">
             Back to the home page
           </Button>

@@ -360,28 +360,28 @@ export function MembershipForm() {
             </p>
           </div>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <div className="mt-8 flex flex-wrap justify-center gap-3 sm:gap-4 w-full">
             <button
               type="button"
               onClick={() => {
                 setIsSubmitted(false);
                 setSubmittedData(null);
               }}
-              className="inline-flex items-center gap-2 rounded-full border-2 border-slate-300 px-6 py-2.5 font-display text-sm font-bold text-[#334155] transition-all hover:border-[#075BD6] hover:text-[#075BD6]"
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-5 py-2.5 sm:px-6 sm:py-3 font-display text-[0.84rem] xs:text-sm font-bold text-[#334155] whitespace-nowrap min-h-[44px] max-w-full transition-all hover:border-[#075BD6] hover:text-[#075BD6]"
             >
               Fill Another Application
             </button>
             <a
               href="/MMM_Pakistan_Membership_Application_Form.pdf"
               download
-              className="inline-flex items-center gap-2 rounded-full bg-[#075BD6] px-6 py-2.5 font-display text-sm font-bold text-white shadow-soft transition-all hover:bg-[#0649B8]"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#075BD6] px-5 py-2.5 sm:px-6 sm:py-3 font-display text-[0.84rem] xs:text-sm font-bold text-white whitespace-nowrap min-h-[44px] max-w-full shadow-soft transition-all hover:bg-[#0649B8]"
             >
-              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg className="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                 <polyline points="7 10 12 15 17 10" />
                 <line x1="12" y1="15" x2="12" y2="3" />
               </svg>
-              Download Offline PDF Form
+              <span>Download Offline PDF Form</span>
             </a>
           </div>
         </div>
@@ -394,7 +394,7 @@ export function MembershipForm() {
       id="membership-form-element"
       onSubmit={handleSubmit}
       noValidate
-      className="space-y-10"
+      className="space-y-10 w-full min-w-0 max-w-full"
       aria-label="MMM Pakistan Membership Application Form"
     >
       {/* Required fields notice */}
@@ -417,31 +417,39 @@ export function MembershipForm() {
       </div>
 
       {/* SECTION 1: MEMBERSHIP CATEGORY */}
-      <section aria-labelledby="section-1-heading" className="space-y-4">
-        <div className="flex items-center gap-3 border-b border-[#DCE2EA] pb-3">
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#075BD6] text-xs font-black text-white">
-            1
-          </span>
-          <div>
-            <h3 id="section-1-heading" className="font-display text-lg sm:text-xl font-black text-[#0A1020]">
-              SECTION 1 — MEMBERSHIP CATEGORY (tick one)
-            </h3>
-            <p className="text-xs text-[#6B7280]">Select the category that corresponds to your profession or status.</p>
+      <section aria-labelledby="section-1-heading" className="space-y-4 min-w-0 max-w-full">
+        <div className="border-b border-[#DCE2EA] pb-3.5">
+          {/* Mobile Section Badge */}
+          <div className="sm:hidden mb-2">
+            <span className="inline-flex items-center rounded-md bg-blue-100 px-2.5 py-0.5 text-xs font-black uppercase tracking-wider text-[#075BD6]">
+              SECTION 1
+            </span>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <span className="hidden sm:flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#075BD6] text-xs font-black text-white">
+              1
+            </span>
+            <div>
+              <h3 id="section-1-heading" className="font-display text-base sm:text-xl font-black text-[#0A1020] leading-snug">
+                <span className="hidden sm:inline">SECTION 1 - </span>MEMBERSHIP CATEGORY (Select one)
+              </h3>
+              <p className="text-xs text-[#6B7280]">Select the category that corresponds to your profession or status.</p>
+            </div>
           </div>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 min-w-0 max-w-full">
           {CATEGORIES.map((cat) => {
             const isSelected = category === cat.id;
             return (
               <label
                 key={cat.id}
                 htmlFor={`cat-${cat.id}`}
-                className={`relative flex cursor-pointer flex-col justify-between rounded-xl border p-4 transition-all duration-200 ${
-                  isSelected
+                className={`relative flex cursor-pointer flex-col justify-between rounded-xl border p-4 transition-all duration-200 ${isSelected
                     ? "border-[#075BD6] bg-[#F3F7FF] ring-2 ring-[#075BD6]/30 shadow-xs"
                     : "border-[#DCE2EA] bg-white hover:border-slate-300 hover:bg-slate-50/50"
-                }`}
+                  }`}
               >
                 <div className="flex items-start gap-3">
                   <input
@@ -467,22 +475,31 @@ export function MembershipForm() {
       </section>
 
       {/* SECTION 2: PERSONAL IDENTIFICATION */}
-      <section aria-labelledby="section-2-heading" className="space-y-5">
-        <div className="flex items-center gap-3 border-b border-[#DCE2EA] pb-3">
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#075BD6] text-xs font-black text-white">
-            2
-          </span>
-          <div>
-            <h3 id="section-2-heading" className="font-display text-lg sm:text-xl font-black text-[#0A1020]">
-              SECTION 2 — PERSONAL IDENTIFICATION
-            </h3>
-            <p className="text-xs text-[#6B7280]">Accurate personal details as recorded on your national identification.</p>
+      <section aria-labelledby="section-2-heading" className="space-y-5 min-w-0 max-w-full">
+        <div className="border-b border-[#DCE2EA] pb-3.5">
+          {/* Mobile Section Badge */}
+          <div className="sm:hidden mb-2">
+            <span className="inline-flex items-center rounded-md bg-blue-100 px-2.5 py-0.5 text-xs font-black uppercase tracking-wider text-[#075BD6]">
+              SECTION 2
+            </span>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <span className="hidden sm:flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#075BD6] text-xs font-black text-white">
+              2
+            </span>
+            <div>
+              <h3 id="section-2-heading" className="font-display text-base sm:text-xl font-black text-[#0A1020] leading-snug">
+                <span className="hidden sm:inline">SECTION 2 - </span>PERSONAL IDENTIFICATION
+              </h3>
+              <p className="text-xs text-[#6B7280]">Accurate personal details as recorded on your national identification.</p>
+            </div>
           </div>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 min-w-0 max-w-full">
           {/* Full Name */}
-          <div className="sm:col-span-2">
+          <div className="sm:col-span-2 min-w-0 max-w-full">
             <label htmlFor="fullName" className="block text-sm font-bold text-[#0A1020]">
               Full Name (as per CNIC) <span className="text-[#EF3B19]">*</span>
             </label>
@@ -492,9 +509,8 @@ export function MembershipForm() {
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
               placeholder="e.g. Muhammad Abdullah"
-              className={`mt-1.5 block w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                errors.fullName ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-              }`}
+              className={`mt-1.5 block w-full min-w-0 max-w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.fullName ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                }`}
               aria-required="true"
               aria-invalid={errors.fullName ? "true" : undefined}
             />
@@ -502,7 +518,7 @@ export function MembershipForm() {
           </div>
 
           {/* CNIC */}
-          <div>
+          <div className="min-w-0 max-w-full">
             <label htmlFor="cnic" className="block text-sm font-bold text-[#0A1020]">
               CNIC / B-Form / NICOP No. <span className="text-[#EF3B19]">*</span>
             </label>
@@ -512,9 +528,8 @@ export function MembershipForm() {
               value={cnic}
               onChange={(e) => setCnic(e.target.value)}
               placeholder="e.g. 35201-1234567-1"
-              className={`mt-1.5 block w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                errors.cnic ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-              }`}
+              className={`mt-1.5 block w-full min-w-0 max-w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.cnic ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                }`}
               aria-required="true"
               aria-invalid={errors.cnic ? "true" : undefined}
             />
@@ -522,7 +537,7 @@ export function MembershipForm() {
           </div>
 
           {/* Date of Birth */}
-          <div>
+          <div className="min-w-0 max-w-full">
             <label htmlFor="dob" className="block text-sm font-bold text-[#0A1020]">
               Date of Birth <span className="text-[#EF3B19]">*</span>
             </label>
@@ -531,9 +546,8 @@ export function MembershipForm() {
               id="dob"
               value={dob}
               onChange={(e) => setDob(e.target.value)}
-              className={`mt-1.5 block w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                errors.dob ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-              }`}
+              className={`mt-1.5 block w-full min-w-0 max-w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.dob ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                }`}
               aria-required="true"
               aria-invalid={errors.dob ? "true" : undefined}
             />
@@ -541,7 +555,7 @@ export function MembershipForm() {
           </div>
 
           {/* Gender */}
-          <div>
+          <div className="min-w-0 max-w-full">
             <label htmlFor="gender" className="block text-sm font-bold text-[#0A1020]">
               Gender <span className="text-[#EF3B19]">*</span>
             </label>
@@ -549,9 +563,8 @@ export function MembershipForm() {
               id="gender"
               value={gender}
               onChange={(e) => setGender(e.target.value)}
-              className={`mt-1.5 block w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                errors.gender ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-              }`}
+              className={`mt-1.5 block w-full min-w-0 max-w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.gender ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                }`}
               aria-required="true"
             >
               <option value="">Select Gender</option>
@@ -563,7 +576,7 @@ export function MembershipForm() {
           </div>
 
           {/* Nationality */}
-          <div>
+          <div className="min-w-0 max-w-full">
             <label htmlFor="nationality" className="block text-sm font-bold text-[#0A1020]">
               Nationality <span className="text-[#EF3B19]">*</span>
             </label>
@@ -573,16 +586,15 @@ export function MembershipForm() {
               value={nationality}
               onChange={(e) => setNationality(e.target.value)}
               placeholder="e.g. Pakistani"
-              className={`mt-1.5 block w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                errors.nationality ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-              }`}
+              className={`mt-1.5 block w-full min-w-0 max-w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.nationality ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                }`}
               aria-required="true"
             />
             {errors.nationality && <p className="mt-1 text-xs text-[#EF3B19]">{errors.nationality}</p>}
           </div>
 
           {/* Mobile Number */}
-          <div>
+          <div className="min-w-0 max-w-full">
             <label htmlFor="mobileNumber" className="block text-sm font-bold text-[#0A1020]">
               Mobile Number <span className="text-[#EF3B19]">*</span>
             </label>
@@ -592,16 +604,15 @@ export function MembershipForm() {
               value={mobileNumber}
               onChange={(e) => setMobileNumber(e.target.value)}
               placeholder="e.g. 0300-1234567"
-              className={`mt-1.5 block w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                errors.mobileNumber ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-              }`}
+              className={`mt-1.5 block w-full min-w-0 max-w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.mobileNumber ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                }`}
               aria-required="true"
             />
             {errors.mobileNumber && <p className="mt-1 text-xs text-[#EF3B19]">{errors.mobileNumber}</p>}
           </div>
 
           {/* WhatsApp Number */}
-          <div>
+          <div className="min-w-0 max-w-full">
             <label htmlFor="whatsappNumber" className="block text-sm font-bold text-[#0A1020]">
               WhatsApp Number <span className="text-[#EF3B19]">*</span>
             </label>
@@ -611,16 +622,15 @@ export function MembershipForm() {
               value={whatsappNumber}
               onChange={(e) => setWhatsappNumber(e.target.value)}
               placeholder="e.g. +92 300 1234567"
-              className={`mt-1.5 block w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                errors.whatsappNumber ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-              }`}
+              className={`mt-1.5 block w-full min-w-0 max-w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.whatsappNumber ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                }`}
               aria-required="true"
             />
             {errors.whatsappNumber && <p className="mt-1 text-xs text-[#EF3B19]">{errors.whatsappNumber}</p>}
           </div>
 
           {/* Email Address */}
-          <div className="sm:col-span-2">
+          <div className="sm:col-span-2 min-w-0 max-w-full">
             <label htmlFor="email" className="block text-sm font-bold text-[#0A1020]">
               Email Address <span className="text-[#EF3B19]">*</span>
             </label>
@@ -630,16 +640,15 @@ export function MembershipForm() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="e.g. doctor@example.com"
-              className={`mt-1.5 block w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                errors.email ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-              }`}
+              className={`mt-1.5 block w-full min-w-0 max-w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.email ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                }`}
               aria-required="true"
             />
             {errors.email && <p className="mt-1 text-xs text-[#EF3B19]">{errors.email}</p>}
           </div>
 
           {/* Current Mailing Address */}
-          <div className="sm:col-span-2">
+          <div className="sm:col-span-2 min-w-0 max-w-full">
             <label htmlFor="address" className="block text-sm font-bold text-[#0A1020]">
               Current Mailing Address <span className="text-[#EF3B19]">*</span>
             </label>
@@ -649,16 +658,15 @@ export function MembershipForm() {
               value={address}
               onChange={(e) => setAddress(e.target.value)}
               placeholder="House/Street/Building, Area, Postal Code"
-              className={`mt-1.5 block w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                errors.address ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-              }`}
+              className={`mt-1.5 block w-full min-w-0 max-w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.address ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                }`}
               aria-required="true"
             />
             {errors.address && <p className="mt-1 text-xs text-[#EF3B19]">{errors.address}</p>}
           </div>
 
           {/* City */}
-          <div>
+          <div className="min-w-0 max-w-full">
             <label htmlFor="city" className="block text-sm font-bold text-[#0A1020]">
               City <span className="text-[#EF3B19]">*</span>
             </label>
@@ -668,16 +676,15 @@ export function MembershipForm() {
               value={city}
               onChange={(e) => setCity(e.target.value)}
               placeholder="e.g. Lahore"
-              className={`mt-1.5 block w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                errors.city ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-              }`}
+              className={`mt-1.5 block w-full min-w-0 max-w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.city ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                }`}
               aria-required="true"
             />
             {errors.city && <p className="mt-1 text-xs text-[#EF3B19]">{errors.city}</p>}
           </div>
 
           {/* District */}
-          <div>
+          <div className="min-w-0 max-w-full">
             <label htmlFor="district" className="block text-sm font-bold text-[#0A1020]">
               District <span className="text-[#EF3B19]">*</span>
             </label>
@@ -687,16 +694,15 @@ export function MembershipForm() {
               value={district}
               onChange={(e) => setDistrict(e.target.value)}
               placeholder="e.g. Lahore / DG Khan / Multan"
-              className={`mt-1.5 block w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                errors.district ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-              }`}
+              className={`mt-1.5 block w-full min-w-0 max-w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.district ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                }`}
               aria-required="true"
             />
             {errors.district && <p className="mt-1 text-xs text-[#EF3B19]">{errors.district}</p>}
           </div>
 
           {/* Province */}
-          <div className="sm:col-span-2">
+          <div className="sm:col-span-2 min-w-0 max-w-full">
             <label htmlFor="province" className="block text-sm font-bold text-[#0A1020]">
               Province <span className="text-[#EF3B19]">*</span>
             </label>
@@ -704,7 +710,7 @@ export function MembershipForm() {
               id="province"
               value={province}
               onChange={(e) => setProvince(e.target.value)}
-              className="mt-1.5 block w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+              className="mt-1.5 block w-full min-w-0 max-w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
             >
               {PROVINCES.map((prov) => (
                 <option key={prov} value={prov}>
@@ -715,12 +721,12 @@ export function MembershipForm() {
           </div>
 
           {/* International Member Specific Fields */}
-          <div className="sm:col-span-2 rounded-xl border border-blue-100 bg-[#F8FAFD] p-4">
+          <div className="sm:col-span-2 min-w-0 max-w-full rounded-xl border border-blue-100 bg-[#F8FAFD] p-4">
             <p className="text-xs font-semibold text-[#075BD6]">
               International Members: please also complete the country/city of residence field below.
             </p>
-            <div className="mt-3 grid gap-4 sm:grid-cols-2">
-              <div>
+            <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-2 min-w-0 max-w-full">
+              <div className="min-w-0 max-w-full">
                 <label htmlFor="countryResidence" className="block text-xs font-bold text-[#0A1020]">
                   Country of Residence (International Members) {isInternational && <span className="text-[#EF3B19]">*</span>}
                 </label>
@@ -730,15 +736,14 @@ export function MembershipForm() {
                   value={countryResidence}
                   onChange={(e) => setCountryResidence(e.target.value)}
                   placeholder="e.g. United Kingdom / USA / Saudi Arabia"
-                  className={`mt-1 block w-full rounded-lg border px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                    errors.countryResidence ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-                  }`}
+                  className={`mt-1 block w-full min-w-0 max-w-full rounded-lg border px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.countryResidence ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                    }`}
                 />
                 {errors.countryResidence && (
                   <p className="mt-1 text-xs text-[#EF3B19]">{errors.countryResidence}</p>
                 )}
               </div>
-              <div>
+              <div className="min-w-0 max-w-full">
                 <label htmlFor="cityResidence" className="block text-xs font-bold text-[#0A1020]">
                   City of Residence (International Members) {isInternational && <span className="text-[#EF3B19]">*</span>}
                 </label>
@@ -748,9 +753,8 @@ export function MembershipForm() {
                   value={cityResidence}
                   onChange={(e) => setCityResidence(e.target.value)}
                   placeholder="e.g. London / Houston / Riyadh"
-                  className={`mt-1 block w-full rounded-lg border px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                    errors.cityResidence ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-                  }`}
+                  className={`mt-1 block w-full min-w-0 max-w-full rounded-lg border px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.cityResidence ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                    }`}
                 />
                 {errors.cityResidence && (
                   <p className="mt-1 text-xs text-[#EF3B19]">{errors.cityResidence}</p>
@@ -761,47 +765,62 @@ export function MembershipForm() {
         </div>
       </section>
 
-      {/* SECTION 3: ACADEMIC & PROFESSIONAL QUALIFICATION (Categories 1–6 only) */}
+      {/* SECTION 3: ACADEMIC & PROFESSIONAL QUALIFICATION (Categories 1-6 only) */}
       <section
         aria-labelledby="section-3-heading"
-        className={`space-y-5 rounded-2xl border p-5 sm:p-6 transition-all ${
-          isProfessional
+        className={`min-w-0 max-w-full overflow-hidden space-y-5 rounded-2xl border p-4 xs:p-5 sm:p-6 transition-all ${isProfessional
             ? "border-[#075BD6]/30 bg-white shadow-xs"
             : "border-[#DCE2EA] bg-slate-50/70 opacity-80"
-        }`}
+          }`}
       >
-        <div className="flex items-center justify-between border-b border-[#DCE2EA] pb-3">
-          <div className="flex items-center gap-3">
+        <div className="border-b border-[#DCE2EA] pb-3.5">
+          {/* Mobile Section Badge */}
+          <div className="sm:hidden mb-2">
             <span
-              className={`flex h-7 w-7 items-center justify-center rounded-lg text-xs font-black text-white ${
-                isProfessional ? "bg-[#075BD6]" : "bg-slate-400"
-              }`}
+              className={`inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-black uppercase tracking-wider ${isProfessional
+                  ? "bg-blue-100 text-[#075BD6]"
+                  : "bg-slate-200 text-slate-700"
+                }`}
             >
-              3
+              SECTION 3
             </span>
-            <div>
-              <h3 id="section-3-heading" className="font-display text-lg sm:text-xl font-black text-[#0A1020]">
-                SECTION 3 — ACADEMIC & PROFESSIONAL QUALIFICATION
-              </h3>
-              <span className="text-xs font-semibold text-[#075BD6]">
-                (Categories 1–6 only)
-              </span>
-            </div>
           </div>
-          {!isProfessional && (
-            <span className="rounded-full bg-slate-200 px-3 py-1 text-xs font-semibold text-slate-700">
-              Not required for your category
-            </span>
-          )}
+
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4">
+            <div className="flex items-center gap-3">
+              <span
+                className={`hidden sm:flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-xs font-black text-white ${isProfessional ? "bg-[#075BD6]" : "bg-slate-400"
+                  }`}
+              >
+                3
+              </span>
+              <div>
+                <h3 id="section-3-heading" className="font-display text-base sm:text-xl font-black text-[#0A1020] leading-snug">
+                  <span className="hidden sm:inline">SECTION 3 - </span>ACADEMIC & PROFESSIONAL QUALIFICATION
+                </h3>
+                <span className="text-xs font-semibold text-[#075BD6]">
+                  (Categories 1-6 only)
+                </span>
+              </div>
+            </div>
+
+            {!isProfessional && (
+              <div className="mt-1 sm:mt-0">
+                <span className="inline-flex rounded-full bg-slate-200 px-3 py-1 text-xs font-semibold text-slate-700">
+                  Not required for your category
+                </span>
+              </div>
+            )}
+          </div>
         </div>
 
         <p className="text-xs italic text-[#4B5563]">
-          Applicants in Categories 7–9 may skip to Section 4 / 5 as applicable.
+          Applicants in Categories 7-9 may skip to Section 4 / 5 as applicable.
         </p>
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 min-w-0 max-w-full">
           {/* Basic Qualification */}
-          <div className="sm:col-span-2">
+          <div className="sm:col-span-2 min-w-0 max-w-full">
             <label htmlFor="basicQualification" className="block text-sm font-bold text-[#0A1020]">
               Basic Qualification (e.g. MBBS, BDS, DPT, B.Pharm, Pharm.D, B.Sc. Nursing){" "}
               {isProfessional && <span className="text-[#EF3B19]">*</span>}
@@ -812,9 +831,8 @@ export function MembershipForm() {
               value={basicQualification}
               onChange={(e) => setBasicQualification(e.target.value)}
               placeholder="e.g. MBBS / BDS / DPT"
-              className={`mt-1.5 block w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                errors.basicQualification ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-              }`}
+              className={`mt-1.5 block w-full min-w-0 max-w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.basicQualification ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                }`}
             />
             {errors.basicQualification && (
               <p className="mt-1 text-xs text-[#EF3B19]">{errors.basicQualification}</p>
@@ -822,7 +840,7 @@ export function MembershipForm() {
           </div>
 
           {/* Institution */}
-          <div>
+          <div className="min-w-0 max-w-full">
             <label htmlFor="institution" className="block text-sm font-bold text-[#0A1020]">
               Institution {isProfessional && <span className="text-[#EF3B19]">*</span>}
             </label>
@@ -832,15 +850,14 @@ export function MembershipForm() {
               value={institution}
               onChange={(e) => setInstitution(e.target.value)}
               placeholder="e.g. King Edward Medical University"
-              className={`mt-1.5 block w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                errors.institution ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-              }`}
+              className={`mt-1.5 block w-full min-w-0 max-w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.institution ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                }`}
             />
             {errors.institution && <p className="mt-1 text-xs text-[#EF3B19]">{errors.institution}</p>}
           </div>
 
           {/* Year of Graduation */}
-          <div>
+          <div className="min-w-0 max-w-full">
             <label htmlFor="yearGraduation" className="block text-sm font-bold text-[#0A1020]">
               Year of Graduation {isProfessional && <span className="text-[#EF3B19]">*</span>}
             </label>
@@ -850,17 +867,16 @@ export function MembershipForm() {
               value={yearGraduation}
               onChange={(e) => setYearGraduation(e.target.value)}
               placeholder="e.g. 2018"
-              className={`mt-1.5 block w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                errors.yearGraduation ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-              }`}
+              className={`mt-1.5 block w-full min-w-0 max-w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.yearGraduation ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                }`}
             />
             {errors.yearGraduation && <p className="mt-1 text-xs text-[#EF3B19]">{errors.yearGraduation}</p>}
           </div>
 
           {/* Postgraduate Qualification */}
-          <div className="sm:col-span-2">
+          <div className="sm:col-span-2 min-w-0 max-w-full">
             <label htmlFor="postgradQualification" className="block text-sm font-bold text-[#0A1020]">
-              Postgraduate Qualification & Awarding Body (if any — e.g. FCPS, MCPS, MD, MS, MPH)
+              Postgraduate Qualification & Awarding Body (if any - e.g. FCPS, MCPS, MD, MS, MPH)
             </label>
             <input
               type="text"
@@ -868,12 +884,12 @@ export function MembershipForm() {
               value={postgradQualification}
               onChange={(e) => setPostgradQualification(e.target.value)}
               placeholder="e.g. FCPS (Internal Medicine) - CPSP"
-              className="mt-1.5 block w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+              className="mt-1.5 block w-full min-w-0 max-w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
             />
           </div>
 
           {/* Area of Specialisation / Clinical Interest */}
-          <div className="sm:col-span-2">
+          <div className="sm:col-span-2 min-w-0 max-w-full">
             <label htmlFor="specialisation" className="block text-sm font-bold text-[#0A1020]">
               Area of Specialisation / Clinical Interest (if any)
             </label>
@@ -883,12 +899,12 @@ export function MembershipForm() {
               value={specialisation}
               onChange={(e) => setSpecialisation(e.target.value)}
               placeholder="e.g. Emergency Medicine, Paediatrics, Ultrasound, Trauma Triage"
-              className="mt-1.5 block w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+              className="mt-1.5 block w-full min-w-0 max-w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
             />
           </div>
 
           {/* Current Designation & Place of Work */}
-          <div>
+          <div className="min-w-0 max-w-full">
             <label htmlFor="designationWorkplace" className="block text-sm font-bold text-[#0A1020]">
               Current Designation & Place of Work
             </label>
@@ -898,12 +914,12 @@ export function MembershipForm() {
               value={designationWorkplace}
               onChange={(e) => setDesignationWorkplace(e.target.value)}
               placeholder="e.g. Medical Officer, Mayo Hospital Lahore"
-              className="mt-1.5 block w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+              className="mt-1.5 block w-full min-w-0 max-w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
             />
           </div>
 
           {/* Years of Professional Experience */}
-          <div>
+          <div className="min-w-0 max-w-full">
             <label htmlFor="yearsExperience" className="block text-sm font-bold text-[#0A1020]">
               Years of Professional Experience
             </label>
@@ -913,49 +929,64 @@ export function MembershipForm() {
               value={yearsExperience}
               onChange={(e) => setYearsExperience(e.target.value)}
               placeholder="e.g. 5 Years"
-              className="mt-1.5 block w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+              className="mt-1.5 block w-full min-w-0 max-w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
             />
           </div>
         </div>
       </section>
 
-      {/* SECTION 4: ACADEMIC DETAILS — STUDENT MEMBERS (Categories 7–8 only) */}
+      {/* SECTION 4: ACADEMIC DETAILS - STUDENT MEMBERS (Categories 7-8 only) */}
       <section
         aria-labelledby="section-4-heading"
-        className={`space-y-5 rounded-2xl border p-5 sm:p-6 transition-all ${
-          isStudent
+        className={`min-w-0 max-w-full overflow-hidden space-y-5 rounded-2xl border p-4 xs:p-5 sm:p-6 transition-all ${isStudent
             ? "border-[#075BD6]/30 bg-white shadow-xs"
             : "border-[#DCE2EA] bg-slate-50/70 opacity-80"
-        }`}
+          }`}
       >
-        <div className="flex items-center justify-between border-b border-[#DCE2EA] pb-3">
-          <div className="flex items-center gap-3">
+        <div className="border-b border-[#DCE2EA] pb-3.5">
+          {/* Mobile Section Badge */}
+          <div className="sm:hidden mb-2">
             <span
-              className={`flex h-7 w-7 items-center justify-center rounded-lg text-xs font-black text-white ${
-                isStudent ? "bg-[#075BD6]" : "bg-slate-400"
-              }`}
+              className={`inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-black uppercase tracking-wider ${isStudent
+                  ? "bg-blue-100 text-[#075BD6]"
+                  : "bg-slate-200 text-slate-700"
+                }`}
             >
-              4
+              SECTION 4
             </span>
-            <div>
-              <h3 id="section-4-heading" className="font-display text-lg sm:text-xl font-black text-[#0A1020]">
-                SECTION 4 — ACADEMIC DETAILS — STUDENT MEMBERS
-              </h3>
-              <span className="text-xs font-semibold text-[#075BD6]">
-                (Categories 7–8 only)
-              </span>
-            </div>
           </div>
-          {!isStudent && (
-            <span className="rounded-full bg-slate-200 px-3 py-1 text-xs font-semibold text-slate-700">
-              Not required for your category
-            </span>
-          )}
+
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4">
+            <div className="flex items-center gap-3">
+              <span
+                className={`hidden sm:flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-xs font-black text-white ${isStudent ? "bg-[#075BD6]" : "bg-slate-400"
+                  }`}
+              >
+                4
+              </span>
+              <div>
+                <h3 id="section-4-heading" className="font-display text-base sm:text-xl font-black text-[#0A1020] leading-snug">
+                  <span className="hidden sm:inline">SECTION 4 - </span>ACADEMIC DETAILS - STUDENT MEMBERS
+                </h3>
+                <span className="text-xs font-semibold text-[#075BD6]">
+                  (Categories 7-8 only)
+                </span>
+              </div>
+            </div>
+
+            {!isStudent && (
+              <div className="mt-1 sm:mt-0">
+                <span className="inline-flex rounded-full bg-slate-200 px-3 py-1 text-xs font-semibold text-slate-700">
+                  Not required for your category
+                </span>
+              </div>
+            )}
+          </div>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 min-w-0 max-w-full">
           {/* Institution Name & Campus */}
-          <div className="sm:col-span-2">
+          <div className="sm:col-span-2 min-w-0 max-w-full">
             <label htmlFor="studentInstitution" className="block text-sm font-bold text-[#0A1020]">
               Institution Name & Campus {isStudent && <span className="text-[#EF3B19]">*</span>}
             </label>
@@ -965,9 +996,8 @@ export function MembershipForm() {
               value={studentInstitution}
               onChange={(e) => setStudentInstitution(e.target.value)}
               placeholder="e.g. Allama Iqbal Medical College, Lahore"
-              className={`mt-1.5 block w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                errors.studentInstitution ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-              }`}
+              className={`mt-1.5 block w-full min-w-0 max-w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.studentInstitution ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                }`}
             />
             {errors.studentInstitution && (
               <p className="mt-1 text-xs text-[#EF3B19]">{errors.studentInstitution}</p>
@@ -975,7 +1005,7 @@ export function MembershipForm() {
           </div>
 
           {/* Programme */}
-          <div>
+          <div className="min-w-0 max-w-full">
             <label htmlFor="studentProgram" className="block text-sm font-bold text-[#0A1020]">
               Programme {isStudent && <span className="text-[#EF3B19]">*</span>}
             </label>
@@ -984,10 +1014,9 @@ export function MembershipForm() {
               id="studentProgram"
               value={studentProgram}
               onChange={(e) => setStudentProgram(e.target.value)}
-              placeholder="e.g. MBBS / BDS / Pharm-D / DPT / B.Sc Nursing"
-              className={`mt-1.5 block w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                errors.studentProgram ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-              }`}
+              placeholder="e.g. MBBS / BDS / DPT / Pharm-D"
+              className={`mt-1.5 block w-full min-w-0 max-w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.studentProgram ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                }`}
             />
             {errors.studentProgram && (
               <p className="mt-1 text-xs text-[#EF3B19]">{errors.studentProgram}</p>
@@ -995,7 +1024,7 @@ export function MembershipForm() {
           </div>
 
           {/* Current Year of Study */}
-          <div>
+          <div className="min-w-0 max-w-full">
             <label htmlFor="studentYearOfStudy" className="block text-sm font-bold text-[#0A1020]">
               Current Year of Study {isStudent && <span className="text-[#EF3B19]">*</span>}
             </label>
@@ -1005,9 +1034,8 @@ export function MembershipForm() {
               value={studentYearOfStudy}
               onChange={(e) => setStudentYearOfStudy(e.target.value)}
               placeholder="e.g. 3rd Year / Final Year"
-              className={`mt-1.5 block w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                errors.studentYearOfStudy ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-              }`}
+              className={`mt-1.5 block w-full min-w-0 max-w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.studentYearOfStudy ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                }`}
             />
             {errors.studentYearOfStudy && (
               <p className="mt-1 text-xs text-[#EF3B19]">{errors.studentYearOfStudy}</p>
@@ -1015,7 +1043,7 @@ export function MembershipForm() {
           </div>
 
           {/* Roll / Student Registration No. */}
-          <div>
+          <div className="min-w-0 max-w-full">
             <label htmlFor="studentRollNo" className="block text-sm font-bold text-[#0A1020]">
               Roll / Student Registration No.
             </label>
@@ -1025,12 +1053,12 @@ export function MembershipForm() {
               value={studentRollNo}
               onChange={(e) => setStudentRollNo(e.target.value)}
               placeholder="e.g. 2022-AIMC-042"
-              className="mt-1.5 block w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+              className="mt-1.5 block w-full min-w-0 max-w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
             />
           </div>
 
           {/* Expected Year of Graduation */}
-          <div>
+          <div className="min-w-0 max-w-full">
             <label htmlFor="studentGradYear" className="block text-sm font-bold text-[#0A1020]">
               Expected Year of Graduation
             </label>
@@ -1040,12 +1068,12 @@ export function MembershipForm() {
               value={studentGradYear}
               onChange={(e) => setStudentGradYear(e.target.value)}
               placeholder="e.g. 2027"
-              className="mt-1.5 block w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+              className="mt-1.5 block w-full min-w-0 max-w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
             />
           </div>
 
           {/* Attachment notice */}
-          <div className="sm:col-span-2 rounded-xl border border-dashed border-[#DCE2EA] bg-slate-50/50 p-4">
+          <div className="sm:col-span-2 min-w-0 max-w-full rounded-xl border border-dashed border-[#DCE2EA] bg-slate-50/50 p-4">
             <label htmlFor="studentIdCard" className="block text-xs font-bold text-[#0A1020]">
               Please attach a copy of your valid student / college ID card.
             </label>
@@ -1055,10 +1083,10 @@ export function MembershipForm() {
                 id="studentIdCard"
                 accept="image/*,.pdf"
                 onChange={(e) => handleFileChange(e, setStudentIdFileName)}
-                className="text-xs text-slate-500 file:mr-3 file:rounded-lg file:border-0 file:bg-[#075BD6] file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-white hover:file:bg-[#0649B8]"
+                className="text-xs text-slate-500 file:mr-3 file:rounded-lg file:border-0 file:bg-[#075BD6] file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-white hover:file:bg-[#0649B8] max-w-full"
               />
               {studentIdFileName && (
-                <span className="text-xs font-semibold text-emerald-700">
+                <span className="text-xs font-semibold text-emerald-700 break-all">
                   Attached: {studentIdFileName}
                 </span>
               )}
@@ -1067,48 +1095,63 @@ export function MembershipForm() {
         </div>
       </section>
 
-      {/* SECTION 5: REGULATORY COUNCIL / PROFESSIONAL BODY REGISTRATION (Categories 1–6 only) */}
+      {/* SECTION 5: REGULATORY COUNCIL / PROFESSIONAL BODY REGISTRATION (Categories 1-6 only) */}
       <section
         aria-labelledby="section-5-heading"
-        className={`space-y-5 rounded-2xl border p-5 sm:p-6 transition-all ${
-          isProfessional
+        className={`min-w-0 max-w-full overflow-hidden space-y-5 rounded-2xl border p-4 xs:p-5 sm:p-6 transition-all ${isProfessional
             ? "border-[#075BD6]/30 bg-white shadow-xs"
             : "border-[#DCE2EA] bg-slate-50/70 opacity-80"
-        }`}
+          }`}
       >
-        <div className="flex items-center justify-between border-b border-[#DCE2EA] pb-3">
-          <div className="flex items-center gap-3">
+        <div className="border-b border-[#DCE2EA] pb-3.5">
+          {/* Mobile Section Badge */}
+          <div className="sm:hidden mb-2">
             <span
-              className={`flex h-7 w-7 items-center justify-center rounded-lg text-xs font-black text-white ${
-                isProfessional ? "bg-[#075BD6]" : "bg-slate-400"
-              }`}
+              className={`inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-black uppercase tracking-wider ${isProfessional
+                  ? "bg-blue-100 text-[#075BD6]"
+                  : "bg-slate-200 text-slate-700"
+                }`}
             >
-              5
+              SECTION 5
             </span>
-            <div>
-              <h3 id="section-5-heading" className="font-display text-lg sm:text-xl font-black text-[#0A1020]">
-                SECTION 5 — REGULATORY COUNCIL / PROFESSIONAL BODY REGISTRATION
-              </h3>
-              <span className="text-xs font-semibold text-[#075BD6]">
-                (Categories 1–6 only)
-              </span>
-            </div>
           </div>
-          {!isProfessional && (
-            <span className="rounded-full bg-slate-200 px-3 py-1 text-xs font-semibold text-slate-700">
-              Not required for your category
-            </span>
-          )}
+
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4">
+            <div className="flex items-center gap-3">
+              <span
+                className={`hidden sm:flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-xs font-black text-white ${isProfessional ? "bg-[#075BD6]" : "bg-slate-400"
+                  }`}
+              >
+                5
+              </span>
+              <div>
+                <h3 id="section-5-heading" className="font-display text-base sm:text-xl font-black text-[#0A1020] leading-snug">
+                  <span className="hidden sm:inline">SECTION 5 - </span>REGULATORY COUNCIL / PROFESSIONAL BODY REGISTRATION
+                </h3>
+                <span className="text-xs font-semibold text-[#075BD6]">
+                  (Categories 1-6 only)
+                </span>
+              </div>
+            </div>
+
+            {!isProfessional && (
+              <div className="mt-1 sm:mt-0">
+                <span className="inline-flex rounded-full bg-slate-200 px-3 py-1 text-xs font-semibold text-slate-700">
+                  Not required for your category
+                </span>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Dynamic Subsection Based on Selected Category */}
         {category === "1" && (
-          <div className="space-y-4 rounded-xl border border-blue-100 bg-[#F9FBFE] p-4">
+          <div className="space-y-4 rounded-xl border border-blue-100 bg-[#F9FBFE] p-4 min-w-0 max-w-full">
             <h4 className="font-display text-sm font-black text-[#0A1020]">
-              Category 1 — Medical and Dental Doctor: PMDC Registration
+              Category 1 - Medical and Dental Doctor: PMDC Registration
             </h4>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 min-w-0 max-w-full">
+              <div className="min-w-0 max-w-full">
                 <label htmlFor="pmdcRegNo" className="block text-xs font-bold text-[#0A1020]">
                   PMDC Registration No. <span className="text-[#EF3B19]">*</span>
                 </label>
@@ -1118,14 +1161,13 @@ export function MembershipForm() {
                   value={pmdcRegNo}
                   onChange={(e) => setPmdcRegNo(e.target.value)}
                   placeholder="e.g. 12345-P"
-                  className={`mt-1 block w-full rounded-lg border px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                    errors.pmdcRegNo ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-                  }`}
+                  className={`mt-1 block w-full min-w-0 max-w-full rounded-lg border px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.pmdcRegNo ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                    }`}
                 />
                 {errors.pmdcRegNo && <p className="mt-1 text-xs text-[#EF3B19]">{errors.pmdcRegNo}</p>}
               </div>
 
-              <div>
+              <div className="min-w-0 max-w-full">
                 <label htmlFor="pmdcCategory" className="block text-xs font-bold text-[#0A1020]">
                   Category (Provisional / Permanent)
                 </label>
@@ -1133,14 +1175,14 @@ export function MembershipForm() {
                   id="pmdcCategory"
                   value={pmdcCategory}
                   onChange={(e) => setPmdcCategory(e.target.value)}
-                  className="mt-1 block w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+                  className="mt-1 block w-full min-w-0 max-w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
                 >
                   <option value="Permanent">Permanent</option>
                   <option value="Provisional">Provisional</option>
                 </select>
               </div>
 
-              <div>
+              <div className="min-w-0 max-w-full">
                 <label htmlFor="pmdcDate" className="block text-xs font-bold text-[#0A1020]">
                   Date of Registration
                 </label>
@@ -1149,11 +1191,11 @@ export function MembershipForm() {
                   id="pmdcDate"
                   value={pmdcDate}
                   onChange={(e) => setPmdcDate(e.target.value)}
-                  className="mt-1 block w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+                  className="mt-1 block w-full min-w-0 max-w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
                 />
               </div>
 
-              <div>
+              <div className="min-w-0 max-w-full">
                 <label htmlFor="pmdcValidity" className="block text-xs font-bold text-[#0A1020]">
                   Validity / Renewal Status
                 </label>
@@ -1163,11 +1205,11 @@ export function MembershipForm() {
                   value={pmdcValidity}
                   onChange={(e) => setPmdcValidity(e.target.value)}
                   placeholder="e.g. Valid until Dec 2026"
-                  className="mt-1 block w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+                  className="mt-1 block w-full min-w-0 max-w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
                 />
               </div>
 
-              <div className="sm:col-span-2">
+              <div className="sm:col-span-2 min-w-0 max-w-full">
                 <label htmlFor="cpspNo" className="block text-xs font-bold text-[#0A1020]">
                   CPSP Fellow / Member No. (if in postgraduate training)
                 </label>
@@ -1177,7 +1219,7 @@ export function MembershipForm() {
                   value={cpspNo}
                   onChange={(e) => setCpspNo(e.target.value)}
                   placeholder="e.g. CPSP-12345 (Optional)"
-                  className="mt-1 block w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+                  className="mt-1 block w-full min-w-0 max-w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
                 />
               </div>
             </div>
@@ -1185,12 +1227,12 @@ export function MembershipForm() {
         )}
 
         {category === "2" && (
-          <div className="space-y-4 rounded-xl border border-blue-100 bg-[#F9FBFE] p-4">
+          <div className="space-y-4 rounded-xl border border-blue-100 bg-[#F9FBFE] p-4 min-w-0 max-w-full">
             <h4 className="font-display text-sm font-black text-[#0A1020]">
-              Category 2 — Doctor of Physical Therapy (DPT): PPTA Membership
+              Category 2 - Doctor of Physical Therapy (DPT): PPTA Membership
             </h4>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 min-w-0 max-w-full">
+              <div className="min-w-0 max-w-full">
                 <label htmlFor="pptaNo" className="block text-xs font-bold text-[#0A1020]">
                   PPTA Membership No. <span className="text-[#EF3B19]">*</span>
                 </label>
@@ -1200,14 +1242,13 @@ export function MembershipForm() {
                   value={pptaNo}
                   onChange={(e) => setPptaNo(e.target.value)}
                   placeholder="e.g. PPTA-9876"
-                  className={`mt-1 block w-full rounded-lg border px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                    errors.pptaNo ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-                  }`}
+                  className={`mt-1 block w-full min-w-0 max-w-full rounded-lg border px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.pptaNo ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                    }`}
                 />
                 {errors.pptaNo && <p className="mt-1 text-xs text-[#EF3B19]">{errors.pptaNo}</p>}
               </div>
 
-              <div>
+              <div className="min-w-0 max-w-full">
                 <label htmlFor="pptaDate" className="block text-xs font-bold text-[#0A1020]">
                   Date Issued
                 </label>
@@ -1216,11 +1257,11 @@ export function MembershipForm() {
                   id="pptaDate"
                   value={pptaDate}
                   onChange={(e) => setPptaDate(e.target.value)}
-                  className="mt-1 block w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+                  className="mt-1 block w-full min-w-0 max-w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
                 />
               </div>
 
-              <div className="sm:col-span-2">
+              <div className="sm:col-span-2 min-w-0 max-w-full">
                 <label htmlFor="healthcareCommNo" className="block text-xs font-bold text-[#0A1020]">
                   Healthcare Commission Registration No. (if applicable)
                 </label>
@@ -1230,7 +1271,7 @@ export function MembershipForm() {
                   value={healthcareCommNo}
                   onChange={(e) => setHealthcareCommNo(e.target.value)}
                   placeholder="e.g. PHC-12345"
-                  className="mt-1 block w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+                  className="mt-1 block w-full min-w-0 max-w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
                 />
               </div>
             </div>
@@ -1238,12 +1279,12 @@ export function MembershipForm() {
         )}
 
         {category === "3" && (
-          <div className="space-y-4 rounded-xl border border-blue-100 bg-[#F9FBFE] p-4">
+          <div className="space-y-4 rounded-xl border border-blue-100 bg-[#F9FBFE] p-4 min-w-0 max-w-full">
             <h4 className="font-display text-sm font-black text-[#0A1020]">
-              Category 3 — Allied Health Professional
+              Category 3 - Allied Health Professional
             </h4>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="sm:col-span-2">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 min-w-0 max-w-full">
+              <div className="sm:col-span-2 min-w-0 max-w-full">
                 <label htmlFor="alliedCouncilName" className="block text-xs font-bold text-[#0A1020]">
                   Council / Professional Body Name (e.g. PNC for midwives/LHVs; Healthcare Commission; institutional certification)
                 </label>
@@ -1253,11 +1294,11 @@ export function MembershipForm() {
                   value={alliedCouncilName}
                   onChange={(e) => setAlliedCouncilName(e.target.value)}
                   placeholder="e.g. Punjab Healthcare Commission / PNC / Institutional"
-                  className="mt-1 block w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+                  className="mt-1 block w-full min-w-0 max-w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
                 />
               </div>
 
-              <div>
+              <div className="min-w-0 max-w-full">
                 <label htmlFor="alliedRegNo" className="block text-xs font-bold text-[#0A1020]">
                   Registration / Certification No. <span className="text-[#EF3B19]">*</span>
                 </label>
@@ -1267,14 +1308,13 @@ export function MembershipForm() {
                   value={alliedRegNo}
                   onChange={(e) => setAlliedRegNo(e.target.value)}
                   placeholder="e.g. AHP-5678"
-                  className={`mt-1 block w-full rounded-lg border px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                    errors.alliedRegNo ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-                  }`}
+                  className={`mt-1 block w-full min-w-0 max-w-full rounded-lg border px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.alliedRegNo ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                    }`}
                 />
                 {errors.alliedRegNo && <p className="mt-1 text-xs text-[#EF3B19]">{errors.alliedRegNo}</p>}
               </div>
 
-              <div>
+              <div className="min-w-0 max-w-full">
                 <label htmlFor="alliedCadre" className="block text-xs font-bold text-[#0A1020]">
                   Category / Cadre
                 </label>
@@ -1284,11 +1324,11 @@ export function MembershipForm() {
                   value={alliedCadre}
                   onChange={(e) => setAlliedCadre(e.target.value)}
                   placeholder="e.g. Medical Technologist / Radiographer / Nutritionist"
-                  className="mt-1 block w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+                  className="mt-1 block w-full min-w-0 max-w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
                 />
               </div>
 
-              <div>
+              <div className="min-w-0 max-w-full">
                 <label htmlFor="alliedDateIssued" className="block text-xs font-bold text-[#0A1020]">
                   Date Issued
                 </label>
@@ -1297,11 +1337,11 @@ export function MembershipForm() {
                   id="alliedDateIssued"
                   value={alliedDateIssued}
                   onChange={(e) => setAlliedDateIssued(e.target.value)}
-                  className="mt-1 block w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+                  className="mt-1 block w-full min-w-0 max-w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
                 />
               </div>
 
-              <div>
+              <div className="min-w-0 max-w-full">
                 <label htmlFor="alliedValidity" className="block text-xs font-bold text-[#0A1020]">
                   Validity Status
                 </label>
@@ -1311,7 +1351,7 @@ export function MembershipForm() {
                   value={alliedValidity}
                   onChange={(e) => setAlliedValidity(e.target.value)}
                   placeholder="e.g. Active / Valid"
-                  className="mt-1 block w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+                  className="mt-1 block w-full min-w-0 max-w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
                 />
               </div>
             </div>
@@ -1319,12 +1359,12 @@ export function MembershipForm() {
         )}
 
         {category === "4" && (
-          <div className="space-y-4 rounded-xl border border-blue-100 bg-[#F9FBFE] p-4">
+          <div className="space-y-4 rounded-xl border border-blue-100 bg-[#F9FBFE] p-4 min-w-0 max-w-full">
             <h4 className="font-display text-sm font-black text-[#0A1020]">
-              Category 4 — Nursing Professional: PNC Registration
+              Category 4 - Nursing Professional: PNC Registration
             </h4>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 min-w-0 max-w-full">
+              <div className="min-w-0 max-w-full">
                 <label htmlFor="pncRegNo" className="block text-xs font-bold text-[#0A1020]">
                   PNC Registration No. <span className="text-[#EF3B19]">*</span>
                 </label>
@@ -1334,14 +1374,13 @@ export function MembershipForm() {
                   value={pncRegNo}
                   onChange={(e) => setPncRegNo(e.target.value)}
                   placeholder="e.g. PNC-12345"
-                  className={`mt-1 block w-full rounded-lg border px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                    errors.pncRegNo ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-                  }`}
+                  className={`mt-1 block w-full min-w-0 max-w-full rounded-lg border px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.pncRegNo ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                    }`}
                 />
                 {errors.pncRegNo && <p className="mt-1 text-xs text-[#EF3B19]">{errors.pncRegNo}</p>}
               </div>
 
-              <div>
+              <div className="min-w-0 max-w-full">
                 <label htmlFor="pncProvince" className="block text-xs font-bold text-[#0A1020]">
                   Province of Registration
                 </label>
@@ -1351,11 +1390,11 @@ export function MembershipForm() {
                   value={pncProvince}
                   onChange={(e) => setPncProvince(e.target.value)}
                   placeholder="e.g. Punjab"
-                  className="mt-1 block w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+                  className="mt-1 block w-full min-w-0 max-w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
                 />
               </div>
 
-              <div className="sm:col-span-2">
+              <div className="sm:col-span-2 min-w-0 max-w-full">
                 <label htmlFor="pncValidity" className="block text-xs font-bold text-[#0A1020]">
                   Validity Status
                 </label>
@@ -1365,7 +1404,7 @@ export function MembershipForm() {
                   value={pncValidity}
                   onChange={(e) => setPncValidity(e.target.value)}
                   placeholder="e.g. Valid through 2027"
-                  className="mt-1 block w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+                  className="mt-1 block w-full min-w-0 max-w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
                 />
               </div>
             </div>
@@ -1373,12 +1412,12 @@ export function MembershipForm() {
         )}
 
         {category === "5" && (
-          <div className="space-y-4 rounded-xl border border-blue-100 bg-[#F9FBFE] p-4">
+          <div className="space-y-4 rounded-xl border border-blue-100 bg-[#F9FBFE] p-4 min-w-0 max-w-full">
             <h4 className="font-display text-sm font-black text-[#0A1020]">
-              Category 5 — Pharmacist: PPC Registration
+              Category 5 - Pharmacist: PPC Registration
             </h4>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 min-w-0 max-w-full">
+              <div className="min-w-0 max-w-full">
                 <label htmlFor="ppcRegNo" className="block text-xs font-bold text-[#0A1020]">
                   PPC Registration No. <span className="text-[#EF3B19]">*</span>
                 </label>
@@ -1388,14 +1427,13 @@ export function MembershipForm() {
                   value={ppcRegNo}
                   onChange={(e) => setPpcRegNo(e.target.value)}
                   placeholder="e.g. PPC-4321"
-                  className={`mt-1 block w-full rounded-lg border px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                    errors.ppcRegNo ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-                  }`}
+                  className={`mt-1 block w-full min-w-0 max-w-full rounded-lg border px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.ppcRegNo ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                    }`}
                 />
                 {errors.ppcRegNo && <p className="mt-1 text-xs text-[#EF3B19]">{errors.ppcRegNo}</p>}
               </div>
 
-              <div>
+              <div className="min-w-0 max-w-full">
                 <label htmlFor="ppcCategory" className="block text-xs font-bold text-[#0A1020]">
                   Category (Pharmacist-A / Pharmacist-B)
                 </label>
@@ -1403,14 +1441,14 @@ export function MembershipForm() {
                   id="ppcCategory"
                   value={ppcCategory}
                   onChange={(e) => setPpcCategory(e.target.value)}
-                  className="mt-1 block w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+                  className="mt-1 block w-full min-w-0 max-w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
                 >
                   <option value="Pharmacist-A">Pharmacist-A</option>
                   <option value="Pharmacist-B">Pharmacist-B</option>
                 </select>
               </div>
 
-              <div>
+              <div className="min-w-0 max-w-full">
                 <label htmlFor="ppcDate" className="block text-xs font-bold text-[#0A1020]">
                   Date of Registration
                 </label>
@@ -1419,11 +1457,11 @@ export function MembershipForm() {
                   id="ppcDate"
                   value={ppcDate}
                   onChange={(e) => setPpcDate(e.target.value)}
-                  className="mt-1 block w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+                  className="mt-1 block w-full min-w-0 max-w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
                 />
               </div>
 
-              <div>
+              <div className="min-w-0 max-w-full">
                 <label htmlFor="ppcValidity" className="block text-xs font-bold text-[#0A1020]">
                   Validity Status
                 </label>
@@ -1433,7 +1471,7 @@ export function MembershipForm() {
                   value={ppcValidity}
                   onChange={(e) => setPpcValidity(e.target.value)}
                   placeholder="e.g. Valid / Up to date"
-                  className="mt-1 block w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+                  className="mt-1 block w-full min-w-0 max-w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
                 />
               </div>
             </div>
@@ -1441,12 +1479,12 @@ export function MembershipForm() {
         )}
 
         {category === "6" && (
-          <div className="space-y-4 rounded-xl border border-blue-100 bg-[#F9FBFE] p-4">
+          <div className="space-y-4 rounded-xl border border-blue-100 bg-[#F9FBFE] p-4 min-w-0 max-w-full">
             <h4 className="font-display text-sm font-black text-[#0A1020]">
-              Category 6 — International Member: Foreign Regulator Registration
+              Category 6 - International Member: Foreign Regulator Registration
             </h4>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="sm:col-span-2">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 min-w-0 max-w-full">
+              <div className="sm:col-span-2 min-w-0 max-w-full">
                 <label htmlFor="intlCountryRegulator" className="block text-xs font-bold text-[#0A1020]">
                   Country of Practice & Name of Foreign Regulator (e.g. GMC/UK, US state board, DHA/HAAD/SCFHS/MOH-Gulf, AHPRA/Australia) <span className="text-[#EF3B19]">*</span>
                 </label>
@@ -1456,16 +1494,15 @@ export function MembershipForm() {
                   value={intlCountryRegulator}
                   onChange={(e) => setIntlCountryRegulator(e.target.value)}
                   placeholder="e.g. General Medical Council (GMC), United Kingdom"
-                  className={`mt-1 block w-full rounded-lg border px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                    errors.intlCountryRegulator ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-                  }`}
+                  className={`mt-1 block w-full min-w-0 max-w-full rounded-lg border px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.intlCountryRegulator ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                    }`}
                 />
                 {errors.intlCountryRegulator && (
                   <p className="mt-1 text-xs text-[#EF3B19]">{errors.intlCountryRegulator}</p>
                 )}
               </div>
 
-              <div>
+              <div className="min-w-0 max-w-full">
                 <label htmlFor="intlRegLicenceNo" className="block text-xs font-bold text-[#0A1020]">
                   Registration / Licence No. <span className="text-[#EF3B19]">*</span>
                 </label>
@@ -1475,16 +1512,15 @@ export function MembershipForm() {
                   value={intlRegLicenceNo}
                   onChange={(e) => setIntlRegLicenceNo(e.target.value)}
                   placeholder="e.g. GMC-7654321"
-                  className={`mt-1 block w-full rounded-lg border px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                    errors.intlRegLicenceNo ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-                  }`}
+                  className={`mt-1 block w-full min-w-0 max-w-full rounded-lg border px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.intlRegLicenceNo ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                    }`}
                 />
                 {errors.intlRegLicenceNo && (
                   <p className="mt-1 text-xs text-[#EF3B19]">{errors.intlRegLicenceNo}</p>
                 )}
               </div>
 
-              <div>
+              <div className="min-w-0 max-w-full">
                 <label htmlFor="intlDate" className="block text-xs font-bold text-[#0A1020]">
                   Date of Registration
                 </label>
@@ -1493,11 +1529,11 @@ export function MembershipForm() {
                   id="intlDate"
                   value={intlDate}
                   onChange={(e) => setIntlDate(e.target.value)}
-                  className="mt-1 block w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+                  className="mt-1 block w-full min-w-0 max-w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
                 />
               </div>
 
-              <div>
+              <div className="min-w-0 max-w-full">
                 <label htmlFor="intlValidity" className="block text-xs font-bold text-[#0A1020]">
                   Validity Status
                 </label>
@@ -1507,11 +1543,11 @@ export function MembershipForm() {
                   value={intlValidity}
                   onChange={(e) => setIntlValidity(e.target.value)}
                   placeholder="e.g. Current Full Licence"
-                  className="mt-1 block w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+                  className="mt-1 block w-full min-w-0 max-w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
                 />
               </div>
 
-              <div>
+              <div className="min-w-0 max-w-full">
                 <label htmlFor="intlOriginProof" className="block text-xs font-bold text-[#0A1020]">
                   Proof of Pakistani Origin (CNIC / NICOP / Passport No.) <span className="text-[#EF3B19]">*</span>
                 </label>
@@ -1521,9 +1557,8 @@ export function MembershipForm() {
                   value={intlOriginProof}
                   onChange={(e) => setIntlOriginProof(e.target.value)}
                   placeholder="e.g. NICOP No. or Pakistani Passport No."
-                  className={`mt-1 block w-full rounded-lg border px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                    errors.intlOriginProof ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-                  }`}
+                  className={`mt-1 block w-full min-w-0 max-w-full rounded-lg border px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.intlOriginProof ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                    }`}
                 />
                 {errors.intlOriginProof && (
                   <p className="mt-1 text-xs text-[#EF3B19]">{errors.intlOriginProof}</p>
@@ -1536,13 +1571,13 @@ export function MembershipForm() {
         {/* Categories 7-9 fallback reminder */}
         {!isProfessional && (
           <p className="text-xs text-slate-500">
-            Regulatory council registration details are only applicable for practicing clinical professionals (Categories 1–6).
+            Regulatory council registration details are only applicable for practicing clinical professionals (Categories 1-6).
           </p>
         )}
 
         {/* Certificate Attachment Notice */}
         {isProfessional && (
-          <div className="rounded-xl border border-dashed border-[#DCE2EA] bg-slate-50/50 p-4">
+          <div className="rounded-xl border border-dashed border-[#DCE2EA] bg-slate-50/50 p-4 min-w-0 max-w-full">
             <label htmlFor="regCertificateFile" className="block text-xs font-bold text-[#0A1020]">
               Please attach a scanned copy of the relevant registration/membership certificate.
             </label>
@@ -1552,10 +1587,10 @@ export function MembershipForm() {
                 id="regCertificateFile"
                 accept="image/*,.pdf"
                 onChange={(e) => handleFileChange(e, setRegCertFileName)}
-                className="text-xs text-slate-500 file:mr-3 file:rounded-lg file:border-0 file:bg-[#075BD6] file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-white hover:file:bg-[#0649B8]"
+                className="text-xs text-slate-500 file:mr-3 file:rounded-lg file:border-0 file:bg-[#075BD6] file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-white hover:file:bg-[#0649B8] max-w-full"
               />
               {regCertFileName && (
-                <span className="text-xs font-semibold text-emerald-700">
+                <span className="text-xs font-semibold text-emerald-700 break-all">
                   Attached: {regCertFileName}
                 </span>
               )}
@@ -1565,22 +1600,31 @@ export function MembershipForm() {
       </section>
 
       {/* SECTION 6: MMM-SPECIFIC & ORGANISATIONAL DATA */}
-      <section aria-labelledby="section-6-heading" className="space-y-5">
-        <div className="flex items-center gap-3 border-b border-[#DCE2EA] pb-3">
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#075BD6] text-xs font-black text-white">
-            6
-          </span>
-          <div>
-            <h3 id="section-6-heading" className="font-display text-lg sm:text-xl font-black text-[#0A1020]">
-              SECTION 6 — MMM-SPECIFIC & ORGANISATIONAL DATA
-            </h3>
-            <p className="text-xs text-[#6B7280]">Connect with local teams and declare your volunteer focus.</p>
+      <section aria-labelledby="section-6-heading" className="space-y-5 min-w-0 max-w-full">
+        <div className="border-b border-[#DCE2EA] pb-3.5">
+          {/* Mobile Section Badge */}
+          <div className="sm:hidden mb-2">
+            <span className="inline-flex items-center rounded-md bg-blue-100 px-2.5 py-0.5 text-xs font-black uppercase tracking-wider text-[#075BD6]">
+              SECTION 6
+            </span>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <span className="hidden sm:flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#075BD6] text-xs font-black text-white">
+              6
+            </span>
+            <div>
+              <h3 id="section-6-heading" className="font-display text-base sm:text-xl font-black text-[#0A1020] leading-snug">
+                <span className="hidden sm:inline">SECTION 6 - </span>MMM-SPECIFIC & ORGANISATIONAL DATA
+              </h3>
+              <p className="text-xs text-[#6B7280]">Connect with local teams and declare your volunteer focus.</p>
+            </div>
           </div>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 min-w-0 max-w-full">
           {/* Nearest Chapter */}
-          <div>
+          <div className="min-w-0 max-w-full">
             <label htmlFor="nearestChapter" className="block text-sm font-bold text-[#0A1020]">
               Nearest MMM Chapter / Activity Centre (e.g. Lahore, DG Khan, Multan, Sialkot, Vehari){" "}
               <span className="text-[#EF3B19]">*</span>
@@ -1591,9 +1635,8 @@ export function MembershipForm() {
               value={nearestChapter}
               onChange={(e) => setNearestChapter(e.target.value)}
               placeholder="e.g. Lahore / Multan / Overseas"
-              className={`mt-1.5 block w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                errors.nearestChapter ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-              }`}
+              className={`mt-1.5 block w-full min-w-0 max-w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.nearestChapter ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                }`}
               aria-required="true"
             />
             {errors.nearestChapter && (
@@ -1602,7 +1645,7 @@ export function MembershipForm() {
           </div>
 
           {/* Referred By */}
-          <div>
+          <div className="min-w-0 max-w-full">
             <label htmlFor="referredBy" className="block text-sm font-bold text-[#0A1020]">
               Referred By (existing member name/ID, if any)
             </label>
@@ -1612,26 +1655,25 @@ export function MembershipForm() {
               value={referredBy}
               onChange={(e) => setReferredBy(e.target.value)}
               placeholder="e.g. Dr. Salman / ID-204"
-              className="mt-1.5 block w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+              className="mt-1.5 block w-full min-w-0 max-w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
             />
           </div>
 
           {/* How did you come to know about MMM? (tick one) */}
-          <div className="sm:col-span-2">
+          <div className="sm:col-span-2 min-w-0 max-w-full">
             <fieldset>
               <legend className="block text-sm font-bold text-[#0A1020]">
                 How did you come to know about MMM? (tick one)
               </legend>
-              <div className="mt-2.5 grid gap-2.5 sm:grid-cols-2 md:grid-cols-3">
+              <div className="mt-2.5 grid grid-cols-1 gap-2.5 sm:grid-cols-2 md:grid-cols-3 min-w-0 max-w-full">
                 {HOW_KNOWN_OPTIONS.map((opt) => (
                   <label
                     key={opt}
                     htmlFor={`howKnown-${opt}`}
-                    className={`flex cursor-pointer items-center gap-2.5 rounded-xl border p-3 text-xs transition-colors ${
-                      howKnown === opt
+                    className={`flex cursor-pointer items-center gap-2.5 rounded-xl border p-3 text-xs transition-colors ${howKnown === opt
                         ? "border-[#075BD6] bg-[#F3F7FF] font-bold text-[#075BD6]"
                         : "border-[#DCE2EA] bg-white hover:bg-slate-50 text-[#334155]"
-                    }`}
+                      }`}
                   >
                     <input
                       type="radio"
@@ -1659,30 +1701,29 @@ export function MembershipForm() {
                   value={howKnownOther}
                   onChange={(e) => setHowKnownOther(e.target.value)}
                   placeholder="Please specify..."
-                  className="mt-1 block w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+                  className="mt-1 block w-full min-w-0 max-w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
                 />
               </div>
             )}
           </div>
 
           {/* Areas of Volunteer Interest (tick all that apply) */}
-          <div className="sm:col-span-2">
+          <div className="sm:col-span-2 min-w-0 max-w-full">
             <fieldset>
               <legend className="block text-sm font-bold text-[#0A1020]">
                 Areas of Volunteer Interest (tick all that apply)
               </legend>
-              <div className="mt-2.5 grid gap-2.5 sm:grid-cols-2 md:grid-cols-4">
+              <div className="mt-2.5 grid grid-cols-1 gap-2.5 sm:grid-cols-2 md:grid-cols-4 min-w-0 max-w-full">
                 {VOLUNTEER_AREAS.map((area) => {
                   const isChecked = volunteerInterests.includes(area);
                   return (
                     <label
                       key={area}
                       htmlFor={`vol-${area}`}
-                      className={`flex cursor-pointer items-center gap-2.5 rounded-xl border p-3 text-xs transition-colors ${
-                        isChecked
+                      className={`flex cursor-pointer items-center gap-2.5 rounded-xl border p-3 text-xs transition-colors ${isChecked
                           ? "border-[#075BD6] bg-[#F3F7FF] font-bold text-[#075BD6]"
                           : "border-[#DCE2EA] bg-white hover:bg-slate-50 text-[#334155]"
-                      }`}
+                        }`}
                     >
                       <input
                         type="checkbox"
@@ -1701,7 +1742,7 @@ export function MembershipForm() {
           </div>
 
           {/* Availability */}
-          <div className="sm:col-span-2">
+          <div className="sm:col-span-2 min-w-0 max-w-full">
             <label htmlFor="activityAvailability" className="block text-sm font-bold text-[#0A1020]">
               Availability for Monthly Activities / Annual Medical Conference
             </label>
@@ -1711,12 +1752,12 @@ export function MembershipForm() {
               value={activityAvailability}
               onChange={(e) => setActivityAvailability(e.target.value)}
               placeholder="e.g. Weekends, 1 Saturday per month, Annual Conference attendance"
-              className="mt-1.5 block w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+              className="mt-1.5 block w-full min-w-0 max-w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
             />
           </div>
 
           {/* Prior/Concurrent Affiliation */}
-          <div className="sm:col-span-2">
+          <div className="sm:col-span-2 min-w-0 max-w-full">
             <label htmlFor="priorAffiliation" className="block text-sm font-bold text-[#0A1020]">
               Prior/Concurrent Affiliation with Other Bodies (e.g. PIMA, FIMA, PPTA, provincial associations)
             </label>
@@ -1726,12 +1767,12 @@ export function MembershipForm() {
               value={priorAffiliation}
               onChange={(e) => setPriorAffiliation(e.target.value)}
               placeholder="e.g. Member of PIMA / PPTA / PMA"
-              className="mt-1.5 block w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+              className="mt-1.5 block w-full min-w-0 max-w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
             />
           </div>
 
           {/* Consent Checkbox */}
-          <div className="sm:col-span-2 rounded-xl bg-slate-50 p-4 border border-[#DCE2EA]">
+          <div className="sm:col-span-2 min-w-0 max-w-full rounded-xl bg-slate-50 p-4 border border-[#DCE2EA]">
             <label htmlFor="consentCommunications" className="flex cursor-pointer items-start gap-3">
               <input
                 type="checkbox"
@@ -1747,7 +1788,7 @@ export function MembershipForm() {
           </div>
 
           {/* Membership Fee Category */}
-          <div>
+          <div className="min-w-0 max-w-full">
             <label htmlFor="membershipFeeCategory" className="block text-sm font-bold text-[#0A1020]">
               Membership Fee Category
             </label>
@@ -1757,12 +1798,12 @@ export function MembershipForm() {
               value={membershipFeeCategory}
               onChange={(e) => setMembershipFeeCategory(e.target.value)}
               placeholder="e.g. Regular / Student / Life / Patron"
-              className="mt-1.5 block w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+              className="mt-1.5 block w-full min-w-0 max-w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
             />
           </div>
 
           {/* Payment Reference No. */}
-          <div>
+          <div className="min-w-0 max-w-full">
             <label htmlFor="paymentReferenceNo" className="block text-sm font-bold text-[#0A1020]">
               Payment Reference No.
             </label>
@@ -1772,28 +1813,37 @@ export function MembershipForm() {
               value={paymentReferenceNo}
               onChange={(e) => setPaymentReferenceNo(e.target.value)}
               placeholder="e.g. Bank slip / TxID / Cash receipt (if paid)"
-              className="mt-1.5 block w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+              className="mt-1.5 block w-full min-w-0 max-w-full rounded-xl border border-[#DCE2EA] bg-white px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
             />
           </div>
         </div>
       </section>
 
       {/* SECTION 7: DECLARATION & UNDERTAKING */}
-      <section aria-labelledby="section-7-heading" className="space-y-6">
-        <div className="flex items-center gap-3 border-b border-[#DCE2EA] pb-3">
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#075BD6] text-xs font-black text-white">
-            7
-          </span>
-          <div>
-            <h3 id="section-7-heading" className="font-display text-lg sm:text-xl font-black text-[#0A1020]">
-              SECTION 7 — DECLARATION & UNDERTAKING
-            </h3>
-            <p className="text-xs text-[#6B7280]">Please read carefully and provide your digital signature.</p>
+      <section aria-labelledby="section-7-heading" className="space-y-6 min-w-0 max-w-full">
+        <div className="border-b border-[#DCE2EA] pb-3.5">
+          {/* Mobile Section Badge */}
+          <div className="sm:hidden mb-2">
+            <span className="inline-flex items-center rounded-md bg-blue-100 px-2.5 py-0.5 text-xs font-black uppercase tracking-wider text-[#075BD6]">
+              SECTION 7
+            </span>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <span className="hidden sm:flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#075BD6] text-xs font-black text-white">
+              7
+            </span>
+            <div>
+              <h3 id="section-7-heading" className="font-display text-base sm:text-xl font-black text-[#0A1020] leading-snug">
+                <span className="hidden sm:inline">SECTION 7 - </span>DECLARATION & UNDERTAKING
+              </h3>
+              <p className="text-xs text-[#6B7280]">Please read carefully and provide your digital signature.</p>
+            </div>
           </div>
         </div>
 
         {/* Verbatim Declaration Box */}
-        <div className="rounded-2xl border border-blue-200 bg-blue-50/50 p-5 sm:p-6">
+        <div className="rounded-2xl border border-blue-200 bg-blue-50/50 p-5 sm:p-6 min-w-0 max-w-full">
           <p className="font-serif text-[0.93rem] sm:text-[0.98rem] leading-relaxed text-[#0A1020]">
             “I hereby declare that the information provided in this form, including my regulatory registration or student-enrolment details, is true and accurate to the best of my knowledge. I undertake to abide by the constitution, code of conduct, and Islamic professional ethics of Muslim Medical Mission (MMM) Pakistan. I consent to MMM verifying my registration/enrolment status with PMDC, PNC, PPC, PPTA, the relevant council or professional body, or my institution, as applicable.”
           </p>
@@ -1820,8 +1870,8 @@ export function MembershipForm() {
         </div>
 
         {/* Signature & Date */}
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 min-w-0 max-w-full">
+          <div className="min-w-0 max-w-full">
             <label htmlFor="applicantSignature" className="block text-sm font-bold text-[#0A1020]">
               Signature of Applicant (Full Name) <span className="text-[#EF3B19]">*</span>
             </label>
@@ -1830,10 +1880,9 @@ export function MembershipForm() {
               id="applicantSignature"
               value={applicantSignature}
               onChange={(e) => setApplicantSignature(e.target.value)}
-              placeholder="Type your full legal name as digital signature"
-              className={`mt-1.5 block w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                errors.applicantSignature ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-              }`}
+              placeholder="Type legal name as digital signature"
+              className={`mt-1.5 block w-full min-w-0 max-w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.applicantSignature ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                }`}
               aria-required="true"
             />
             {errors.applicantSignature && (
@@ -1841,7 +1890,7 @@ export function MembershipForm() {
             )}
           </div>
 
-          <div>
+          <div className="min-w-0 max-w-full">
             <label htmlFor="declarationDate" className="block text-sm font-bold text-[#0A1020]">
               Date <span className="text-[#EF3B19]">*</span>
             </label>
@@ -1850,9 +1899,8 @@ export function MembershipForm() {
               id="declarationDate"
               value={declarationDate}
               onChange={(e) => setDeclarationDate(e.target.value)}
-              className={`mt-1.5 block w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${
-                errors.declarationDate ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
-              }`}
+              className={`mt-1.5 block w-full min-w-0 max-w-full rounded-xl border px-3.5 py-2.5 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20 ${errors.declarationDate ? "border-[#EF3B19] bg-red-50/20" : "border-[#DCE2EA] bg-white"
+                }`}
               aria-required="true"
             />
             {errors.declarationDate && (
@@ -1861,7 +1909,7 @@ export function MembershipForm() {
           </div>
 
           {/* Countersignature info */}
-          <div>
+          <div className="min-w-0 max-w-full">
             <label htmlFor="countersignature" className="block text-xs font-bold text-[#0A1020]">
               Countersignature (Chapter Coordinator / Proposer, where required)
             </label>
@@ -1871,11 +1919,11 @@ export function MembershipForm() {
               value={countersignature}
               onChange={(e) => setCountersignature(e.target.value)}
               placeholder="Coordinator Name / ID (if provided by chapter)"
-              className="mt-1 block w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+              className="mt-1 block w-full min-w-0 max-w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] placeholder-slate-400 placeholder:truncate transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
             />
           </div>
 
-          <div>
+          <div className="min-w-0 max-w-full">
             <label htmlFor="countersignatureDate" className="block text-xs font-bold text-[#0A1020]">
               Countersignature Date
             </label>
@@ -1884,7 +1932,7 @@ export function MembershipForm() {
               id="countersignatureDate"
               value={countersignatureDate}
               onChange={(e) => setCountersignatureDate(e.target.value)}
-              className="mt-1 block w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
+              className="mt-1 block w-full min-w-0 max-w-full rounded-lg border border-[#DCE2EA] bg-white px-3 py-2 text-sm text-[#0A1020] transition-colors focus:border-[#075BD6] focus:outline-none focus:ring-2 focus:ring-[#075BD6]/20"
             />
           </div>
         </div>
@@ -1923,15 +1971,15 @@ export function MembershipForm() {
       )}
 
       {/* Submit Button */}
-      <div className="pt-4 flex flex-col sm:flex-row items-center gap-4">
+      <div className="pt-4 flex flex-wrap items-center gap-3 sm:gap-4 w-full">
         <button
           type="submit"
           disabled={isSubmitting}
-          className="group relative inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-full bg-[#046BD2] px-9 py-4 font-display text-base font-bold text-white shadow-[0_10px_24px_-8px_rgba(4,107,210,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e53935] hover:shadow-[0_10px_24px_-8px_rgba(229,57,53,0.4)] disabled:cursor-not-allowed disabled:opacity-60"
+          className="group relative inline-flex items-center justify-center gap-2.5 rounded-full bg-[#046BD2] px-6 py-3 xs:px-7 xs:py-3.5 sm:px-9 sm:py-4 font-display text-[0.88rem] xs:text-[0.94rem] sm:text-base font-bold text-white whitespace-nowrap min-h-[44px] max-w-full shadow-[0_10px_24px_-8px_rgba(4,107,210,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e53935] hover:shadow-[0_10px_24px_-8px_rgba(229,57,53,0.4)] disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isSubmitting ? (
             <>
-              <svg className="h-5 w-5 animate-spin text-white" viewBox="0 0 24 24" fill="none">
+              <svg className="h-5 w-5 shrink-0 animate-spin text-white" viewBox="0 0 24 24" fill="none">
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
               </svg>
@@ -1940,7 +1988,7 @@ export function MembershipForm() {
           ) : (
             <>
               <span>Submit Application</span>
-              <svg className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <svg className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </>
@@ -1950,9 +1998,9 @@ export function MembershipForm() {
         <a
           href="/MMM_Pakistan_Membership_Application_Form.pdf"
           download
-          className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3.5 font-display text-sm font-bold text-[#334155] transition-all duration-300 hover:border-[#e53935] hover:bg-[#e53935] hover:text-white"
+          className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-5 py-2.5 xs:px-6 xs:py-3 sm:py-3.5 font-display text-[0.84rem] xs:text-sm font-bold text-[#334155] whitespace-nowrap min-h-[44px] max-w-full transition-all duration-300 hover:border-[#e53935] hover:bg-[#e53935] hover:text-white"
         >
-          <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
             <polyline points="7 10 12 15 17 10" />
             <line x1="12" y1="15" x2="12" y2="3" />

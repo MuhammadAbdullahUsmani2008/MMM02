@@ -66,8 +66,8 @@ export default function ContactPage() {
                         {c.body}
                       </p>
                     </div>
-                    <span className="inline-flex items-center gap-2.5 font-display text-[1rem] font-bold break-all text-blue-brand">
-                      {c.action}
+                    <span className="inline-flex items-center gap-2 xs:gap-2.5 font-display text-[0.88rem] xs:text-[1rem] font-bold text-blue-brand whitespace-nowrap shrink-0">
+                      <span>{c.action}</span>
                       <Arrow className="shrink-0 transition-transform duration-300 group-hover:translate-x-1.5" />
                     </span>
                   </a>

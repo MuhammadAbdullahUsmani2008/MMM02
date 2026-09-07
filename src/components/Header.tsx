@@ -421,23 +421,23 @@ export function Header() {
                 type="button"
                 onClick={() => setSearchOpen((s) => !s)}
                 aria-label="Search programmes and field reports"
-                className={`flex h-8 w-8 xs:h-9 xs:w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full transition-colors ${
+                className={`flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full transition-colors cursor-pointer ${
                   searchOpen
                     ? "bg-[#F3F7FF] text-[#075BD6]"
                     : "text-[#4B5563] hover:bg-[#F5F7FA] hover:text-[#075BD6]"
                 }`}
               >
-                <SearchIcon className="h-4 w-4 xs:h-[18px] xs:w-[18px]" />
+                <SearchIcon className="h-4 w-4 xs:h-[18px] xs:w-[18px] shrink-0" />
               </button>
 
               {/* Direct Donate Button (UNDA Royal/Electric Blue Style with red hover) */}
               <Link
                 href="/donate"
-                className="inline-flex shrink-0 items-center gap-1 xs:gap-1.5 sm:gap-2 rounded-full bg-[#075BD6] px-3 py-1.5 xs:px-3.5 xs:py-2 sm:px-5 sm:py-2.5 font-display text-[0.78rem] xs:text-[0.82rem] sm:text-[0.88rem] font-bold text-white shadow-[0_4px_14px_rgba(7,91,214,0.35)] transition-all duration-250 hover:-translate-y-0.5 hover:bg-[#e53935] hover:shadow-[0_6px_18px_rgba(229,57,53,0.4)] active:scale-95 whitespace-nowrap"
+                className="inline-flex shrink-0 items-center justify-center gap-1 xs:gap-1.5 sm:gap-2 rounded-full bg-[#075BD6] min-h-[36px] sm:min-h-[42px] px-3 py-1.5 xs:px-3.5 xs:py-2 sm:px-5 sm:py-2.5 font-display text-[0.78rem] xs:text-[0.82rem] sm:text-[0.88rem] font-bold text-white shadow-[0_4px_14px_rgba(7,91,214,0.35)] transition-all duration-250 hover:-translate-y-0.5 hover:bg-[#e53935] hover:shadow-[0_6px_18px_rgba(229,57,53,0.4)] active:scale-95 whitespace-nowrap"
               >
                 <span>Donate</span>
                 <span className="hidden md:inline">Now</span>
-                <HeartIcon className="h-3 w-3 xs:h-3.5 xs:w-3.5" />
+                <HeartIcon className="h-3 w-3 xs:h-3.5 xs:w-3.5 shrink-0" />
               </Link>
 
               {/* Mobile Drawer Button */}
@@ -445,9 +445,9 @@ export function Header() {
                 type="button"
                 onClick={() => setDrawer(true)}
                 aria-label="Open navigation menu"
-                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-slate-200 text-[#334155] transition-colors hover:bg-slate-100 lg:hidden"
+                className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg border border-slate-200 text-[#334155] transition-colors hover:bg-slate-100 lg:hidden cursor-pointer"
               >
-                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.2">
+                <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0" fill="none" stroke="currentColor" strokeWidth="2.2">
                   <path d="M4 6h16M4 12h16M4 18h16" strokeLinecap="round" />
                 </svg>
               </button>
@@ -497,9 +497,9 @@ export function Header() {
               type="button"
               onClick={() => setDrawer(false)}
               aria-label="Close menu"
-              className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-slate-200 text-[#334155] transition-colors hover:bg-slate-100 ml-2"
+              className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-slate-200 text-[#334155] transition-colors hover:bg-slate-100 ml-2 cursor-pointer"
             >
-              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+              <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0" fill="none" aria-hidden stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
                 <path d="M6 6l12 12M18 6L6 18" />
               </svg>
             </button>
@@ -513,10 +513,10 @@ export function Header() {
                 setDrawer(false);
                 setSearchOpen(true);
               }}
-              className="flex w-full items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs sm:text-sm font-medium text-slate-500 shadow-xs transition-colors hover:border-[#075BD6] hover:text-[#0A1020]"
+              className="flex w-full min-h-[44px] items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-xs sm:text-sm font-medium text-slate-500 shadow-xs transition-colors hover:border-[#075BD6] hover:text-[#0A1020] cursor-pointer whitespace-nowrap"
             >
               <SearchIcon className="h-4 w-4 shrink-0 text-[#075BD6]" />
-              <span>Search programmes, reports, Zakat...</span>
+              <span className="truncate">Search programmes, reports, Zakat...</span>
             </button>
           </div>
 
@@ -603,15 +603,15 @@ export function Header() {
             <Link
               href="/donate"
               onClick={() => setDrawer(false)}
-              className="flex items-center justify-center gap-2 rounded-xl bg-[#046BD2] py-3 text-center font-display font-bold text-white shadow-sm transition-all duration-250 hover:bg-[#e53935]"
+              className="flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-[#046BD2] px-4 py-3 text-center font-display text-sm sm:text-base font-bold text-white shadow-sm transition-all duration-250 hover:bg-[#e53935] whitespace-nowrap active:scale-98"
             >
               <span>Donate Now</span>
-              <HeartIcon className="h-4 w-4" />
+              <HeartIcon className="h-4 w-4 shrink-0" />
             </Link>
             <Link
               href="/get-involved"
               onClick={() => setDrawer(false)}
-              className="rounded-xl border border-slate-200 bg-white py-2.5 text-center font-display font-bold text-[#003475] transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] hover:text-white"
+              className="flex min-h-[44px] items-center justify-center rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-center font-display text-sm sm:text-base font-bold text-[#003475] transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] hover:text-white whitespace-nowrap active:scale-98"
             >
               Become a Volunteer
             </Link>

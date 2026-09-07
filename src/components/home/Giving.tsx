@@ -65,10 +65,10 @@ export function Giving() {
 
                   <Link
                     href="/donate"
-                    className="mt-6 flex items-center justify-between rounded-xl bg-[#F5F7FA] border border-[#DCE2EA] px-4 py-3 font-display text-[0.9rem] font-bold text-[#0A1020] transition-all duration-250 group-hover:bg-[#e53935] group-hover:border-[#e53935] group-hover:text-white"
+                    className="mt-6 flex min-h-[44px] items-center justify-between rounded-xl bg-[#F5F7FA] border border-[#DCE2EA] px-4 py-3 font-display text-[0.85rem] xs:text-[0.9rem] font-bold text-[#0A1020] transition-all duration-250 group-hover:bg-[#e53935] group-hover:border-[#e53935] group-hover:text-white whitespace-nowrap active:scale-98"
                   >
-                    <span>Donate PKR {tier.amount}</span>
-                    <Arrow className="h-3.5 w-3.5 transition-transform duration-300 ease-out group-hover:translate-x-1.5" />
+                    <span className="whitespace-nowrap">Donate PKR {tier.amount}</span>
+                    <Arrow className="h-3.5 w-3.5 shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-1.5" />
                   </Link>
                 </article>
               </Reveal>
@@ -76,41 +76,41 @@ export function Giving() {
           })}
         </div>
 
-        <Reveal delay={80}>
-          <div className="mt-9 grid gap-7 rounded-2xl border border-[#DCE6FB] bg-gradient-to-br from-[#F3F7FF] via-[#F8FAFC] to-white p-6 sm:p-7 shadow-[0_4px_20px_rgba(6,73,184,0.06)] lg:grid-cols-12 lg:items-center lg:p-8">
-            <div className="lg:col-span-5">
-              <span className="inline-flex items-center gap-1.5 font-display text-[0.82rem] font-extrabold uppercase tracking-wider text-[#075BD6]">
-                <svg className="h-3.5 w-3.5 text-[#075BD6]" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-2.001A11.954 11.954 0 0110 1.944zM11 14a1 1 0 11-2 0 1 1 0 012 0zm0-7a1 1 0 10-2 0v3a1 1 0 102 0V7z" clipRule="evenodd" />
-                </svg>
-                Zero Intermediary Deductions
-              </span>
-              <h3 className="mt-2 font-display text-[1.4rem] sm:text-[1.55rem] font-black text-[#0A1020]">
-                Direct bank transfer to field accounts
-              </h3>
-              <p className="mt-2 text-[0.92rem] leading-relaxed text-[#4B5563]">
-                A direct transfer carries zero merchant processing cuts, ensuring every rupee delivers medicine, food, and water. Send the receipt via WhatsApp and our dispatch coordinator will link it directly to the active clinic it funds.
-              </p>
-              <div className="mt-5 flex flex-wrap items-center gap-3">
-                <a
-                  href={org.whatsapp}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group inline-flex items-center gap-2 rounded-full bg-[#075BD6] px-6 py-2.5 font-display text-[0.88rem] font-bold text-white shadow-sm transition-all duration-250 hover:bg-[#e53935] hover:shadow-md"
-                >
-                  <span>WhatsApp a transfer slip</span>
-                  <Arrow className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-                </a>
-                <Link
-                  href="/donate"
-                  className="inline-flex items-center gap-2 rounded-full border border-[#DCE2EA] bg-white px-5 py-2.5 font-display text-[0.88rem] font-bold text-[#0A1020] transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] hover:text-white"
-                >
-                  All donation methods
-                </Link>
+        {/* Bank Direct Transfer Highlight */}
+        <Reveal delay={140}>
+          <div className="mt-10 rounded-2xl border border-[#DCE2EA] bg-[#F8FAFD] p-6 sm:p-9 shadow-xs">
+            <div className="grid gap-6 lg:grid-cols-12 lg:items-center">
+              <div className="lg:col-span-6">
+                <span className="inline-flex items-center gap-1.5 font-display text-[0.82rem] font-extrabold uppercase tracking-wider text-[#075BD6]">
+                  Direct Bank Transfer
+                </span>
+                <h3 className="mt-2 font-display text-[1.4rem] sm:text-[1.65rem] font-black text-[#0A1020]">
+                  100% of your gift reaches the patient.
+                </h3>
+                <p className="mt-2 text-[0.92rem] leading-relaxed text-[#4B5563]">
+                  A direct transfer carries zero merchant processing cuts, ensuring every rupee delivers medicine, food, and water. Send the receipt via WhatsApp and our dispatch coordinator will link it directly to the active clinic it funds.
+                </p>
+                <div className="mt-5 flex flex-wrap items-center gap-2.5 sm:gap-3">
+                  <a
+                    href={org.whatsapp}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#075BD6] min-h-[44px] px-4 py-2.5 sm:px-6 sm:py-2.5 font-display text-[0.84rem] sm:text-[0.88rem] font-bold text-white shadow-sm transition-all duration-250 hover:bg-[#e53935] hover:shadow-md whitespace-nowrap active:scale-98"
+                  >
+                    <span className="whitespace-nowrap">WhatsApp a transfer slip</span>
+                    <Arrow className="h-3.5 w-3.5 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
+                  </a>
+                  <Link
+                    href="/donate"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-[#DCE2EA] bg-white min-h-[44px] px-4 py-2.5 sm:px-5 sm:py-2.5 font-display text-[0.84rem] sm:text-[0.88rem] font-bold text-[#0A1020] transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] hover:text-white whitespace-nowrap active:scale-98"
+                  >
+                    <span className="whitespace-nowrap">All donation methods</span>
+                  </Link>
+                </div>
               </div>
             </div>
 
-            <dl className="grid gap-x-6 gap-y-4 sm:grid-cols-2 lg:col-span-6 lg:col-start-7">
+            <dl className="mt-8 grid gap-x-6 gap-y-4 sm:grid-cols-2 lg:grid-cols-4">
               {[
                 { k: "Account Title", v: org.bank.title },
                 { k: "Bank", v: org.bank.bank },

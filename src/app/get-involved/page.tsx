@@ -204,26 +204,26 @@ export default function MembershipPage() {
               Membership
             </h1>
             <p className="mt-5 text-[1.08rem] sm:text-[1.18rem] leading-relaxed text-[#4B5563]">
-              Muslim Medical Mission (MMM) Pakistan brings together doctors, dentists, physiotherapists, nurses, pharmacists, allied health professionals, students, and volunteers who share one purpose: serving humanity through free medical camps, health education, disaster relief, and the training of the next generation of Pakistan&apos;s healthcare professionals — all guided by the values of compassion and service that Islam calls every healer to.
+              Muslim Medical Mission (MMM) Pakistan brings together doctors, dentists, physiotherapists, nurses, pharmacists, allied health professionals, students, and volunteers who share one purpose: serving humanity through free medical camps, health education, disaster relief, and the training of the next generation of Pakistan&apos;s healthcare professionals - all guided by the values of compassion and service that Islam calls every healer to.
             </p>
             <p className="mt-4 text-[1.02rem] sm:text-[1.08rem] leading-relaxed text-[#4B5563]">
               Whether you are a practising professional, a student still training for the field, or simply someone who wants to give their time to a good cause, there is a place for you at MMM Pakistan.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
               <a
                 href="#application-form"
-                className="group inline-flex items-center gap-2.5 rounded-full bg-[#046BD2] px-7 py-3.5 font-display text-[0.95rem] font-bold text-white shadow-[0_10px_24px_-8px_rgba(4,107,210,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e53935] hover:shadow-[0_10px_24px_-8px_rgba(229,57,53,0.4)]"
+                className="group inline-flex items-center justify-center gap-2 xs:gap-2.5 rounded-full bg-[#046BD2] px-5 py-2.5 xs:px-6 xs:py-3 sm:px-7 sm:py-3.5 font-display text-[0.84rem] xs:text-[0.9rem] sm:text-[0.95rem] font-bold text-white whitespace-nowrap min-h-[44px] max-w-full shadow-[0_10px_24px_-8px_rgba(4,107,210,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e53935] hover:shadow-[0_10px_24px_-8px_rgba(229,57,53,0.4)]"
               >
                 <span>Join MMM Pakistan Today</span>
-                <Arrow className="transition-transform duration-300 group-hover:translate-x-1" />
+                <Arrow className="shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
               <a
                 href="/MMM_Pakistan_Membership_Application_Form.pdf"
                 download
-                className="group inline-flex items-center gap-2.5 rounded-full border-2 border-slate-300 px-7 py-3.5 font-display text-[0.95rem] font-bold text-[#334155] transition-all duration-300 hover:border-[#e53935] hover:bg-[#e53935] hover:text-white"
+                className="group inline-flex items-center justify-center gap-2 xs:gap-2.5 rounded-full border-2 border-slate-300 px-5 py-2.5 xs:px-6 xs:py-3 sm:px-7 sm:py-3.5 font-display text-[0.84rem] xs:text-[0.9rem] sm:text-[0.95rem] font-bold text-[#334155] whitespace-nowrap min-h-[44px] max-w-full transition-all duration-300 hover:border-[#e53935] hover:bg-[#e53935] hover:text-white"
               >
-                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg className="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                   <polyline points="7 10 12 15 17 10" />
                   <line x1="12" y1="15" x2="12" y2="3" />
@@ -364,7 +364,7 @@ export default function MembershipPage() {
                     Eligibility
                   </h2>
                   <p className="mt-4 text-[1.02rem] sm:text-[1.08rem] leading-relaxed text-[#4B5563]">
-                    Membership as a Medical and Dental Doctor, Doctor of Physical Therapy, Allied Health Professional, Nursing Professional, or Pharmacist requires current, valid registration with the relevant professional council or body — PMDC, PNC, PPC, or PPTA, as applicable to your profession. International Members must hold current registration/licensure with the health regulator of the country in which they practise, along with proof of Pakistani origin. Student members must be currently enrolled at a recognised institution. Volunteers may join regardless of professional background.
+                    Membership as a Medical and Dental Doctor, Doctor of Physical Therapy, Allied Health Professional, Nursing Professional, or Pharmacist requires current, valid registration with the relevant professional council or body - PMDC, PNC, PPC, or PPTA, as applicable to your profession. International Members must hold current registration/licensure with the health regulator of the country in which they practise, along with proof of Pakistani origin. Student members must be currently enrolled at a recognised institution. Volunteers may join regardless of professional background.
                   </p>
                 </div>
               </div>
@@ -408,10 +408,10 @@ export default function MembershipPage() {
                 <div className="mt-8">
                   <a
                     href="#application-form"
-                    className="inline-flex items-center gap-2 rounded-full bg-[#075BD6] px-6 py-3 font-display text-sm font-bold text-white shadow-soft transition-all hover:bg-[#0649B8]"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#075BD6] px-5 py-2.5 xs:px-6 xs:py-3 font-display text-[0.84rem] xs:text-sm font-bold text-white whitespace-nowrap min-h-[44px] max-w-full shadow-soft transition-all hover:bg-[#0649B8]"
                   >
                     <span>Go to Online Form Below</span>
-                    <Arrow className="h-4 w-4" />
+                    <Arrow className="h-4 w-4 shrink-0" />
                   </a>
                 </div>
               </div>
@@ -430,7 +430,7 @@ export default function MembershipPage() {
                   <h3 className="mt-5 font-display text-2xl font-black text-[#0A1020]">
                     Download &amp; Submit Offline
                   </h3>
-                  <p className="mt-3 text-xs italic text-slate-500">— or, if you prefer to apply manually —</p>
+                  <p className="mt-3 text-xs italic text-slate-500">- or, if you prefer to apply manually -</p>
 
                   <ol className="mt-4 space-y-3 text-sm leading-relaxed text-[#4B5563]">
                     <li className="flex items-start gap-2.5">
@@ -444,7 +444,7 @@ export default function MembershipPage() {
                         3
                       </span>
                       <span>
-                        Attach the required documents — a copy of your CNIC, a recent photograph, and your degree/registration certificate or student ID card, as applicable to your category.
+                        Attach the required documents - a copy of your CNIC, a recent photograph, and your degree/registration certificate or student ID card, as applicable to your category.
                       </span>
                     </li>
                     <li className="flex items-start gap-2.5">
@@ -472,9 +472,9 @@ export default function MembershipPage() {
                   <a
                     href="/MMM_Pakistan_Membership_Application_Form.pdf"
                     download
-                    className="inline-flex items-center gap-2 rounded-full border-2 border-slate-300 px-6 py-2.5 font-display text-sm font-bold text-[#334155] transition-all hover:border-[#075BD6] hover:text-[#075BD6]"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-4.5 py-2.5 xs:px-6 xs:py-2.5 font-display text-[0.84rem] xs:text-sm font-bold text-[#334155] whitespace-nowrap min-h-[44px] max-w-full transition-all hover:border-[#075BD6] hover:text-[#075BD6]"
                   >
-                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg className="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                       <polyline points="7 10 12 15 17 10" />
                       <line x1="12" y1="15" x2="12" y2="3" />
@@ -493,7 +493,7 @@ export default function MembershipPage() {
       {/* -------------------------------------------------------------- */}
       <section id="application-form" className="py-20 lg:py-28 border-b border-[#DCE2EA] bg-[#F5F7FA]">
         <div className="shell">
-          <div className="rounded-3xl border border-[#DCE2EA] bg-white p-6 sm:p-10 lg:p-12 shadow-soft">
+          <div className="rounded-3xl border border-[#DCE2EA] bg-white p-4 xs:p-6 sm:p-10 lg:p-12 shadow-soft min-w-0 max-w-full overflow-hidden">
             <div className="border-b border-[#DCE2EA] pb-8 text-center sm:text-left">
               <span className="rounded-full bg-blue-100 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#075BD6]">
                 Online Registration
@@ -595,17 +595,17 @@ export default function MembershipPage() {
                 <div className="mt-6 flex flex-col gap-3">
                   <a
                     href="#application-form"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#046BD2] px-6 py-3 font-display text-sm font-bold text-white shadow-soft transition-all hover:bg-[#e53935]"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#046BD2] px-5 py-2.5 xs:px-6 xs:py-3 font-display text-[0.84rem] xs:text-sm font-bold text-white whitespace-nowrap min-h-[44px] max-w-full shadow-soft transition-all hover:bg-[#e53935]"
                   >
                     <span>Join MMM Pakistan Today</span>
-                    <Arrow className="h-4 w-4" />
+                    <Arrow className="h-4 w-4 shrink-0" />
                   </a>
                   <a
                     href="/MMM_Pakistan_Membership_Application_Form.pdf"
                     download
-                    className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 font-display text-sm font-bold text-[#334155] transition-all hover:border-[#075BD6] hover:text-[#075BD6]"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-5 py-2.5 xs:px-6 xs:py-3 font-display text-[0.84rem] xs:text-sm font-bold text-[#334155] whitespace-nowrap min-h-[44px] max-w-full transition-all hover:border-[#075BD6] hover:text-[#075BD6]"
                   >
-                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg className="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                       <polyline points="7 10 12 15 17 10" />
                       <line x1="12" y1="15" x2="12" y2="3" />
@@ -648,10 +648,10 @@ export default function MembershipPage() {
           <div className="mt-10">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 font-display text-sm font-bold text-[#334155] transition-all hover:border-[#075BD6] hover:text-[#075BD6]"
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-4 py-2.5 xs:px-6 xs:py-3 font-display text-[0.75rem] xs:text-[0.82rem] sm:text-sm font-bold text-[#334155] whitespace-nowrap min-h-[44px] max-w-full transition-all hover:border-[#075BD6] hover:text-[#075BD6]"
             >
               <span>Start an Institutional Partnership Conversation</span>
-              <Arrow className="h-4 w-4" />
+              <Arrow className="h-4 w-4 shrink-0" />
             </Link>
           </div>
         </div>

@@ -131,13 +131,13 @@ export function DonationPlanner() {
                     setCustom("");
                   }}
                   aria-pressed={on}
-                  className={`rounded-full px-6 py-3 font-display text-[0.95rem] font-bold transition-all duration-250 ${
+                  className={`inline-flex items-center justify-center rounded-full px-4.5 py-2.5 xs:px-6 xs:py-3 font-display text-[0.85rem] xs:text-[0.95rem] font-bold whitespace-nowrap min-h-[44px] transition-all duration-250 ${
                     on
                       ? "bg-[#046BD2] text-white shadow-sm hover:bg-[#e53935]"
                       : "bg-slate-100 text-[#334155] hover:bg-[#e53935] hover:text-white"
                   }`}
                 >
-                  {money(p)}
+                  <span>{money(p)}</span>
                 </button>
               );
             })}
@@ -192,13 +192,13 @@ export function DonationPlanner() {
           href={`${org.whatsapp}?text=${message}`}
           target="_blank"
           rel="noreferrer"
-          className="group mt-8 inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-[#046BD2] px-7 py-4 font-display font-bold text-white shadow-[0_8px_20px_rgba(4,107,210,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#003475]"
+          className="group mt-8 inline-flex w-full items-center justify-center gap-2 xs:gap-2.5 rounded-full bg-[#046BD2] px-5 py-3 xs:px-7 xs:py-4 font-display text-[0.88rem] xs:text-base font-bold text-white whitespace-nowrap min-h-[44px] shadow-[0_8px_20px_rgba(4,107,210,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#003475]"
         >
-          Arrange this donation
-          <Arrow className="transition-transform duration-300 group-hover:translate-x-1" />
+          <span>Arrange this donation</span>
+          <Arrow className="shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
         </a>
 
-        <div className="mt-7 space-y-3 border-t border-white/12 pt-6">
+        <div className="mt-7 space-y-3 border-t border-slate-200 pt-6">
           {[
             { k: "Account title", v: org.bank.title },
             { k: "IBAN", v: org.bank.iban },
@@ -206,15 +206,15 @@ export function DonationPlanner() {
           ].map((row) => (
             <div key={row.k} className="flex items-start justify-between gap-4">
               <div className="min-w-0">
-                <p className="text-[0.85rem] text-navy-300">{row.k}</p>
-                <p className="mt-0.5 text-[0.88rem] font-semibold break-all text-white">{row.v}</p>
+                <p className="text-[0.85rem] text-slate-500">{row.k}</p>
+                <p className="mt-0.5 text-[0.88rem] font-semibold break-all text-[#0A1020]">{row.v}</p>
               </div>
               <button
                 type="button"
                 onClick={() => copy(row.v, row.k)}
-                className="shrink-0 rounded-full border border-white/25 px-3.5 py-1.5 font-display text-[0.75rem] font-bold text-white transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] hover:text-white"
+                className="inline-flex shrink-0 items-center justify-center rounded-full border border-slate-300 bg-white px-3.5 py-1.5 font-display text-[0.75rem] font-bold text-[#334155] whitespace-nowrap min-h-[38px] transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] hover:text-white"
               >
-                {copied === row.k ? "Copied" : "Copy"}
+                <span>{copied === row.k ? "Copied" : "Copy"}</span>
               </button>
             </div>
           ))}

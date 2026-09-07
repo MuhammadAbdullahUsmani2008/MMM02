@@ -220,7 +220,7 @@ export default function AboutPage() {
           </div>
 
           <Reveal delay={100}>
-            <div className="mt-12 flex flex-wrap gap-4">
+            <div className="mt-12 flex flex-wrap gap-3 sm:gap-4">
               <Button href="/get-involved" variant="primary">
                 Volunteer with us
               </Button>

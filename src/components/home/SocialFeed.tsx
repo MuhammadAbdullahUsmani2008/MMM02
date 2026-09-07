@@ -135,11 +135,11 @@ export function SocialFeed() {
 
         {/* Platform Tabs Switcher */}
         <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-b border-[#DCE2EA] pb-3">
-          <div className="no-scrollbar flex items-center gap-2 overflow-x-auto pb-1">
+          <div className="no-scrollbar flex items-center gap-2 overflow-x-auto pb-1 max-w-full">
             <button
               type="button"
               onClick={() => setActiveTab("all")}
-              className={`cursor-pointer rounded-full px-4 py-2 font-display text-xs sm:text-sm font-bold transition-all ${
+              className={`shrink-0 cursor-pointer rounded-full min-h-[38px] px-4 py-2 font-display text-xs sm:text-sm font-bold whitespace-nowrap transition-all ${
                 activeTab === "all"
                   ? "bg-[#075BD6] text-white shadow-xs"
                   : "bg-[#F5F7FA] text-[#4B5563] hover:bg-[#DCE6FB] hover:text-[#075BD6]"
@@ -151,59 +151,59 @@ export function SocialFeed() {
             <button
               type="button"
               onClick={() => setActiveTab("youtube")}
-              className={`inline-flex cursor-pointer items-center gap-1.5 rounded-full px-4 py-2 font-display text-xs sm:text-sm font-bold transition-all ${
+              className={`inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-full min-h-[38px] px-4 py-2 font-display text-xs sm:text-sm font-bold whitespace-nowrap transition-all ${
                 activeTab === "youtube"
                   ? "bg-[#FF0000] text-white shadow-xs"
                   : "bg-[#F5F7FA] text-[#4B5563] hover:bg-red-50 hover:text-[#FF0000]"
               }`}
             >
-              <YouTubeIcon className="h-4 w-4" />
+              <YouTubeIcon className="h-4 w-4 shrink-0" />
               <span>YouTube</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveTab("facebook")}
-              className={`inline-flex cursor-pointer items-center gap-1.5 rounded-full px-4 py-2 font-display text-xs sm:text-sm font-bold transition-all ${
+              className={`inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-full min-h-[38px] px-4 py-2 font-display text-xs sm:text-sm font-bold whitespace-nowrap transition-all ${
                 activeTab === "facebook"
                   ? "bg-[#1877F2] text-white shadow-xs"
                   : "bg-[#F5F7FA] text-[#4B5563] hover:bg-blue-50 hover:text-[#1877F2]"
               }`}
             >
-              <FacebookIcon className="h-4 w-4" />
+              <FacebookIcon className="h-4 w-4 shrink-0" />
               <span>Facebook</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveTab("instagram")}
-              className={`inline-flex cursor-pointer items-center gap-1.5 rounded-full px-4 py-2 font-display text-xs sm:text-sm font-bold transition-all ${
+              className={`inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-full min-h-[38px] px-4 py-2 font-display text-xs sm:text-sm font-bold whitespace-nowrap transition-all ${
                 activeTab === "instagram"
                   ? "bg-gradient-to-r from-amber-500 via-pink-600 to-purple-600 text-white shadow-xs"
                   : "bg-[#F5F7FA] text-[#4B5563] hover:bg-pink-50 hover:text-[#E1306C]"
               }`}
             >
-              <InstagramIcon className="h-4 w-4" />
+              <InstagramIcon className="h-4 w-4 shrink-0" />
               <span>Instagram</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveTab("x")}
-              className={`inline-flex cursor-pointer items-center gap-1.5 rounded-full px-4 py-2 font-display text-xs sm:text-sm font-bold transition-all ${
+              className={`inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-full min-h-[38px] px-4 py-2 font-display text-xs sm:text-sm font-bold whitespace-nowrap transition-all ${
                 activeTab === "x"
                   ? "bg-black text-white shadow-xs"
                   : "bg-[#F5F7FA] text-[#4B5563] hover:bg-slate-200 hover:text-black"
               }`}
             >
-              <XIcon className="h-3.5 w-3.5" />
+              <XIcon className="h-3.5 w-3.5 shrink-0" />
               <span>X (Twitter)</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveTab("embed")}
-              className={`inline-flex cursor-pointer items-center gap-1.5 rounded-full px-4 py-2 font-display text-xs sm:text-sm font-bold transition-all ${
+              className={`inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-full min-h-[38px] px-4 py-2 font-display text-xs sm:text-sm font-bold whitespace-nowrap transition-all ${
                 activeTab === "embed"
                   ? "bg-[#0649B8] text-white shadow-xs"
                   : "bg-[#F3F7FF] text-[#075BD6] border border-[#DCE6FB] hover:bg-[#075BD6] hover:text-white"
@@ -273,9 +273,9 @@ export function SocialFeed() {
                     href="https://x.com/MMMPakOfficial"
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl bg-black px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-slate-800"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-black min-h-[40px] px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-slate-800 whitespace-nowrap max-w-full"
                   >
-                    <XIcon className="h-3.5 w-3.5" />
+                    <XIcon className="h-3.5 w-3.5 shrink-0" />
                     <span>Follow @MMMPakOfficial on X</span>
                   </a>
                 </div>
@@ -299,9 +299,9 @@ export function SocialFeed() {
                     href="https://facebook.com/MMMPakOfficial"
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl bg-[#1877F2] px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-blue-700"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1877F2] min-h-[40px] px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-blue-700 whitespace-nowrap max-w-full"
                   >
-                    <FacebookIcon className="h-3.5 w-3.5" />
+                    <FacebookIcon className="h-3.5 w-3.5 shrink-0" />
                     <span>View Official Facebook Page</span>
                   </a>
                 </div>
@@ -436,7 +436,7 @@ export function SocialFeed() {
                 type="button"
                 onClick={() => setSelectedVideo(null)}
                 aria-label="Close video player"
-                className="absolute top-3 right-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-md transition-colors hover:bg-white hover:text-black cursor-pointer"
+                className="absolute top-3 right-3 z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-md transition-colors hover:bg-white hover:text-black cursor-pointer"
               >
                 ✕
               </button>

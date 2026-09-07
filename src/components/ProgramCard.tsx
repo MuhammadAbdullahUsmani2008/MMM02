@@ -92,12 +92,12 @@ export function ProgramCard({
         )}
 
         {/* Bottom Action Row with Donation Pill & Learn More Button */}
-        <div className="mt-auto pt-6 border-t border-[#DCE2EA]/80 flex items-center justify-between gap-3">
+        <div className="mt-auto pt-6 border-t border-[#DCE2EA]/80 flex flex-wrap items-center justify-between gap-2.5">
           <Link
             href="/donate"
-            className="group/supp inline-flex items-center gap-1.5 rounded-lg border border-[#DCE2EA] bg-[#F5F7FA] px-3.5 py-2 font-display text-xs sm:text-[0.82rem] font-bold text-[#0A1020] transition-all duration-250 hover:border-[#e53935] hover:bg-[#e53935] hover:text-white"
+            className="group/supp inline-flex items-center justify-center gap-1.5 rounded-lg border border-[#DCE2EA] bg-[#F5F7FA] px-3 py-2 font-display text-[0.78rem] sm:text-[0.82rem] font-bold text-[#0A1020] whitespace-nowrap min-h-[38px] transition-all duration-250 hover:border-[#e53935] hover:bg-[#e53935] hover:text-white"
           >
-            <svg className="h-3.5 w-3.5 text-[#EF3B19] transition-colors duration-250 group-hover/supp:text-white" fill="currentColor" viewBox="0 0 20 20">
+            <svg className="h-3.5 w-3.5 shrink-0 text-[#EF3B19] transition-colors duration-250 group-hover/supp:text-white" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
             </svg>
             <span>Support</span>
@@ -105,10 +105,10 @@ export function ProgramCard({
 
           <Link
             href={`/what-we-do/${program.slug}`}
-            className="inline-flex items-center gap-1.5 rounded-lg bg-[#075BD6] px-4.5 py-2 font-display text-xs sm:text-[0.85rem] font-bold text-white shadow-xs transition-all duration-250 hover:bg-[#e53935] hover:shadow-sm group/btn"
+            className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-[#075BD6] px-3.5 py-2 xs:px-4.5 font-display text-[0.78rem] sm:text-[0.85rem] font-bold text-white whitespace-nowrap min-h-[38px] shadow-xs transition-all duration-250 hover:bg-[#e53935] hover:shadow-sm group/btn"
           >
             <span>Learn More</span>
-            <Arrow className="h-3 w-3 transition-transform duration-200 group-hover/btn:translate-x-1" />
+            <Arrow className="h-3 w-3 shrink-0 transition-transform duration-200 group-hover/btn:translate-x-1" />
           </Link>
         </div>
       </div>

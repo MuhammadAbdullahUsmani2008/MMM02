@@ -84,10 +84,10 @@ export function Mission() {
           <Reveal delay={120}>
             <Link
               href="/about"
-              className="group mt-7 inline-flex items-center gap-2 font-display text-[0.94rem] font-bold text-[#075BD6] transition-colors hover:text-[#0649B8]"
+              className="group mt-7 inline-flex items-center gap-1.5 xs:gap-2 font-display text-[0.85rem] xs:text-[0.94rem] font-bold text-[#075BD6] whitespace-nowrap shrink-0 min-h-[36px] transition-colors hover:text-[#0649B8]"
             >
               <span className="link-underline">Learn more about our organizational structure</span>
-              <Arrow className="transition-transform duration-300 group-hover:translate-x-1.5" />
+              <Arrow className="shrink-0 transition-transform duration-300 group-hover:translate-x-1.5" />
             </Link>
           </Reveal>
         </div>

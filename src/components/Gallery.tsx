@@ -62,7 +62,7 @@ export function Gallery() {
                 setShown(24);
               }}
               aria-pressed={on}
-              className={`shrink-0 rounded-full px-5 py-2.5 font-display text-[0.88rem] font-bold transition-all duration-300 ${
+              className={`inline-flex shrink-0 items-center justify-center rounded-full px-4 py-2 xs:px-5 xs:py-2.5 font-display text-[0.82rem] xs:text-[0.88rem] font-bold whitespace-nowrap min-h-[40px] transition-all duration-300 ${
                 on
                   ? "bg-[#046BD2] text-white shadow-sm"
                   : "bg-slate-100 text-[#334155] hover:bg-blue-50 hover:text-[#046BD2]"
@@ -106,11 +106,11 @@ export function Gallery() {
           <button
             type="button"
             onClick={() => setShown((s) => s + 24)}
-            className="rounded-full border-2 border-slate-300 px-8 py-3.5 font-display font-bold text-[#334155] transition-colors hover:border-[#046BD2] hover:text-[#046BD2] hover:bg-blue-50/50"
+            className="inline-flex items-center justify-center rounded-full border-2 border-slate-300 px-6 py-2.5 xs:px-8 xs:py-3.5 font-display text-[0.88rem] xs:text-base font-bold text-[#334155] whitespace-nowrap min-h-[44px] max-w-full transition-colors hover:border-[#046BD2] hover:text-[#046BD2] hover:bg-blue-50/50"
           >
-            Show more photographs
+            <span>Show more photographs</span>
             <span className="ml-2 text-slate-400">
-              {visible.length} of {items.length}
+              ({visible.length} of {items.length})
             </span>
           </button>
         </div>
@@ -129,9 +129,9 @@ export function Gallery() {
             type="button"
             onClick={() => setLightbox(null)}
             aria-label="Close"
-            className="absolute top-5 right-5 grid h-11 w-11 place-items-center rounded-full border border-white/25 text-white transition-colors hover:bg-white/10"
+            className="absolute top-5 right-5 grid h-11 w-11 shrink-0 min-h-[44px] min-w-[44px] place-items-center rounded-full border border-white/25 text-white transition-colors hover:bg-white/10"
           >
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden>
+            <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0" fill="none" aria-hidden>
               <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
             </svg>
           </button>
@@ -143,9 +143,9 @@ export function Gallery() {
               move(-1);
             }}
             aria-label="Previous"
-            className="absolute left-4 grid h-12 w-12 place-items-center rounded-full border border-white/25 text-white transition-colors hover:bg-white/10 sm:left-8"
+            className="absolute left-4 grid h-12 w-12 shrink-0 min-h-[44px] min-w-[44px] place-items-center rounded-full border border-white/25 text-white transition-colors hover:bg-white/10 sm:left-8"
           >
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden>
+            <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0" fill="none" aria-hidden>
               <path d="M15 5l-7 7 7 7" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
@@ -171,9 +171,9 @@ export function Gallery() {
               move(1);
             }}
             aria-label="Next"
-            className="absolute right-4 grid h-12 w-12 place-items-center rounded-full border border-white/25 text-white transition-colors hover:bg-white/10 sm:right-8"
+            className="absolute right-4 grid h-12 w-12 shrink-0 min-h-[44px] min-w-[44px] place-items-center rounded-full border border-white/25 text-white transition-colors hover:bg-white/10 sm:right-8"
           >
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden>
+            <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0" fill="none" aria-hidden>
               <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>

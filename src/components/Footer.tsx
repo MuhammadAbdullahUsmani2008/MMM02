@@ -170,10 +170,10 @@ export function Footer() {
 
               <Link
                 href="/donate"
-                className="group mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#046BD2] px-6 py-3 font-display text-[0.9rem] font-bold text-white shadow-sm transition-all duration-250 hover:bg-[#e53935] hover:shadow-md"
+                className="group mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#046BD2] px-5 py-2.5 xs:px-6 xs:py-3 font-display text-[0.84rem] xs:text-[0.9rem] font-bold text-white whitespace-nowrap min-h-[44px] shadow-sm transition-all duration-250 hover:bg-[#e53935] hover:shadow-md"
               >
-                All the ways to give
-                <Arrow className="transition-transform duration-300 group-hover:translate-x-1" />
+                <span>All the ways to give</span>
+                <Arrow className="shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
           </div>
