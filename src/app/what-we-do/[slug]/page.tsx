@@ -83,14 +83,14 @@ export default async function ProgramPage({ params }: Params) {
               <div className="mt-10 flex flex-wrap gap-4">
                 <Link
                   href="/donate"
-                  className="group inline-flex items-center gap-2.5 rounded-full bg-[#046BD2] px-7 py-3.5 font-display font-bold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#003475]"
+                  className="group inline-flex items-center gap-2.5 rounded-full bg-[#046BD2] px-7 py-3.5 font-display font-bold text-white shadow-sm transition-all duration-250 hover:-translate-y-0.5 hover:bg-[#e53935]"
                 >
                   Fund this programme
                   <Arrow className="transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
                 <Link
                   href="/get-involved"
-                  className="inline-flex items-center gap-2.5 rounded-full border-2 border-slate-300 px-7 py-3.5 font-display font-bold text-[#003475] transition-colors hover:border-[#046BD2] hover:text-[#046BD2] hover:bg-blue-50/50"
+                  className="inline-flex items-center gap-2.5 rounded-full border-2 border-slate-300 px-7 py-3.5 font-display font-bold text-[#003475] transition-all duration-250 hover:border-[#e53935] hover:bg-[#e53935] hover:text-white"
                 >
                   Join a deployment
                 </Link>

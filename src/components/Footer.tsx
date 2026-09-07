@@ -170,7 +170,7 @@ export function Footer() {
 
               <Link
                 href="/donate"
-                className="group mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#046BD2] px-6 py-3 font-display text-[0.9rem] font-bold text-white shadow-sm transition-all hover:bg-[#003475] hover:shadow-md"
+                className="group mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#046BD2] px-6 py-3 font-display text-[0.9rem] font-bold text-white shadow-sm transition-all duration-250 hover:bg-[#e53935] hover:shadow-md"
               >
                 All the ways to give
                 <Arrow className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -197,7 +197,7 @@ export function Footer() {
                     rel="noreferrer"
                     aria-label={`Follow Muslim Medical Mission on ${s.name}`}
                     title={s.name}
-                    className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#334155] shadow-xs ring-1 ring-slate-300/80 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#075BD6] hover:text-white hover:ring-[#075BD6] hover:shadow-sm"
+                    className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#334155] shadow-xs ring-1 ring-slate-300/80 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#e53935] hover:text-white hover:ring-[#e53935] hover:shadow-sm"
                   >
                     {Icon ? <Icon className="h-4 w-4" /> : <span>{s.name}</span>}
                     <span className="sr-only">{s.name}</span>

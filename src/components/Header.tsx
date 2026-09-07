@@ -430,10 +430,10 @@ export function Header() {
                 <SearchIcon className="h-4 w-4 xs:h-[18px] xs:w-[18px]" />
               </button>
 
-              {/* Direct Donate Button (UNDA Royal/Electric Blue Style) */}
+              {/* Direct Donate Button (UNDA Royal/Electric Blue Style with red hover) */}
               <Link
                 href="/donate"
-                className="inline-flex shrink-0 items-center gap-1 xs:gap-1.5 sm:gap-2 rounded-full bg-[#075BD6] px-3 py-1.5 xs:px-3.5 xs:py-2 sm:px-5 sm:py-2.5 font-display text-[0.78rem] xs:text-[0.82rem] sm:text-[0.88rem] font-bold text-white shadow-[0_4px_14px_rgba(7,91,214,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#0649B8] hover:shadow-[0_6px_18px_rgba(6,73,184,0.35)] active:scale-95 whitespace-nowrap"
+                className="inline-flex shrink-0 items-center gap-1 xs:gap-1.5 sm:gap-2 rounded-full bg-[#075BD6] px-3 py-1.5 xs:px-3.5 xs:py-2 sm:px-5 sm:py-2.5 font-display text-[0.78rem] xs:text-[0.82rem] sm:text-[0.88rem] font-bold text-white shadow-[0_4px_14px_rgba(7,91,214,0.35)] transition-all duration-250 hover:-translate-y-0.5 hover:bg-[#e53935] hover:shadow-[0_6px_18px_rgba(229,57,53,0.4)] active:scale-95 whitespace-nowrap"
               >
                 <span>Donate</span>
                 <span className="hidden md:inline">Now</span>
@@ -603,7 +603,7 @@ export function Header() {
             <Link
               href="/donate"
               onClick={() => setDrawer(false)}
-              className="flex items-center justify-center gap-2 rounded-xl bg-[#046BD2] py-3 text-center font-display font-bold text-white shadow-sm transition-colors hover:bg-[#003475]"
+              className="flex items-center justify-center gap-2 rounded-xl bg-[#046BD2] py-3 text-center font-display font-bold text-white shadow-sm transition-all duration-250 hover:bg-[#e53935]"
             >
               <span>Donate Now</span>
               <HeartIcon className="h-4 w-4" />
@@ -611,7 +611,7 @@ export function Header() {
             <Link
               href="/get-involved"
               onClick={() => setDrawer(false)}
-              className="rounded-xl border border-slate-200 bg-white py-2.5 text-center font-display font-bold text-[#003475] transition-colors hover:bg-slate-100"
+              className="rounded-xl border border-slate-200 bg-white py-2.5 text-center font-display font-bold text-[#003475] transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] hover:text-white"
             >
               Become a Volunteer
             </Link>

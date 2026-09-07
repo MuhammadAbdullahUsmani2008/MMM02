@@ -49,14 +49,14 @@ export function GazaBand() {
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <Link
                 href="/what-we-do/gaza-field-clinics"
-                className="group inline-flex items-center gap-2 rounded-full bg-[#075BD6] px-6 py-3.5 font-display text-[0.96rem] font-bold text-white shadow-sm transition-all duration-300 hover:bg-[#0649B8] hover:shadow-md"
+                className="group inline-flex items-center gap-2 rounded-full bg-[#075BD6] px-6 py-3.5 font-display text-[0.96rem] font-bold text-white shadow-sm transition-all duration-250 hover:bg-[#e53935] hover:shadow-md"
               >
                 <span>Support the Gaza relief effort</span>
                 <Arrow className="transition-transform duration-300 group-hover:translate-x-1.5" />
               </Link>
               <Link
                 href="/donate"
-                className="font-display text-[0.92rem] font-bold text-[#075BD6] hover:text-[#0649B8] transition-colors underline underline-offset-4"
+                className="font-display text-[0.92rem] font-bold text-[#075BD6] hover:text-[#e53935] transition-colors underline underline-offset-4"
               >
                 Direct emergency bank transfer
               </Link>

@@ -131,10 +131,10 @@ export function DonationPlanner() {
                     setCustom("");
                   }}
                   aria-pressed={on}
-                  className={`rounded-full px-6 py-3 font-display text-[0.95rem] font-bold transition-all duration-300 ${
+                  className={`rounded-full px-6 py-3 font-display text-[0.95rem] font-bold transition-all duration-250 ${
                     on
-                      ? "bg-[#046BD2] text-white shadow-sm"
-                      : "bg-slate-100 text-[#334155] hover:bg-blue-50 hover:text-[#046BD2]"
+                      ? "bg-[#046BD2] text-white shadow-sm hover:bg-[#e53935]"
+                      : "bg-slate-100 text-[#334155] hover:bg-[#e53935] hover:text-white"
                   }`}
                 >
                   {money(p)}
@@ -212,7 +212,7 @@ export function DonationPlanner() {
               <button
                 type="button"
                 onClick={() => copy(row.v, row.k)}
-                className="shrink-0 rounded-full border border-white/25 px-3.5 py-1.5 font-display text-[0.75rem] font-bold text-white transition-colors hover:bg-white/10"
+                className="shrink-0 rounded-full border border-white/25 px-3.5 py-1.5 font-display text-[0.75rem] font-bold text-white transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] hover:text-white"
               >
                 {copied === row.k ? "Copied" : "Copy"}
               </button>

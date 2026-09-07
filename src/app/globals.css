@@ -106,9 +106,9 @@
   }
 
   :focus-visible {
-    outline: 3px solid var(--color-blue-bright);
+    outline: 3px solid #e53935;
     outline-offset: 3px;
-    border-radius: 4px;
+    border-radius: 6px;
   }
 
   [id] { scroll-margin-top: 7.5rem; }

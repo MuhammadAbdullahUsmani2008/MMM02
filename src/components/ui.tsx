@@ -34,12 +34,12 @@ type ButtonProps = {
 
 const variants = {
   donate:
-    "bg-red-brand text-white hover:bg-red-deep shadow-[0_10px_24px_-8px_rgba(224,31,38,0.4)]",
+    "bg-red-brand text-white hover:bg-[#e53935] shadow-[0_10px_24px_-8px_rgba(224,31,38,0.4)] hover:shadow-[0_10px_24px_-8px_rgba(229,57,53,0.4)]",
   primary:
-    "bg-[#046BD2] text-white hover:bg-[#003475] shadow-[0_10px_24px_-8px_rgba(4,107,210,0.4)]",
-  ghost: "border-2 border-[#003475] text-[#003475] hover:bg-[#003475] hover:text-white",
-  outline: "border-2 border-slate-300 text-[#334155] hover:border-[#046BD2] hover:text-[#046BD2] hover:bg-blue-50/60",
-  quiet: "bg-slate-100 text-[#334155] hover:bg-slate-200 shadow-soft",
+    "bg-[#046BD2] text-white hover:bg-[#e53935] hover:border-[#e53935] shadow-[0_10px_24px_-8px_rgba(4,107,210,0.4)] hover:shadow-[0_10px_24px_-8px_rgba(229,57,53,0.4)]",
+  ghost: "border-2 border-[#003475] text-[#003475] hover:bg-[#e53935] hover:border-[#e53935] hover:text-white",
+  outline: "border-2 border-slate-300 text-[#334155] hover:border-[#e53935] hover:bg-[#e53935] hover:text-white",
+  quiet: "bg-slate-100 text-[#334155] hover:bg-[#e53935] hover:text-white shadow-soft",
 } as const;
 
 export function Button({

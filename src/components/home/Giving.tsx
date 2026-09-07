@@ -65,7 +65,7 @@ export function Giving() {
 
                   <Link
                     href="/donate"
-                    className="mt-6 flex items-center justify-between rounded-xl bg-[#F5F7FA] border border-[#DCE2EA] px-4 py-3 font-display text-[0.9rem] font-bold text-[#0A1020] transition-all duration-200 group-hover:bg-[#075BD6] group-hover:border-[#075BD6] group-hover:text-white"
+                    className="mt-6 flex items-center justify-between rounded-xl bg-[#F5F7FA] border border-[#DCE2EA] px-4 py-3 font-display text-[0.9rem] font-bold text-[#0A1020] transition-all duration-250 group-hover:bg-[#e53935] group-hover:border-[#e53935] group-hover:text-white"
                   >
                     <span>Donate PKR {tier.amount}</span>
                     <Arrow className="h-3.5 w-3.5 transition-transform duration-300 ease-out group-hover:translate-x-1.5" />
@@ -96,14 +96,14 @@ export function Giving() {
                   href={org.whatsapp}
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex items-center gap-2 rounded-full bg-[#075BD6] px-6 py-2.5 font-display text-[0.88rem] font-bold text-white shadow-sm transition-all duration-300 hover:bg-[#0649B8] hover:shadow-md"
+                  className="group inline-flex items-center gap-2 rounded-full bg-[#075BD6] px-6 py-2.5 font-display text-[0.88rem] font-bold text-white shadow-sm transition-all duration-250 hover:bg-[#e53935] hover:shadow-md"
                 >
                   <span>WhatsApp a transfer slip</span>
                   <Arrow className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
                 <Link
                   href="/donate"
-                  className="inline-flex items-center gap-2 rounded-full border border-[#DCE2EA] bg-white px-5 py-2.5 font-display text-[0.88rem] font-bold text-[#0A1020] transition-colors hover:border-[#075BD6] hover:bg-[#F3F7FF]"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#DCE2EA] bg-white px-5 py-2.5 font-display text-[0.88rem] font-bold text-[#0A1020] transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] hover:text-white"
                 >
                   All donation methods
                 </Link>

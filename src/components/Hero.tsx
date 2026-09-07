@@ -158,21 +158,11 @@ export function Hero() {
               loading={i === 0 ? "eager" : "lazy"}
             />
 
-            {/* Cinematic contrast scrims matching UNDA dark tones */}
-            <div
-              className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0A1020]/95 via-[#0A1020]/65 to-transparent"
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0A1020]/95 via-transparent to-[#0A1020]/45"
-              aria-hidden
-            />
-
             {/* Slide Text Content */}
-            <div className="absolute inset-0 flex items-center pt-28 pb-24 sm:pt-36 sm:pb-28">
+            <div className="absolute inset-0 flex items-center pt-24 pb-20 sm:pt-36 sm:pb-28">
               <div className="shell-wide">
                 {/* Subtle Translucent Navy Hero Text Panel */}
-                <div className="w-full max-w-[580px] rounded-[14px] border border-white/25 bg-[rgba(5,18,35,0.68)] p-5.5 sm:p-7 md:py-[28px] md:px-[32px] backdrop-blur-[3px]">
+                <div className="w-full max-w-[580px] rounded-[14px] border border-white/25 bg-[rgba(5,18,35,0.80)] p-4.5 xs:p-5.5 sm:p-7 md:py-[28px] md:px-[32px] backdrop-blur-md shadow-2xl">
                   {/* Pillar Category Badge */}
                   <div className="mb-3.5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-[#0A1020]/80 px-3 py-1 backdrop-blur-md shadow-sm">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#EF3B19] animate-pulse" />
@@ -198,21 +188,21 @@ export function Hero() {
                     {s.subtext}
                   </p>
 
-                  {/* Dual Call To Actions (Both on the same line) */}
-                  <div className="mt-6 sm:mt-7 flex items-center gap-2 xs:gap-2.5 sm:gap-3.5">
+                  {/* Dual Call To Actions (Responsive: stacked on mobile, side-by-side on desktop) */}
+                  <div className="mt-5 sm:mt-7 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3.5 w-full">
                     <Link
                       href={s.primaryCta.href}
-                      className="group inline-flex shrink-0 items-center justify-center gap-1.5 xs:gap-2 rounded-full bg-[#075BD6] px-3.5 py-2.5 xs:px-5 xs:py-3 sm:px-6 sm:py-3.5 font-display text-[0.80rem] xs:text-[0.86rem] sm:text-[0.94rem] font-bold text-white shadow-[0_12px_24px_-8px_rgba(7,91,214,0.7)] transition-all duration-300 hover:bg-[#0649B8] hover:shadow-[0_14px_28px_-6px_rgba(6,73,184,0.8)] whitespace-nowrap"
+                      className="group inline-flex w-full sm:w-auto shrink-0 items-center justify-center gap-1.5 sm:gap-2 rounded-full bg-[#075BD6] px-4 py-2.5 xs:px-5 xs:py-2.5 sm:px-6 sm:py-3.5 font-display text-[0.82rem] xs:text-[0.86rem] sm:text-[0.94rem] font-bold text-white shadow-[0_12px_24px_-8px_rgba(7,91,214,0.7)] transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] hover:shadow-[0_12px_24px_-8px_rgba(229,57,53,0.7)] active:scale-98 whitespace-nowrap text-center"
                     >
                       <span>{s.primaryCta.label}</span>
-                      <Arrow className="h-3.5 w-3.5 xs:h-4 xs:w-4 transition-transform duration-300 ease-out group-hover:translate-x-1.5" />
+                      <Arrow className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 transition-transform duration-250 ease-out group-hover:translate-x-1.5" />
                     </Link>
                     <Link
                       href={s.secondaryCta.href}
-                      className="group inline-flex shrink-0 items-center justify-center gap-1.5 xs:gap-2 rounded-full border border-white/50 bg-black/35 px-3 py-2.5 xs:px-4.5 xs:py-3 sm:px-5.5 sm:py-3.5 font-display text-[0.80rem] xs:text-[0.86rem] sm:text-[0.94rem] font-bold text-white backdrop-blur-md transition-all duration-300 hover:border-white hover:bg-white/20 whitespace-nowrap"
+                      className="group inline-flex w-full sm:w-auto shrink-0 items-center justify-center gap-1.5 sm:gap-2 rounded-full border border-white/50 bg-black/35 px-3.5 py-2.5 xs:px-4.5 xs:py-2.5 sm:px-5.5 sm:py-3.5 font-display text-[0.82rem] xs:text-[0.86rem] sm:text-[0.94rem] font-bold text-white backdrop-blur-md transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] hover:text-white active:scale-98 whitespace-nowrap text-center"
                     >
                       <span>{s.secondaryCta.label}</span>
-                      <Arrow className="h-3.5 w-3.5 xs:h-4 xs:w-4 transition-transform duration-300 ease-out group-hover:translate-x-1.5" />
+                      <Arrow className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 transition-transform duration-250 ease-out group-hover:translate-x-1.5" />
                     </Link>
                   </div>
                 </div>
@@ -228,7 +218,7 @@ export function Hero() {
           type="button"
           onClick={prevSlide}
           aria-label="Previous slide"
-          className="pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-[#0A1020]/60 text-white backdrop-blur-md transition-all duration-200 hover:bg-[#075BD6] hover:border-[#075BD6] active:scale-95 cursor-pointer shadow-lg"
+          className="pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-[#0A1020]/60 text-white backdrop-blur-md transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] active:scale-95 cursor-pointer shadow-lg"
         >
           <svg className="h-5 w-5 rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -238,7 +228,7 @@ export function Hero() {
           type="button"
           onClick={nextSlide}
           aria-label="Next slide"
-          className="pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-[#0A1020]/60 text-white backdrop-blur-md transition-all duration-200 hover:bg-[#075BD6] hover:border-[#075BD6] active:scale-95 cursor-pointer shadow-lg"
+          className="pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-[#0A1020]/60 text-white backdrop-blur-md transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] active:scale-95 cursor-pointer shadow-lg"
         >
           <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />

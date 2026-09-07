@@ -127,7 +127,7 @@ export default function DonatePage() {
                   href={org.whatsapp}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-6 inline-flex rounded-full bg-[#075BD6] px-6 py-3 font-display text-[0.95rem] font-bold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#0649B8]"
+                  className="mt-6 inline-flex rounded-full bg-[#075BD6] px-6 py-3 font-display text-[0.95rem] font-bold text-white shadow-sm transition-all duration-250 hover:-translate-y-0.5 hover:bg-[#e53935]"
                 >
                   Message the team
                 </a>
