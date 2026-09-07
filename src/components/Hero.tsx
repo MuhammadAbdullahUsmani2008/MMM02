@@ -162,9 +162,9 @@ export function Hero() {
             <div className="absolute inset-0 flex items-center pt-24 pb-20 sm:pt-36 sm:pb-28">
               <div className="shell-wide">
                 {/* Subtle Translucent Navy Hero Text Panel */}
-                <div className="w-full max-w-[580px] rounded-[14px] border border-white/25 bg-[rgba(5,18,35,0.80)] p-4.5 xs:p-5.5 sm:p-7 md:py-[28px] md:px-[32px] backdrop-blur-md shadow-2xl">
+                <div className="w-full max-w-[580px] rounded-[14px] border border-white/25 bg-[rgba(5,18,35,0.80)] p-4.5 xs:p-5.5 sm:p-7 md:py-[28px] md:px-[32px] backdrop-blur-md">
                   {/* Pillar Category Badge */}
-                  <div className="mb-3.5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-[#0A1020]/80 px-3 py-1 backdrop-blur-md shadow-sm">
+                  <div className="mb-3.5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-[#0A1020]/80 px-3 py-1 backdrop-blur-md">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#EF3B19] animate-pulse" />
                     <span className="font-display text-[0.74rem] sm:text-[0.78rem] font-black uppercase tracking-wider text-white">
                       {s.badge}
@@ -176,15 +176,15 @@ export function Hero() {
                   </div>
 
                   {/* Headline with Brand Red Highlight (Noto Serif font) */}
-                  <h1 className="mt-4 sm:mt-5 font-display text-[clamp(2.15rem,4vw,3.5rem)] font-black leading-[1.08] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.85)]">
+                  <h1 className="mt-4 sm:mt-5 font-display text-[clamp(2.15rem,4vw,3.5rem)] font-black leading-[1.08] text-white">
                     {s.headline}{" "}
-                    <span className="text-[#EF3B19] drop-shadow-[0_2px_14px_rgba(239,59,25,0.45)]">
+                    <span className="text-[#EF3B19]">
                       {s.highlight}
                     </span>
                   </h1>
 
                   {/* Subtext (Noto Sans font) */}
-                  <p className="mt-3.5 sm:mt-4 text-[1.02rem] sm:text-[1.12rem] leading-relaxed text-slate-100 [text-shadow:0_1px_12px_rgba(0,0,0,0.85)]">
+                  <p className="mt-3.5 sm:mt-4 text-[1.02rem] sm:text-[1.12rem] leading-relaxed text-slate-100">
                     {s.subtext}
                   </p>
 
@@ -192,7 +192,7 @@ export function Hero() {
                   <div className="mt-5 sm:mt-7 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3.5 w-full">
                     <Link
                       href={s.primaryCta.href}
-                      className="group inline-flex w-full sm:w-auto shrink-0 items-center justify-center gap-1.5 sm:gap-2 rounded-full bg-[#075BD6] px-4 py-2.5 xs:px-5 xs:py-2.5 sm:px-6 sm:py-3.5 font-display text-[0.82rem] xs:text-[0.86rem] sm:text-[0.94rem] font-bold text-white shadow-[0_12px_24px_-8px_rgba(7,91,214,0.7)] transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] hover:shadow-[0_12px_24px_-8px_rgba(229,57,53,0.7)] active:scale-98 whitespace-nowrap text-center"
+                      className="group inline-flex w-full sm:w-auto shrink-0 items-center justify-center gap-1.5 sm:gap-2 rounded-full bg-[#075BD6] px-4 py-2.5 xs:px-5 xs:py-2.5 sm:px-6 sm:py-3.5 font-display text-[0.82rem] xs:text-[0.86rem] sm:text-[0.94rem] font-bold text-white transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] active:scale-98 whitespace-nowrap text-center"
                     >
                       <span>{s.primaryCta.label}</span>
                       <Arrow className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 transition-transform duration-250 ease-out group-hover:translate-x-1.5" />
