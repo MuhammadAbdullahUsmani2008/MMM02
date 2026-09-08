@@ -32,7 +32,7 @@ export function GazaBand() {
           </Reveal>
 
           <Reveal delay={100} className="lg:col-span-5 lg:pl-6">
-            <dl className="grid grid-cols-3 gap-3 rounded-2xl border border-[#DCE2EA] bg-[#F5F7FA] p-4 shadow-xs">
+            <dl className="grid grid-cols-1 gap-3 rounded-2xl border border-[#DCE2EA] bg-[#F5F7FA] p-4 shadow-xs xs:grid-cols-3">
               {[
                 { k: "Water", v: "Trucked daily", icon: "💧" },
                 { k: "Food", v: "Parcels & hot meals", icon: "🍲" },

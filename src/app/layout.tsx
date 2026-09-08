@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Noto_Sans, Noto_Serif, Newsreader } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { BackToTop } from "@/components/BackToTop";
 import { org } from "@/data/site";
 import "./globals.css";
 
@@ -101,6 +103,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main id="main">{children}</main>
         <Footer />
+        <WhatsAppFloat />
+        <BackToTop />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}

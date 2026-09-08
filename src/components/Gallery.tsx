@@ -75,7 +75,7 @@ export function Gallery() {
       </div>
 
       {/* Masonry style columns keep the portrait and landscape shots honest */}
-      <div className="mt-9 columns-2 gap-4 md:columns-3 lg:columns-4 [&>*]:mb-4">
+      <div className="mt-9 columns-1 gap-4 xs:columns-2 md:columns-3 lg:columns-4 [&>*]:mb-4">
         {visible.map((item, i) => (
           <button
             key={item.src}
