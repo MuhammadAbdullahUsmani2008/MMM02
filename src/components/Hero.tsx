@@ -143,18 +143,6 @@ export function Hero() {
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Full Viewport Background Video (shared behind all slides) */}
-      <video
-        className="absolute inset-0 h-full w-full object-cover"
-        src="/media/hero-bg.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        aria-hidden
-      />
-
       {/* Full Viewport Sliding Carousel with slide-synchronized text */}
       <div
         className="absolute inset-0 flex h-full w-full transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
@@ -162,11 +150,19 @@ export function Hero() {
       >
         {slides.map((s, i) => (
           <div key={s.id} className="relative h-full w-full shrink-0">
+            {/* Background Image */}
+            <img
+              src={s.image}
+              alt={s.alt}
+              className="h-full w-full object-cover"
+              loading={i === 0 ? "eager" : "lazy"}
+            />
+
             {/* Slide Text Content */}
             <div className="absolute inset-0 flex items-center pt-24 pb-20 sm:pt-36 sm:pb-28">
               <div className="shell-wide">
                 {/* Subtle Translucent Navy Hero Text Panel */}
-                <div className="w-full max-w-[460px] -ml-50 rounded-[14px] border border-white/25 bg-[rgba(5,18,35,0.55)] p-4 xs:p-5 sm:p-6 md:py-[22px] md:px-[26px] backdrop-blur-lg">
+                <div className="w-full max-w-[580px] rounded-[14px] border border-white/25 bg-[rgba(5,18,35,0.80)] p-4.5 xs:p-5.5 sm:p-7 md:py-[28px] md:px-[32px] backdrop-blur-md">
                   {/* Pillar Category Badge */}
                   <div className="mb-3.5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-[#0A1020]/80 px-3 py-1 backdrop-blur-md">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#EF3B19] animate-pulse" />
@@ -180,7 +176,7 @@ export function Hero() {
                   </div>
 
                   {/* Headline with Brand Red Highlight (Noto Serif font) */}
-                  <h1 className="mt-4 sm:mt-5 font-display text-[clamp(1.8rem,3.4vw,2.9rem)] font-black leading-[1.08] text-white">
+                  <h1 className="mt-4 sm:mt-5 font-display text-[clamp(2.15rem,4vw,3.5rem)] font-black leading-[1.08] text-white">
                     {s.headline}{" "}
                     <span className="text-[#EF3B19]">
                       {s.highlight}
@@ -188,7 +184,7 @@ export function Hero() {
                   </h1>
 
                   {/* Subtext (Noto Sans font) */}
-                  <p className="mt-3.5 sm:mt-4 text-[0.95rem] sm:text-[1.02rem] leading-relaxed text-slate-100">
+                  <p className="mt-3.5 sm:mt-4 text-[1.02rem] sm:text-[1.12rem] leading-relaxed text-slate-100">
                     {s.subtext}
                   </p>
 
