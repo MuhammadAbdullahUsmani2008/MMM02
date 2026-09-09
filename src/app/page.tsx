@@ -1,4 +1,5 @@
 import { Hero } from "@/components/Hero";
+import { HeroNGO } from "@/components/HeroNGO";
 import { ImpactBand } from "@/components/home/ImpactBand";
 import { Mission } from "@/components/home/Mission";
 import { Programmes } from "@/components/home/Programmes";
