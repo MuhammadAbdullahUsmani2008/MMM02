@@ -1,4 +1,5 @@
 import { Hero } from "@/components/Hero";
+import { HeroGallery } from "@/components/HeroGallery";
 import { HeroNGO } from "@/components/HeroNGO";
 import { ImpactBand } from "@/components/home/ImpactBand";
 import { Mission } from "@/components/home/Mission";
@@ -12,7 +13,7 @@ import { JoinCta } from "@/components/home/JoinCta";
 export default function HomePage() {
   return (
     <>
-      <Hero />
+      <HeroGallery />
       <ImpactBand />
       <Mission />
       <Programmes />
