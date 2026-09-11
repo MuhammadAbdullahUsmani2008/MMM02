@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { programs, programBySlug } from "@/data/site";
 import { ProgramCard } from "@/components/ProgramCard";
 import { Reveal } from "@/components/Reveal";
-import { Arrow, PageHeader, accentBar } from "@/components/ui";
+import { Arrow, PageHeader } from "@/components/ui";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -68,9 +68,6 @@ export default async function ProgramPage({ params }: Params) {
       <section className="py-20 lg:py-28">
         <div className="shell-wide grid gap-14 lg:grid-cols-12">
           <div className={program.gallery.length ? "lg:col-span-7" : "lg:col-span-8"}>
-            <Reveal>
-              <span className={`block h-1 w-16 ${accentBar[program.accent]}`} aria-hidden />
-            </Reveal>
             <div className="rich mt-8 text-[1.06rem]">
               {program.body.map((para, i) => (
                 <Reveal key={i} delay={i * 60} as="p" className="mb-5">
