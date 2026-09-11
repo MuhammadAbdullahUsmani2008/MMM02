@@ -196,7 +196,7 @@ export function PageHeader({
             src={image}
             alt=""
             aria-hidden
-            className="h-full w-full object-cover opacity-15"
+            className="h-full w-full object-cover opacity-20"
           />
         ) : (
           <div
@@ -208,7 +208,6 @@ export function PageHeader({
             }}
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/40" />
       </div>
 
       <div className="shell">

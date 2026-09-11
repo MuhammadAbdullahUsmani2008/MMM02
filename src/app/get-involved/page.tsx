@@ -170,9 +170,8 @@ export default function MembershipPage() {
             src="/media/field/free-medical-camp-doctors.jpg"
             alt=""
             aria-hidden
-            className="h-full w-full object-cover opacity-10"
+            className="h-full w-full object-cover opacity-15"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/40" />
         </div>
 
         <div className="shell">

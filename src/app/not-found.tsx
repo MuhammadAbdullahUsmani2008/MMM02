@@ -7,7 +7,7 @@ export default function NotFound() {
         src="/media/disaster/disaster-13.jpg"
         alt=""
         aria-hidden
-        className="absolute inset-0 -z-10 h-full w-full object-cover opacity-10"
+        className="absolute inset-0 -z-10 h-full w-full object-cover opacity-15"
       />
       <div className="shell-wide py-24">
         <h1 className="max-w-2xl text-[clamp(2.2rem,5vw,3.6rem)] font-extrabold text-[#003475]">
