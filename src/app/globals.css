@@ -222,6 +222,51 @@
   animation: heroProgress 5000ms linear forwards;
 }
 
+/* ------------------------------------------------------------------ *
+ * Hero cinematic effects
+ * ------------------------------------------------------------------ */
+
+/* Ken Burns zoom — synced to the 5s slide interval so the image finishes
+   zooming exactly when the slide changes. */
+.hero-kenburns {
+  animation: slow-zoom 5000ms linear forwards;
+}
+
+/* Staggered text reveal — each element slides up + fades in sequence. */
+@keyframes hero-reveal {
+  from { transform: translateY(18px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.hero-reveal {
+  animation: hero-reveal 0.7s var(--ease-out-soft) both;
+}
+
+/* ------------------------------------------------------------------ *
+ * Modern hero slide transition — "zoom-blur dissolve".
+ * The outgoing slide scales up + blurs away while the incoming slide
+ * scales down from a slightly larger, blurred state into sharp focus.
+ * This creates depth and a premium, cinematic feel.
+ * ------------------------------------------------------------------ */
+.hero-slide {
+  transition:
+    opacity 1100ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1100ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 1100ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+.hero-slide-active {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+  z-index: 10;
+}
+.hero-slide-inactive {
+  opacity: 0;
+  transform: scale(1.12);
+  filter: blur(14px);
+  z-index: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal {
@@ -234,6 +279,18 @@
   .animate-slow-zoom,
   .animate-drift-up {
     animation: none !important;
+  }
+  .hero-kenburns,
+  .hero-reveal {
+    animation: none !important;
+  }
+  .hero-slide {
+    transition: none !important;
+  }
+  .hero-slide-inactive {
+    opacity: 0;
+    transform: none;
+    filter: none;
   }
 }
 

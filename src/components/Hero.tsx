@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Arrow } from "./ui";
+import { LiquidTransition } from "./LiquidTransition";
 
 const DURATION = 5000; // Exact 5 seconds automatic slide interval
 
@@ -102,6 +103,8 @@ const slides: Slide[] = [
 
 export function Hero() {
   const [active, setActive] = useState(0);
+  const [transitionProgress, setTransitionProgress] = useState(0);
+  const [waveKey, setWaveKey] = useState(0);
   const touchStartX = useRef<number | null>(null);
 
   const nextSlide = () => {
@@ -136,6 +139,29 @@ export function Hero() {
     return () => clearInterval(timer);
   }, [active]);
 
+  // Animate the liquid transition progress whenever the active slide changes
+  useEffect(() => {
+    setTransitionProgress(0);
+    setWaveKey((k) => k + 1);
+
+    const start = performance.now();
+    const TRANSITION_MS = 1400;
+    let raf = 0;
+
+    const tick = (now: number) => {
+      const t = Math.min((now - start) / TRANSITION_MS, 1);
+      // easeInOutCubic
+      const eased = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      setTransitionProgress(eased);
+      if (t < 1) {
+        raf = requestAnimationFrame(tick);
+      }
+    };
+    raf = requestAnimationFrame(tick);
+
+    return () => cancelAnimationFrame(raf);
+  }, [active]);
+
   return (
     <section
       className="relative isolate flex min-h-[100svh] h-[100svh] flex-col overflow-hidden bg-[#0A1020]"
@@ -143,55 +169,80 @@ export function Hero() {
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Full Viewport Sliding Carousel with slide-synchronized text */}
-      <div
-        className="absolute inset-0 flex h-full w-full transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
-        style={{ transform: `translateX(-${active * 100}%)` }}
-      >
-        {slides.map((s, i) => (
-          <div key={s.id} className="relative h-full w-full shrink-0">
-            {/* Background Image */}
-            <img
-              src={s.image}
-              alt={s.alt}
-              className="h-full w-full object-cover"
-              loading={i === 0 ? "eager" : "lazy"}
-            />
+      {/* Full Viewport Modern Zoom-Blur Dissolve Carousel */}
+      <div className="absolute inset-0 h-full w-full">
+        {slides.map((s, i) => {
+          const on = i === active;
+          return (
+            <div
+              key={s.id}
+              className={`hero-slide absolute inset-0 h-full w-full ${
+                on ? "hero-slide-active" : "hero-slide-inactive"
+              }`}
+              aria-hidden={!on}
+            >
+              {/* Background Image — Ken Burns zoom on the active slide */}
+              <img
+                src={s.image}
+                alt={s.alt}
+                className={`h-full w-full object-cover ${on ? "hero-kenburns" : ""}`}
+                loading={i === 0 ? "eager" : "lazy"}
+              />
 
-            {/* Slide Text Content */}
-            <div className="absolute inset-0 flex items-center pt-24 pb-20 sm:pt-36 sm:pb-28">
-              <div className="shell-wide">
-                {/* Subtle Translucent Navy Hero Text Panel */}
-                <div className="w-full max-w-[580px] rounded-[14px] border border-white/25 bg-[rgba(5,18,35,0.80)] p-4.5 xs:p-5.5 sm:p-7 md:py-[28px] md:px-[32px] backdrop-blur-md">
-                  {/* Pillar Category Badge */}
-                  <div className="mb-3.5 flex max-w-full flex-wrap items-center gap-x-2 gap-y-1 rounded-full border border-white/20 bg-[#0A1020]/80 px-3 py-1 backdrop-blur-md">
-                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#EF3B19] animate-pulse" />
-                    <span className="font-display text-[0.74rem] sm:text-[0.78rem] font-black uppercase tracking-wider text-white">
-                      {s.badge}
-                    </span>
-                    <span className="text-white/40 text-xs">•</span>
-                    <span className="font-display text-[0.72rem] sm:text-[0.75rem] font-medium text-slate-300">
-                      {s.pillar}
-                    </span>
-                  </div>
+              {/* Slide Text Content */}
+              <div className="absolute inset-0 flex items-center pt-24 pb-20 sm:pt-36 sm:pb-28">
+                <div className="shell-wide">
+                  {/* Subtle Translucent Navy Hero Text Panel */}
+                  <div className="w-full max-w-[580px] rounded-[14px] border border-white/25 bg-[rgba(5,18,35,0.55)] p-4.5 xs:p-5.5 sm:p-7 md:py-[28px] md:px-[32px] backdrop-blur-md">
+                    {/* Pillar Category Badge */}
+                    <div
+                      key={`badge-${active}`}
+                      className="hero-reveal mb-3.5 flex w-fit max-w-full flex-wrap items-center gap-x-2 gap-y-1 rounded-full border border-white/20 bg-[#0A1020]/80 px-3 py-1 backdrop-blur-md"
+                      style={{ animationDelay: "0ms" }}
+                    >
+                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#EF3B19] animate-pulse" />
+                      <span className="font-display text-[0.74rem] sm:text-[0.78rem] font-black uppercase tracking-wider text-white">
+                        {s.badge}
+                      </span>
+                      <span className="text-white/40 text-xs">•</span>
+                      <span className="font-display text-[0.72rem] sm:text-[0.75rem] font-medium text-slate-300">
+                        {s.pillar}
+                      </span>
+                    </div>
 
-                  {/* Headline with Brand Red Highlight (Noto Serif font) */}
-                  <h1 className="mt-4 sm:mt-5 font-display text-[clamp(2.15rem,4vw,3.5rem)] font-black leading-[1.08] text-white">
-                    {s.headline}{" "}
-                    <span className="text-[#EF3B19]">
-                      {s.highlight}
-                    </span>
-                  </h1>
+                    {/* Headline with Brand Red Highlight (Noto Serif font) */}
+                    <h1
+                      key={`headline-${active}`}
+                      className={`hero-reveal mt-4 sm:mt-5 font-display font-black leading-[1.08] text-white ${
+                        s.id === "conference"
+                          ? "text-[clamp(1.7rem,3.2vw,2.8rem)]"
+                          : "text-[clamp(2.15rem,4vw,3.5rem)]"
+                      }`}
+                      style={{ animationDelay: "120ms" }}
+                    >
+                      {s.headline}{" "}
+                      <span className="text-[#EF3B19]">
+                        {s.highlight}
+                      </span>
+                    </h1>
 
-                  {/* Subtext (Noto Sans font) */}
-                  <p className="mt-3.5 sm:mt-4 text-[1.02rem] sm:text-[1.12rem] leading-relaxed text-slate-100">
-                    {s.subtext}
-                  </p>
+                    {/* Subtext (Noto Sans font) */}
+                    <p
+                      key={`subtext-${active}`}
+                      className="hero-reveal mt-3.5 sm:mt-4 text-[1.02rem] sm:text-[1.12rem] leading-relaxed text-slate-100"
+                      style={{ animationDelay: "240ms" }}
+                    >
+                      {s.subtext}
+                    </p>
 
-                  {/* Dual Call To Actions (Responsive: stacked/wrapped on mobile, side-by-side on desktop) */}
-                  <div className="mt-5 sm:mt-7 flex flex-wrap items-center gap-2.5 sm:gap-3.5 w-full">
-                    <Link
-                      href={s.primaryCta.href}
+                    {/* Dual Call To Actions (Responsive: stacked/wrapped on mobile, side-by-side on desktop) */}
+                    <div
+                      key={`ctas-${active}`}
+                      className="hero-reveal mt-5 sm:mt-7 flex flex-wrap items-center gap-2.5 sm:gap-3.5 w-full"
+                      style={{ animationDelay: "360ms" }}
+                    >
+                      <Link
+                        href={s.primaryCta.href}
                       className="group inline-flex w-full sm:w-auto shrink-0 items-center justify-center gap-1.5 sm:gap-2 rounded-full bg-[#075BD6] min-h-[44px] px-4 py-2.5 xs:px-5 xs:py-3 sm:px-6 sm:py-3.5 font-display text-[0.82rem] xs:text-[0.88rem] sm:text-[0.94rem] font-bold text-white transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] active:scale-98 text-center"
                     >
                       <span className="whitespace-normal">{s.primaryCta.label}</span>
@@ -208,9 +259,19 @@ export function Hero() {
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+            </div>
+          );
+        })}
       </div>
+
+      {/* WebGL Liquid Distortion Transition overlay */}
+      <LiquidTransition
+        currentImage={slides[active].image}
+        nextImage={slides[(active + 1) % slides.length].image}
+        progress={transitionProgress}
+        waveKey={waveKey}
+        className="z-[5]"
+      />
 
       {/* Edge Navigation Arrows for desktop */}
       <div className="pointer-events-none absolute inset-y-0 inset-x-4 sm:inset-x-8 z-20 hidden md:flex items-center justify-between">
