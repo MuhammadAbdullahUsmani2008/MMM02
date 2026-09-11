@@ -80,7 +80,7 @@ export function JoinCta() {
                 </div>
 
                 <div className="mt-7 pt-5 border-t border-[#DCE2EA] flex items-center justify-between gap-2">
-                  <span className="font-display text-[0.88rem] xs:text-[0.96rem] font-bold text-[#075BD6] whitespace-nowrap transition-colors group-hover:text-[#0649B8]">
+                  <span className="font-display text-[0.88rem] xs:text-[0.96rem] font-bold text-[#075BD6] transition-colors group-hover:text-[#0649B8]">
                     {p.cta}
                   </span>
                   <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F5F7FA] text-[#075BD6] transition-all duration-300 group-hover:bg-[#075BD6] group-hover:text-white group-hover:translate-x-1">

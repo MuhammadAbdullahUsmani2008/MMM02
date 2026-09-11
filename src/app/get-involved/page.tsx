@@ -213,7 +213,7 @@ export default function MembershipPage() {
             <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
               <a
                 href="#application-form"
-                className="group inline-flex items-center justify-center gap-2 xs:gap-2.5 rounded-full bg-[#046BD2] px-5 py-2.5 xs:px-6 xs:py-3 sm:px-7 sm:py-3.5 font-display text-[0.84rem] xs:text-[0.9rem] sm:text-[0.95rem] font-bold text-white whitespace-nowrap min-h-[44px] max-w-full shadow-[0_10px_24px_-8px_rgba(4,107,210,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e53935] hover:shadow-[0_10px_24px_-8px_rgba(229,57,53,0.4)]"
+                className="group inline-flex items-center justify-center gap-2 xs:gap-2.5 rounded-full bg-[#046BD2] px-5 py-2.5 xs:px-6 xs:py-3 sm:px-7 sm:py-3.5 font-display text-[0.84rem] xs:text-[0.9rem] sm:text-[0.95rem] font-bold text-white min-h-[44px] max-w-full shadow-[0_10px_24px_-8px_rgba(4,107,210,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e53935] hover:shadow-[0_10px_24px_-8px_rgba(229,57,53,0.4)]"
               >
                 <span>Join MMM Pakistan Today</span>
                 <Arrow className="shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
@@ -221,7 +221,7 @@ export default function MembershipPage() {
               <a
                 href="/MMM_Pakistan_Membership_Application_Form.pdf"
                 download
-                className="group inline-flex items-center justify-center gap-2 xs:gap-2.5 rounded-full border-2 border-slate-300 px-5 py-2.5 xs:px-6 xs:py-3 sm:px-7 sm:py-3.5 font-display text-[0.84rem] xs:text-[0.9rem] sm:text-[0.95rem] font-bold text-[#334155] whitespace-nowrap min-h-[44px] max-w-full transition-all duration-300 hover:border-[#e53935] hover:bg-[#e53935] hover:text-white"
+                className="group inline-flex items-center justify-center gap-2 xs:gap-2.5 rounded-full border-2 border-slate-300 px-5 py-2.5 xs:px-6 xs:py-3 sm:px-7 sm:py-3.5 font-display text-[0.84rem] xs:text-[0.9rem] sm:text-[0.95rem] font-bold text-[#334155] min-h-[44px] max-w-full transition-all duration-300 hover:border-[#e53935] hover:bg-[#e53935] hover:text-white"
               >
                 <svg className="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />

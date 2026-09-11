@@ -83,14 +83,14 @@ export default async function ProgramPage({ params }: Params) {
               <div className="mt-10 flex flex-wrap gap-3 sm:gap-4">
                 <Link
                   href="/donate"
-                  className="group inline-flex items-center justify-center gap-2 xs:gap-2.5 rounded-full bg-[#046BD2] px-5 py-2.5 xs:px-6 xs:py-3 sm:px-7 sm:py-3.5 font-display text-[0.84rem] xs:text-[0.9rem] sm:text-[0.95rem] font-bold text-white whitespace-nowrap min-h-[44px] shadow-sm transition-all duration-250 hover:-translate-y-0.5 hover:bg-[#e53935]"
+                  className="group inline-flex items-center justify-center gap-2 xs:gap-2.5 rounded-full bg-[#046BD2] px-5 py-2.5 xs:px-6 xs:py-3 sm:px-7 sm:py-3.5 font-display text-[0.84rem] xs:text-[0.9rem] sm:text-[0.95rem] font-bold text-white min-h-[44px] shadow-sm transition-all duration-250 hover:-translate-y-0.5 hover:bg-[#e53935]"
                 >
                   <span>Fund this programme</span>
                   <Arrow className="shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
                 <Link
                   href="/get-involved"
-                  className="inline-flex items-center justify-center gap-2 xs:gap-2.5 rounded-full border-2 border-slate-300 px-5 py-2.5 xs:px-6 xs:py-3 sm:px-7 sm:py-3.5 font-display text-[0.84rem] xs:text-[0.9rem] sm:text-[0.95rem] font-bold text-[#003475] whitespace-nowrap min-h-[44px] transition-all duration-250 hover:border-[#e53935] hover:bg-[#e53935] hover:text-white"
+                  className="inline-flex items-center justify-center gap-2 xs:gap-2.5 rounded-full border-2 border-slate-300 px-5 py-2.5 xs:px-6 xs:py-3 sm:px-7 sm:py-3.5 font-display text-[0.84rem] xs:text-[0.9rem] sm:text-[0.95rem] font-bold text-[#003475] min-h-[44px] transition-all duration-250 hover:border-[#e53935] hover:bg-[#e53935] hover:text-white"
                 >
                   <span>Join a deployment</span>
                 </Link>
@@ -128,14 +128,14 @@ export default async function ProgramPage({ params }: Params) {
       <section className="bg-surface py-20 lg:py-24">
         <div className="shell-wide">
           <Reveal>
-            <div className="flex items-center gap-5">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-5">
               <h2 className="font-display text-[1.5rem] font-extrabold text-[#003475]">
                 Other programmes
               </h2>
               <span className="h-px flex-1 bg-slate-200" aria-hidden />
               <Link
                 href="/what-we-do"
-                className="group inline-flex items-center gap-1.5 xs:gap-2 font-display text-[0.85rem] xs:text-[0.9rem] font-bold text-[#046BD2] whitespace-nowrap shrink-0 min-h-[36px]"
+                className="group inline-flex items-center gap-1.5 xs:gap-2 font-display text-[0.85rem] xs:text-[0.9rem] font-bold text-[#046BD2] shrink-0 min-h-[36px]"
               >
                 <span className="link-underline">See all</span>
                 <Arrow className="shrink-0 transition-transform duration-300 group-hover:translate-x-1" />

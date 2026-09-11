@@ -95,16 +95,16 @@ export function Giving() {
                     href={org.whatsapp}
                     target="_blank"
                     rel="noreferrer"
-                    className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#075BD6] min-h-[44px] px-4 py-2.5 sm:px-6 sm:py-2.5 font-display text-[0.84rem] sm:text-[0.88rem] font-bold text-white shadow-sm transition-all duration-250 hover:bg-[#e53935] hover:shadow-md whitespace-nowrap active:scale-98"
+                    className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#075BD6] min-h-[44px] px-4 py-2.5 sm:px-6 sm:py-2.5 font-display text-[0.84rem] sm:text-[0.88rem] font-bold text-white shadow-sm transition-all duration-250 hover:bg-[#e53935] hover:shadow-md active:scale-98"
                   >
-                    <span className="whitespace-nowrap">WhatsApp a transfer slip</span>
+                    <span>WhatsApp a transfer slip</span>
                     <Arrow className="h-3.5 w-3.5 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
                   </a>
                   <Link
                     href="/donate"
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-[#DCE2EA] bg-white min-h-[44px] px-4 py-2.5 sm:px-5 sm:py-2.5 font-display text-[0.84rem] sm:text-[0.88rem] font-bold text-[#0A1020] transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] hover:text-white whitespace-nowrap active:scale-98"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-[#DCE2EA] bg-white min-h-[44px] px-4 py-2.5 sm:px-5 sm:py-2.5 font-display text-[0.84rem] sm:text-[0.88rem] font-bold text-[#0A1020] transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] hover:text-white active:scale-98"
                   >
-                    <span className="whitespace-nowrap">All donation methods</span>
+                    <span>All donation methods</span>
                   </Link>
                 </div>
               </div>

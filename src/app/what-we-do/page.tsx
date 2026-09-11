@@ -38,7 +38,7 @@ export default function WhatWeDoPage() {
             <section key={group.region} className={gi > 0 ? "mt-20" : ""}>
               <div className="shell-wide">
                 <Reveal>
-                  <div className="flex items-center gap-5">
+                  <div className="flex flex-wrap items-center gap-3 sm:gap-5">
                     <h2 className="font-display text-[1.85rem] sm:text-[2.15rem] font-black text-[#0A1020]">
                       {group.heading}
                     </h2>

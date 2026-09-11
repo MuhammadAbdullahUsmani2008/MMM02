@@ -164,8 +164,8 @@ export function Hero() {
                 {/* Subtle Translucent Navy Hero Text Panel */}
                 <div className="w-full max-w-[580px] rounded-[14px] border border-white/25 bg-[rgba(5,18,35,0.80)] p-4.5 xs:p-5.5 sm:p-7 md:py-[28px] md:px-[32px] backdrop-blur-md">
                   {/* Pillar Category Badge */}
-                  <div className="mb-3.5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-[#0A1020]/80 px-3 py-1 backdrop-blur-md">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#EF3B19] animate-pulse" />
+                  <div className="mb-3.5 flex max-w-full flex-wrap items-center gap-x-2 gap-y-1 rounded-full border border-white/20 bg-[#0A1020]/80 px-3 py-1 backdrop-blur-md">
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#EF3B19] animate-pulse" />
                     <span className="font-display text-[0.74rem] sm:text-[0.78rem] font-black uppercase tracking-wider text-white">
                       {s.badge}
                     </span>
@@ -192,16 +192,16 @@ export function Hero() {
                   <div className="mt-5 sm:mt-7 flex flex-wrap items-center gap-2.5 sm:gap-3.5 w-full">
                     <Link
                       href={s.primaryCta.href}
-                      className="group inline-flex w-full sm:w-auto shrink-0 items-center justify-center gap-1.5 sm:gap-2 rounded-full bg-[#075BD6] min-h-[44px] px-4 py-2.5 xs:px-5 xs:py-3 sm:px-6 sm:py-3.5 font-display text-[0.82rem] xs:text-[0.88rem] sm:text-[0.94rem] font-bold text-white transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] active:scale-98 whitespace-nowrap text-center"
+                      className="group inline-flex w-full sm:w-auto shrink-0 items-center justify-center gap-1.5 sm:gap-2 rounded-full bg-[#075BD6] min-h-[44px] px-4 py-2.5 xs:px-5 xs:py-3 sm:px-6 sm:py-3.5 font-display text-[0.82rem] xs:text-[0.88rem] sm:text-[0.94rem] font-bold text-white transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] active:scale-98 text-center"
                     >
-                      <span className="whitespace-nowrap">{s.primaryCta.label}</span>
+                      <span className="whitespace-normal">{s.primaryCta.label}</span>
                       <Arrow className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 transition-transform duration-250 ease-out group-hover:translate-x-1.5" />
                     </Link>
                     <Link
                       href={s.secondaryCta.href}
-                      className="group inline-flex w-full sm:w-auto shrink-0 items-center justify-center gap-1.5 sm:gap-2 rounded-full border border-white/50 bg-black/35 min-h-[44px] px-3.5 py-2.5 xs:px-4.5 xs:py-3 sm:px-5.5 sm:py-3.5 font-display text-[0.82rem] xs:text-[0.88rem] sm:text-[0.94rem] font-bold text-white backdrop-blur-md transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] hover:text-white active:scale-98 whitespace-nowrap text-center"
+                      className="group inline-flex w-full sm:w-auto shrink-0 items-center justify-center gap-1.5 sm:gap-2 rounded-full border border-white/50 bg-black/35 min-h-[44px] px-3.5 py-2.5 xs:px-4.5 xs:py-3 sm:px-5.5 sm:py-3.5 font-display text-[0.82rem] xs:text-[0.88rem] sm:text-[0.94rem] font-bold text-white backdrop-blur-md transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] hover:text-white active:scale-98 text-center"
                     >
-                      <span className="whitespace-nowrap">{s.secondaryCta.label}</span>
+                      <span className="whitespace-normal">{s.secondaryCta.label}</span>
                       <Arrow className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 transition-transform duration-250 ease-out group-hover:translate-x-1.5" />
                     </Link>
                   </div>
@@ -237,8 +237,8 @@ export function Hero() {
       </div>
 
       {/* Bottom Capsule Bar with 5-second Animated Progress Bar */}
-      <div className="absolute inset-x-0 bottom-6 z-20 flex justify-center px-4 sm:bottom-8">
-        <div className="flex w-full max-w-2xl items-center justify-between gap-4 rounded-full border border-white/20 bg-[#0A1020]/85 px-5 py-2.5 backdrop-blur-md shadow-2xl sm:px-6 sm:py-3">
+      <div className="absolute inset-x-0 bottom-6 z-20 flex justify-center px-3 sm:px-4 sm:bottom-8">
+        <div className="flex w-full max-w-2xl items-center justify-between gap-3 rounded-full border border-white/20 bg-[#0A1020]/85 px-4 py-2.5 backdrop-blur-md shadow-2xl sm:px-6 sm:py-3">
           {/* Operation & Location Link */}
           <Link
             href={slides[active].href}
@@ -248,12 +248,12 @@ export function Hero() {
               {slides[active].operation}
             </span>
             <span className="text-white/40">•</span>
-            <span className="truncate font-normal text-slate-300">{slides[active].place}</span>
+            <span className="hidden truncate font-normal text-slate-300 sm:inline">{slides[active].place}</span>
             <Arrow className="h-3.5 w-3.5 shrink-0 text-[#EF3B19] transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
 
           {/* Sliding Indicator Dots with 5-second countdown progress bar */}
-          <div className="flex shrink-0 items-center gap-2">
+          <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
             <span className="text-xs font-bold text-white/50 mr-1 hidden sm:inline">
               0{active + 1} / 0{slides.length}
             </span>
@@ -268,7 +268,7 @@ export function Hero() {
                   aria-label={`Go to slide ${i + 1}: ${s.operation}`}
                   className={`relative cursor-pointer rounded-full overflow-hidden transition-all duration-300 ${
                     on
-                      ? "h-2.5 w-12 sm:w-14 bg-white/25 shadow-[0_0_10px_rgba(239,59,25,0.4)]"
+                      ? "h-2.5 w-8 sm:w-14 bg-white/25 shadow-[0_0_10px_rgba(239,59,25,0.4)]"
                       : "h-2.5 w-2.5 bg-white/40 hover:bg-white/90"
                   }`}
                 >

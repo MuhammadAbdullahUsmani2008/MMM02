@@ -49,14 +49,14 @@ export function GazaBand() {
             <div className="mt-6 flex flex-wrap items-center gap-3 sm:gap-4">
               <Link
                 href="/what-we-do/gaza-field-clinics"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#075BD6] min-h-[44px] px-4.5 py-2.5 xs:px-5.5 xs:py-3 sm:px-6 sm:py-3.5 font-display text-[0.84rem] xs:text-[0.9rem] sm:text-[0.96rem] font-bold text-white shadow-sm transition-all duration-250 hover:bg-[#e53935] hover:shadow-md whitespace-nowrap active:scale-98"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#075BD6] min-h-[44px] px-4.5 py-2.5 xs:px-5.5 xs:py-3 sm:px-6 sm:py-3.5 font-display text-[0.84rem] xs:text-[0.9rem] sm:text-[0.96rem] font-bold text-white shadow-sm transition-all duration-250 hover:bg-[#e53935] hover:shadow-md active:scale-98"
               >
-                <span className="whitespace-nowrap">Support the Gaza relief effort</span>
+                <span>Support the Gaza relief effort</span>
                 <Arrow className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1.5" />
               </Link>
               <Link
                 href="/donate"
-                className="inline-flex min-h-[44px] items-center font-display text-[0.86rem] sm:text-[0.92rem] font-bold text-[#075BD6] hover:text-[#e53935] transition-colors underline underline-offset-4 whitespace-nowrap"
+                className="inline-flex min-h-[44px] items-center font-display text-[0.86rem] sm:text-[0.92rem] font-bold text-[#075BD6] hover:text-[#e53935] transition-colors underline underline-offset-4"
               >
                 Direct emergency bank transfer
               </Link>

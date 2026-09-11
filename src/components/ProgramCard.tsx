@@ -56,7 +56,7 @@ export function ProgramCard({
         </div>
 
         {/* Region Tag */}
-        <span className="absolute bottom-3.5 right-4 rounded-md bg-white/90 px-2.5 py-0.5 font-display text-[0.76rem] font-bold text-[#0A1020] shadow-xs backdrop-blur-xs">
+        <span className="absolute bottom-3.5 right-4 max-w-[calc(100%-2rem)] truncate rounded-md bg-white/90 px-2.5 py-0.5 font-display text-[0.76rem] font-bold text-[#0A1020] shadow-xs backdrop-blur-xs">
           {program.region}
         </span>
       </div>

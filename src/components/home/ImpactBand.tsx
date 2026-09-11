@@ -71,9 +71,9 @@ export function ImpactBand() {
       <div className="relative shell-wide">
         <div className="grid items-center gap-8 lg:grid-cols-12">
           {/* Left Title Lockup (UNDA Style "Our Impact") */}
-          <div className="flex items-center gap-4 lg:col-span-4 xl:col-span-3.5 border-b border-white/20 pb-6 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-6">
-            <div className="flex h-13 w-13 shrink-0 items-center justify-center rounded-full bg-white text-[#0649B8] shadow-md">
-              <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <div className="flex items-center gap-4 lg:col-span-4 border-b border-white/20 pb-6 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-6">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-[#0649B8] shadow-md">
+              <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
               </svg>
             </div>
@@ -88,7 +88,7 @@ export function ImpactBand() {
           </div>
 
           {/* Right Metrics (UNDA Circular Stat Badges in Green & Blue) */}
-          <dl className="grid grid-cols-2 gap-5 sm:grid-cols-4 lg:col-span-8 xl:col-span-8.5">
+          <dl className="grid grid-cols-2 gap-5 sm:grid-cols-4 lg:col-span-8">
             {stats.map((stat, i) => (
               <Reveal
                 key={stat.label}

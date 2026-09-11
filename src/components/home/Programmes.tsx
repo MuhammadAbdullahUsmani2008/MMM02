@@ -27,7 +27,7 @@ export function Programmes() {
 
           <Link
             href="/what-we-do"
-            className="group inline-flex items-center gap-1.5 xs:gap-2 font-display text-[0.88rem] xs:text-[0.96rem] font-bold text-[#075BD6] whitespace-nowrap shrink-0 min-h-[36px] transition-colors hover:text-[#0649B8]"
+            className="group inline-flex items-center gap-1.5 xs:gap-2 font-display text-[0.88rem] xs:text-[0.96rem] font-bold text-[#075BD6] shrink-0 min-h-[36px] transition-colors hover:text-[#0649B8]"
           >
             <span>View All Projects</span>
             <Arrow className="h-3.5 w-3.5 shrink-0 transition-transform duration-200 group-hover:translate-x-1.5" />

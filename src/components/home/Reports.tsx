@@ -44,7 +44,7 @@ export function Reports() {
                   <span className="h-3 w-px bg-[#DCE2EA]" aria-hidden />
                   <span>Deployment Report</span>
                 </p>
-                <span className="mt-5 inline-flex items-center gap-1.5 xs:gap-2 font-display text-[0.88rem] xs:text-[0.96rem] font-bold text-[#075BD6] whitespace-nowrap transition-colors group-hover:text-[#0649B8]">
+                <span className="mt-5 inline-flex items-center gap-1.5 xs:gap-2 font-display text-[0.88rem] xs:text-[0.96rem] font-bold text-[#075BD6] transition-colors group-hover:text-[#0649B8]">
                   <span>Read the complete report</span>
                   <Arrow className="h-3.5 w-3.5 shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-2" />
                 </span>

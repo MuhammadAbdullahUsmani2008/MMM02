@@ -11,12 +11,36 @@ export const metadata: Metadata = {
 };
 
 const videos = [
-  { thumb: "/media/video/video-01.jpg", title: "Medical camp, South Punjab" },
-  { thumb: "/media/video/video-02.jpg", title: "Ration distribution in the flood belt" },
-  { thumb: "/media/video/video-03.jpg", title: "Reaching Mangrotha after the water" },
-  { thumb: "/media/video/video-04.jpg", title: "Inside a free clinic day" },
-  { thumb: "/media/video/video-05.jpg", title: "Volunteers on deployment" },
-  { thumb: "/media/video/video-06.jpg", title: "Winter relief handover" },
+  {
+    thumb: "/media/video/video-01.jpg",
+    title: "Ramadan Package Distribution, Gaza",
+    embed: "https://www.youtube-nocookie.com/embed/yIm-jdfFi7s?si=ko76G6ZmyTUkhPvx",
+  },
+  {
+    thumb: "/media/video/video-02.jpg",
+    title: "Providing Hot meal in Gaza",
+    embed: "https://www.youtube-nocookie.com/embed/Rjw6EIPoLz0?si=khUi6EduOJIXoI4H",
+  },
+  {
+    thumb: "/media/video/video-03.jpg",
+    title: "Providing Clean Water in Gaza",
+    embed: "https://www.youtube-nocookie.com/embed/xlan-cUhZvc?si=nqLtxqarzMZpEnHO",
+  },
+  {
+    thumb: "/media/video/video-04.jpg",
+    title: "Fresh Bread Distribution in Gaza",
+    embed: "https://www.youtube-nocookie.com/embed/hMtFcTJgjN8?si=1RLPlrVa1dpvHiHR",
+  },
+  {
+    thumb: "/media/video/video-05.jpg",
+    title: "Gaza Relief Campaign",
+    embed: "https://www.youtube-nocookie.com/embed/jxjikidC7zQ?si=6G6ct8OO4i0UyEX8",
+  },
+  {
+    thumb: "/media/video/video-06.jpg",
+    title: "Hot Bread Continues to Reach Gaza's Tents",
+    embed: "https://www.youtube-nocookie.com/embed/OWHADJImiMU?si=GSwMugt7MP891wxo",
+  },
 ];
 
 export default function MediaPage() {
@@ -98,32 +122,51 @@ export default function MediaPage() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {videos.map((v, i) => (
               <Reveal key={v.thumb} delay={i * 70} amount={0.08}>
-                <a
-                  href="https://youtube.com/@mmmpakofficial"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group block overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lift"
-                >
-                  <div className="relative aspect-video overflow-hidden">
-                    <img
-                      src={v.thumb}
-                      alt=""
-                      aria-hidden
-                      loading="lazy"
-                      className="h-full w-full object-cover opacity-90 transition-all duration-700 group-hover:scale-105 group-hover:opacity-100"
-                    />
-                    <span className="absolute inset-0 grid place-items-center" aria-hidden>
-                      <span className="grid h-14 w-14 place-items-center rounded-full bg-[#046BD2]/90 shadow-lift transition-transform duration-400 group-hover:scale-110 group-hover:bg-[#003475]">
-                        <svg viewBox="0 0 24 24" className="ml-0.5 h-6 w-6 fill-white">
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
-                      </span>
-                    </span>
+                {v.embed ? (
+                  <div className="group block overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lift">
+                    <div className="relative aspect-video overflow-hidden">
+                      <iframe
+                        src={v.embed}
+                        title={v.title}
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                        className="absolute inset-0 h-full w-full"
+                      />
+                    </div>
+                    <p className="p-5 font-display text-[0.98rem] font-bold text-[#003475]">
+                      {v.title}
+                    </p>
                   </div>
-                  <p className="p-5 font-display text-[0.98rem] font-bold text-[#003475] transition-colors group-hover:text-[#046BD2]">
-                    {v.title}
-                  </p>
-                </a>
+                ) : (
+                  <a
+                    href="https://youtube.com/@mmmpakofficial"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group block overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lift"
+                  >
+                    <div className="relative aspect-video overflow-hidden">
+                      <img
+                        src={v.thumb}
+                        alt=""
+                        aria-hidden
+                        loading="lazy"
+                        className="h-full w-full object-cover opacity-90 transition-all duration-700 group-hover:scale-105 group-hover:opacity-100"
+                      />
+                      <span className="absolute inset-0 grid place-items-center" aria-hidden>
+                        <span className="grid h-14 w-14 place-items-center rounded-full bg-[#046BD2]/90 shadow-lift transition-transform duration-400 group-hover:scale-110 group-hover:bg-[#003475]">
+                          <svg viewBox="0 0 24 24" className="ml-0.5 h-6 w-6 fill-white">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </span>
+                      </span>
+                    </div>
+                    <p className="p-5 font-display text-[0.98rem] font-bold text-[#003475] transition-colors group-hover:text-[#046BD2]">
+                      {v.title}
+                    </p>
+                  </a>
+                )}
               </Reveal>
             ))}
           </div>

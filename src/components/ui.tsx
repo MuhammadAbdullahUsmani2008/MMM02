@@ -49,11 +49,11 @@ export function Button({
   className = "",
   external = false,
 }: ButtonProps) {
-  const classes = `group inline-flex items-center justify-center gap-2 xs:gap-2.5 rounded-full px-4.5 py-2.5 xs:px-5.5 xs:py-3 sm:px-7 sm:py-3.5 min-h-[44px] max-w-full font-display text-[0.84rem] xs:text-[0.88rem] sm:text-[0.95rem] font-bold tracking-tight whitespace-nowrap transition-all duration-300 hover:-translate-y-0.5 active:scale-98 ${variants[variant]} ${className}`;
+  const classes = `group inline-flex items-center justify-center gap-2 xs:gap-2.5 rounded-full px-4.5 py-2.5 xs:px-5.5 xs:py-3 sm:px-7 sm:py-3.5 min-h-[44px] max-w-full font-display text-[0.84rem] xs:text-[0.88rem] sm:text-[0.95rem] font-bold tracking-tight transition-all duration-300 hover:-translate-y-0.5 active:scale-98 ${variants[variant]} ${className}`;
 
   const inner = (
     <>
-      <span className="whitespace-nowrap">{children}</span>
+      <span className="whitespace-normal">{children}</span>
       <Arrow className="shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
     </>
   );
@@ -119,7 +119,7 @@ export function SectionHead({
         {link ? (
           <Link
             href={link.href}
-            className={`group mt-5 inline-flex items-center gap-1.5 xs:gap-2 font-display text-[0.88rem] xs:text-[0.96rem] font-bold whitespace-nowrap shrink-0 min-h-[38px] ${
+            className={`group mt-5 inline-flex items-center gap-1.5 xs:gap-2 font-display text-[0.88rem] xs:text-[0.96rem] font-bold shrink-0 min-h-[38px] ${
               isDark ? "text-[#075BD6]" : "text-[#EF3B19]"
             }`}
           >
@@ -157,7 +157,7 @@ export function SectionHead({
             {link ? (
               <Link
                 href={link.href}
-                className={`group mt-4 inline-flex items-center gap-1.5 xs:gap-2 font-display text-[0.88rem] xs:text-[0.96rem] font-bold whitespace-nowrap shrink-0 min-h-[38px] ${
+                className={`group mt-4 inline-flex items-center gap-1.5 xs:gap-2 font-display text-[0.88rem] xs:text-[0.96rem] font-bold shrink-0 min-h-[38px] ${
                   isDark ? "text-[#075BD6]" : "text-[#EF3B19]"
                 }`}
               >

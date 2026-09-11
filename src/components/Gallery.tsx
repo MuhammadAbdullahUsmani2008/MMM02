@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { gallery, galleryGroups } from "@/data/gallery";
 
 const filters = [{ key: "all", label: "Everything" }, ...galleryGroups] as const;
@@ -9,6 +9,38 @@ export function Gallery() {
   const [filter, setFilter] = useState<string>("all");
   const [shown, setShown] = useState(24);
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const tabsRef = useRef<HTMLDivElement | null>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+
+  const updateArrows = useCallback(() => {
+    const el = tabsRef.current;
+    if (!el) return;
+    const { scrollLeft, scrollWidth, clientWidth } = el;
+    setCanScrollLeft(scrollLeft > 1);
+    setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
+  }, []);
+
+  useEffect(() => {
+    const el = tabsRef.current;
+    if (!el) return;
+    updateArrows();
+    el.addEventListener("scroll", updateArrows, { passive: true });
+    window.addEventListener("resize", updateArrows);
+    return () => {
+      el.removeEventListener("scroll", updateArrows);
+      window.removeEventListener("resize", updateArrows);
+    };
+  }, [updateArrows]);
+
+  const scrollTabs = useCallback(
+    (dir: 1 | -1) => {
+      const el = tabsRef.current;
+      if (!el) return;
+      el.scrollBy({ left: dir * 240, behavior: "smooth" });
+    },
+    [updateArrows],
+  );
 
   const items = useMemo(
     () => (filter === "all" ? gallery : gallery.filter((g) => g.group === filter)),
@@ -50,28 +82,61 @@ export function Gallery() {
   return (
     <div>
       {/* Filters */}
-      <div className="no-scrollbar -mx-5 flex gap-2 overflow-x-auto px-5 pb-1">
-        {filters.map((f) => {
-          const on = filter === f.key;
-          return (
-            <button
-              key={f.key}
-              type="button"
-              onClick={() => {
-                setFilter(f.key);
-                setShown(24);
-              }}
-              aria-pressed={on}
-              className={`inline-flex shrink-0 items-center justify-center rounded-full px-4 py-2 xs:px-5 xs:py-2.5 font-display text-[0.82rem] xs:text-[0.88rem] font-bold whitespace-nowrap min-h-[40px] transition-all duration-300 ${
-                on
-                  ? "bg-[#046BD2] text-white shadow-sm"
-                  : "bg-slate-100 text-[#334155] hover:bg-blue-50 hover:text-[#046BD2]"
-              }`}
-            >
-              {f.label}
-            </button>
-          );
-        })}
+      <div className="relative">
+        {/* Left scroll arrow (desktop only) */}
+        <button
+          type="button"
+          onClick={() => scrollTabs(-1)}
+          aria-label="Scroll categories left"
+          className={`absolute left-0 top-1/2 z-10 hidden -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-[#334155] shadow-md transition-all duration-300 hover:bg-blue-50 hover:text-[#046BD2] md:flex h-9 w-9 shrink-0 min-h-[36px] min-w-[36px] ${
+            canScrollLeft ? "opacity-100" : "pointer-events-none opacity-0"
+          }`}
+        >
+          <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0" fill="none" aria-hidden>
+            <path d="M15 5l-7 7 7 7" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+
+        <div
+          ref={tabsRef}
+          className="no-scrollbar -mx-5 flex gap-2 overflow-x-auto px-5 pb-1 md:mx-0 md:px-10"
+        >
+          {filters.map((f) => {
+            const on = filter === f.key;
+            return (
+              <button
+                key={f.key}
+                type="button"
+                onClick={() => {
+                  setFilter(f.key);
+                  setShown(24);
+                }}
+                aria-pressed={on}
+                className={`inline-flex shrink-0 items-center justify-center rounded-full px-4 py-2 xs:px-5 xs:py-2.5 font-display text-[0.82rem] xs:text-[0.88rem] font-bold whitespace-nowrap min-h-[40px] transition-all duration-300 ${
+                  on
+                    ? "bg-[#046BD2] text-white shadow-sm"
+                    : "bg-slate-100 text-[#334155] hover:bg-blue-50 hover:text-[#046BD2]"
+                }`}
+              >
+                {f.label}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Right scroll arrow (desktop only) */}
+        <button
+          type="button"
+          onClick={() => scrollTabs(1)}
+          aria-label="Scroll categories right"
+          className={`absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-[#334155] shadow-md transition-all duration-300 hover:bg-blue-50 hover:text-[#046BD2] md:flex h-9 w-9 shrink-0 min-h-[36px] min-w-[36px] ${
+            canScrollRight ? "opacity-100" : "pointer-events-none opacity-0"
+          }`}
+        >
+          <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0" fill="none" aria-hidden>
+            <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
       </div>
 
       {/* Masonry style columns keep the portrait and landscape shots honest */}
