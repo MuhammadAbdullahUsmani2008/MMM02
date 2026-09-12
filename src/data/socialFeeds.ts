@@ -47,10 +47,10 @@ export const socialFeeds: SocialPost[] = [
       "Field Documentary: Free Medical Camps in Dera Ghazi Khan & Taunsa Sharif. Our volunteer doctors provide consultation, diagnostic screening, and full medicine courses to 500+ flood-affected families.",
     media: {
       type: "video",
-      url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      url: "https://www.youtube.com/watch?v=6eNxJF0JYdM",
       thumbnail: "/media/field/free-medical-camp-medicines.jpg",
       duration: "06:42",
-      youtubeId: "dQw4w9WgXcQ",
+      youtubeId: "6eNxJF0JYdM",
     },
     metrics: {
       views: "14.2K",
@@ -147,10 +147,10 @@ export const socialFeeds: SocialPost[] = [
       "Basic Life Support (BLS) & Disaster First Responder Training in collaboration with Punjab Emergency Service (Rescue 1122). Equipping volunteers with life-saving trauma skills.",
     media: {
       type: "video",
-      url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      url: "https://www.youtube.com/watch?v=m8FRltvWSGc",
       thumbnail: "/media/field/bls-rescue-1122.jpg",
       duration: "08:15",
-      youtubeId: "dQw4w9WgXcQ",
+      youtubeId: "m8FRltvWSGc",
     },
     metrics: {
       views: "9.8K",
