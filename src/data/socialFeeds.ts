@@ -49,7 +49,7 @@ export const socialFeeds: SocialPost[] = [
       type: "video",
       url: "https://www.youtube.com/watch?v=6eNxJF0JYdM",
       thumbnail: "/media/field/free-medical-camp-medicines.jpg",
-      duration: "06:42",
+      duration: "1:30",
       youtubeId: "6eNxJF0JYdM",
     },
     metrics: {
@@ -149,7 +149,7 @@ export const socialFeeds: SocialPost[] = [
       type: "video",
       url: "https://www.youtube.com/watch?v=m8FRltvWSGc",
       thumbnail: "/media/field/bls-rescue-1122.jpg",
-      duration: "08:15",
+      duration: "1:41",
       youtubeId: "m8FRltvWSGc",
     },
     metrics: {
