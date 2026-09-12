@@ -120,8 +120,8 @@ export function Giving() {
                 <div key={row.k} className="rounded-xl border border-[#DCE2EA] bg-white/95 p-3.5 shadow-xs transition-colors hover:border-[#075BD6]/40">
                   <dt className="text-[0.76rem] font-bold text-[#6B7280] uppercase tracking-wider">{row.k}</dt>
                   <dd
-                    className={`mt-1 text-[0.92rem] font-bold break-all text-[#0A1020] ${
-                      row.mono ? "font-mono text-[0.88rem] text-[#075BD6]" : ""
+                    className={`mt-1 text-[0.92rem] font-bold text-[#0A1020] ${
+                      row.mono ? "font-mono text-[0.88rem] text-[#075BD6] break-all" : "break-words"
                     }`}
                   >
                     {row.v}

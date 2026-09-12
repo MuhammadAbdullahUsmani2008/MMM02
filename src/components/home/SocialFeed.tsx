@@ -242,9 +242,10 @@ export function SocialFeed() {
               <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-black">
                 <iframe
                   className="h-full w-full"
-                  src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?rel=0"
-                  title="Muslim Medical Mission Video Showcase"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src="https://www.youtube-nocookie.com/embed/m8FRltvWSGc?si=-HExS4RuRuXKk4Qn"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                 />
               </div>
