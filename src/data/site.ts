@@ -479,7 +479,7 @@ export const programs: Program[] = [
       "Avoidable blindness is one of the cruellest inequalities in rural Pakistan. Cataract is straightforward to operate on and the surgery is short, yet thousands of older people lose their independence to it because nobody screened them and nobody could get them to a theatre.",
       "Save Vision screens at the camps we run, dispenses reading glasses on the spot and refers surgical cases into partner hospitals, following each patient through to the operation rather than handing over a slip of paper and hoping.",
     ],
-    image: "/media/field/surgical-operation-theatre.jpg",
+    image: "/media/field/free-medical-camp-doctors.jpg",
     gallery: ["/media/field/surgical-camp-rajanpur.jpg"],
     accent: "cyan",
     highlights: [
