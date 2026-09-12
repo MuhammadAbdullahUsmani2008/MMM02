@@ -346,7 +346,7 @@ export default function MembershipPage() {
       {/* Eligibility Section                                            */}
       {/* -------------------------------------------------------------- */}
       <section className="py-16 lg:py-20 border-b border-[#DCE2EA] bg-gradient-to-br from-[#F8FAFD] via-white to-[#F0F7FF]">
-        <div className="shell">
+        <div className="shell-wide">
           <Reveal>
             <div className="rounded-3xl border border-blue-200 bg-white p-7 sm:p-10 shadow-soft">
               <div className="flex flex-col sm:flex-row items-start gap-5">

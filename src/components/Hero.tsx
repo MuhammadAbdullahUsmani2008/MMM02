@@ -16,6 +16,7 @@ type Slide = {
   headline: string;
   highlight: string;
   subtext: string;
+  subtextMobile?: string;
   primaryCta: { label: string; href: string };
   secondaryCta: { label: string; href: string };
   operation: string;
@@ -48,6 +49,7 @@ const slides: Slide[] = [
     headline: "When Calamity Strikes,",
     highlight: "we are already moving.",
     subtext: "From the 2005 Kashmir earthquake to the floods and droughts of today, MMM's emergency teams are pre-trained to deploy within hours, not days.",
+    subtextMobile: "From earthquakes to floods, MMM's pre-trained teams deploy within hours, not days.",
     primaryCta: { label: "Emergency Response", href: "/disaster-response" },
     secondaryCta: { label: "Support Rapid Response", href: "/donate" },
     operation: "Rapid Emergency Response",
@@ -63,6 +65,7 @@ const slides: Slide[] = [
     headline: "Equipping First Responders",
     highlight: "in collaboration with Rescue 1122.",
     subtext: "Hands-on Basic Life Support, Trauma Response, Haemorrhage Control and Disaster Triage Certifying Everyday Volunteers as Frontline Community Lifesavers.",
+    subtextMobile: "Hands-on training certifying everyday volunteers as frontline lifesavers.",
     primaryCta: { label: "Explore Responder Courses", href: "/what-we-do/training" },
     secondaryCta: { label: "Volunteer with Us", href: "/get-involved" },
     operation: "BLS & Responders Training",
@@ -206,7 +209,11 @@ export function Hero() {
                       </span>
                       <span className="text-white/40 text-xs">•</span>
                       <span className="font-display text-[0.72rem] sm:text-[0.75rem] font-medium text-slate-300">
-                        {s.pillar}
+                        {s.pillar.split("•")[0].trim()}
+                        <span className="hidden sm:inline">
+                          {" • "}
+                          {s.pillar.split("•").slice(1).join("•").trim()}
+                        </span>
                       </span>
                     </div>
 
@@ -232,7 +239,14 @@ export function Hero() {
                       className="hero-reveal mt-3.5 sm:mt-4 text-[1.02rem] sm:text-[1.12rem] leading-relaxed text-slate-100"
                       style={{ animationDelay: "240ms" }}
                     >
-                      {s.subtext}
+                      {s.subtextMobile ? (
+                        <>
+                          <span className="sm:hidden">{s.subtextMobile}</span>
+                          <span className="hidden sm:inline">{s.subtext}</span>
+                        </>
+                      ) : (
+                        s.subtext
+                      )}
                     </p>
 
                     {/* Dual Call To Actions (Responsive: stacked/wrapped on mobile, side-by-side on desktop) */}

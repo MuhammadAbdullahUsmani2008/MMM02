@@ -91,6 +91,15 @@ export function ProgramCard({
           </dl>
         )}
 
+        {/* Desktop-only summary below the stats */}
+        {feature && (
+          <p className="mt-5 hidden lg:block text-[0.95rem] leading-relaxed text-[#4B5563]">
+            Every consultation, diagnosis and full course of medicine is provided free, because a
+            prescription a family cannot fill is not treatment. In a single deployment across Dera
+            Ghazi Khan, senior doctors ran four camps back to back, seeing more than 500 patients.
+          </p>
+        )}
+
         {/* Bottom Action Row with Donation Pill & Learn More Button */}
         <div className="mt-auto pt-6 border-t border-[#DCE2EA]/80 flex flex-wrap items-center justify-between gap-2.5">
           <Link
