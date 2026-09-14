@@ -45,7 +45,7 @@ export default function DisasterResponsePage() {
           { label: "Home", href: "/" },
           { label: "Disaster response", href: "/disaster-response" },
         ]}
-        title="We move in the first week, and we are still there in the third month"
+        title="We move in the first week, and we were still there in the third month"
         lead="Flood response in Pakistan is not one operation. It is four, run in sequence, and most organisations only fund the first two."
         image="/media/field/hero-disaster-response.jpg"
       />
