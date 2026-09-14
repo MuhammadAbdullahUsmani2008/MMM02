@@ -46,7 +46,7 @@ const stats = [
   {
     value: 12,
     suffix: "+",
-    label: "Response to National Disasters",
+    label: "National Disasters Responded",
     sublabel: "Rapid emergency response",
     useGrouping: false,
     badgeColor: "bg-[#DCE6FB] text-[#0649B8]",
@@ -121,7 +121,7 @@ export function ImpactBand() {
             {stats.map((stat, i) => (
               <Reveal
                 key={stat.label}
-                delay={i * 60}
+                // delay={i * 10}
                 className="h-full"
                 as="div"
               >
