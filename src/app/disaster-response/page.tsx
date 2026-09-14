@@ -56,7 +56,7 @@ export default function DisasterResponsePage() {
           <dl className="grid overflow-hidden rounded-2xl bg-white shadow-[0_28px_60px_-28px_rgba(10,23,48,0.45)] sm:grid-cols-3 sm:divide-x sm:divide-line">
             {[
               { v: 4, s: "", k: "Camps run back to back", d: "Dera Ghazi Khan deployment" },
-              { v: 500, s: "+", k: "Patients seen", d: "Free consultation and medicine" },
+              { v: 1000000, s: "+", k: "Patients seen", d: "Free consultation and medicine" },
               { v: 2, s: "", k: "Provinces covered", d: "South Punjab and Balochistan" },
             ].map((x, i) => (
               <Reveal key={x.k} delay={i * 80} as="div" className="p-7">
@@ -120,7 +120,7 @@ export default function DisasterResponsePage() {
           />
 
           <div className="mt-14 grid gap-6 md:grid-cols-2">
-            {reports.map((r, i) => (
+            {reports.slice(0, 2).map((r, i) => (
               <Reveal key={r.slug} delay={i * 80} amount={0.08}>
                 <article className="group h-full overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-soft transition-all duration-400 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lift">
                   <div className="aspect-[16/9] overflow-hidden">
