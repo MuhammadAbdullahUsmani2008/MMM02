@@ -117,7 +117,7 @@ export function ImpactBand() {
           </div>
 
           {/* Right Metrics (UNDA Circular Stat Badges in Green & Blue) */}
-          <dl className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:col-span-8">
+          <dl className="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 sm:gap-5 lg:col-span-8">
             {stats.map((stat, i) => (
               <Reveal
                 key={stat.label}
@@ -125,23 +125,23 @@ export function ImpactBand() {
                 className="h-full"
                 as="div"
               >
-                <div className="group flex items-center gap-3.5 transition-transform duration-300 hover:translate-x-1">
+                <div className="group flex items-center gap-3 transition-transform duration-300 hover:translate-x-1">
                   {/* UNDA style circular icon badge */}
                   <div
-                    className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full shadow-md transition-transform duration-300 group-hover:scale-110 ${stat.badgeColor}`}
+                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full shadow-md transition-transform duration-300 group-hover:scale-110 sm:h-12 sm:w-12 ${stat.badgeColor}`}
                   >
                     {stat.icon}
                   </div>
 
                   {/* Value & Label */}
-                  <div className="min-w-0">
-                    <span className="font-display text-[1.65rem] sm:text-[1.85rem] leading-none font-black tracking-tight text-white">
+                  <div className="min-w-0 flex-1">
+                    <span className="block font-display text-[1.3rem] leading-none font-black tracking-tight text-white sm:text-[1.85rem]">
                       <CountUp to={stat.value} suffix={stat.suffix} useGrouping={stat.useGrouping} />
                     </span>
-                    <dt className="mt-1 font-display text-[0.82rem] sm:text-[0.88rem] font-bold text-white leading-tight truncate">
+                    <dt className="mt-1 font-display text-[0.78rem] font-bold text-white leading-tight sm:text-[0.88rem]">
                       {stat.label}
                     </dt>
-                    <dd className="text-[0.72rem] text-blue-200/90 hidden sm:block truncate">
+                    <dd className="hidden text-[0.72rem] text-blue-200/90 sm:block">
                       {stat.sublabel}
                     </dd>
                   </div>
