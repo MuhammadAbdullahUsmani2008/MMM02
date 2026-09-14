@@ -55,24 +55,24 @@ export default function DisasterResponsePage() {
         <div className="shell-wide">
           <dl className="grid overflow-hidden rounded-2xl bg-white shadow-[0_28px_60px_-28px_rgba(10,23,48,0.45)] sm:grid-cols-3 sm:divide-x sm:divide-line">
             {[
-              { v: 1000000, s: "+", k: "Patients Examined", d: "Free consultation and medicine" },
+              { v: 2005, s: "", k: "Founded in", d: "Muslim Medical Mission" },
               { v: 1000000, s: "+", k: "Patients seen", d: "Free consultation and medicine" },
               { v: 0, s: "", k: "Coverage", d: "All over Pakistan", text: "All Over Pakistan" },
             ].map((x, i) => (
               <Reveal key={x.k} delay={i * 80} as="div" className="p-7">
                 <dt className="sr-only">{x.k}</dt>
                 <dd>
-                  <span className="font-display text-[2.6rem] sm:text-[3rem] leading-none font-black text-[#0A1020]">
+                  <span className="block font-display text-[1.3rem] leading-none font-black tracking-tight text-[#0A1020] sm:text-[1.85rem]">
                     {x.text ? (
                       x.text
                     ) : (
                       <CountUp to={x.v} suffix={x.s} />
                     )}
                   </span>
-                  <span className="mt-3 block font-display text-[1.05rem] font-bold text-[#0A1020]">
+                  <span className="mt-1 block font-display text-[0.78rem] font-bold text-[#0A1020] leading-tight sm:text-[0.88rem]">
                     {x.k}
                   </span>
-                  <span className="mt-1 block text-[0.9rem] text-[#6B7280]">{x.d}</span>
+                  <span className="mt-1 block text-[0.72rem] text-[#6B7280]">{x.d}</span>
                 </dd>
               </Reveal>
             ))}
