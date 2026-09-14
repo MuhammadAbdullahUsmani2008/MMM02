@@ -55,7 +55,7 @@ export default function DisasterResponsePage() {
         <div className="shell-wide">
           <dl className="grid overflow-hidden rounded-2xl bg-white shadow-[0_28px_60px_-28px_rgba(10,23,48,0.45)] sm:grid-cols-3 sm:divide-x sm:divide-line">
             {[
-              { v: 4, s: "", k: "Camps run back to back", d: "Dera Ghazi Khan deployment" },
+              { v: 1000000, s: "+", k: "Patients Examined", d: "Free consultation and medicine" },
               { v: 1000000, s: "+", k: "Patients seen", d: "Free consultation and medicine" },
               { v: 0, s: "", k: "Coverage", d: "All over Pakistan", text: "All Over Pakistan" },
             ].map((x, i) => (
