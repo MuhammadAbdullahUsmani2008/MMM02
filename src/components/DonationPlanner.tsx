@@ -62,6 +62,20 @@ export function DonationPlanner() {
 
   const units = useMemo(() => Math.floor(amount / cause.unitCost), [amount, cause.unitCost]);
 
+  // Shrink the big number as it grows so it never overflows the card.
+  // The formatted string (with commas) determines the size tier.
+  const unitsText = units.toLocaleString("en-GB");
+  const unitsSize =
+    unitsText.length >= 12
+      ? "text-[1.5rem]"
+      : unitsText.length >= 10
+        ? "text-[1.9rem]"
+        : unitsText.length >= 8
+          ? "text-[2.3rem]"
+          : unitsText.length >= 6
+            ? "text-[2.7rem]"
+            : "text-[3.4rem]";
+
   const message = useMemo(
     () =>
       encodeURIComponent(
@@ -173,8 +187,8 @@ export function DonationPlanner() {
           {money(amount)} towards {cause.label.toLowerCase()}
         </p>
 
-        <p className="mt-6 font-display text-[3.4rem] leading-none font-extrabold text-[#003475]">
-          {units.toLocaleString("en-GB")}
+        <p className={`mt-6 font-display ${unitsSize} leading-none font-extrabold text-[#003475]`}>
+          {unitsText}
         </p>
         <p className="mt-2 font-display text-[1.1rem] font-bold text-[#003475]">
           {units === 1 ? cause.unitName : cause.unitPlural}
