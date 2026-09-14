@@ -57,13 +57,17 @@ export default function DisasterResponsePage() {
             {[
               { v: 4, s: "", k: "Camps run back to back", d: "Dera Ghazi Khan deployment" },
               { v: 1000000, s: "+", k: "Patients seen", d: "Free consultation and medicine" },
-              { v: 2, s: "", k: "Provinces covered", d: "South Punjab and Balochistan" },
+              { v: 0, s: "", k: "Coverage", d: "All over Pakistan", text: "All Over Pakistan" },
             ].map((x, i) => (
               <Reveal key={x.k} delay={i * 80} as="div" className="p-7">
                 <dt className="sr-only">{x.k}</dt>
                 <dd>
                   <span className="font-display text-[2.6rem] sm:text-[3rem] leading-none font-black text-[#0A1020]">
-                    <CountUp to={x.v} suffix={x.s} />
+                    {x.text ? (
+                      x.text
+                    ) : (
+                      <CountUp to={x.v} suffix={x.s} />
+                    )}
                   </span>
                   <span className="mt-3 block font-display text-[1.05rem] font-bold text-[#0A1020]">
                     {x.k}
