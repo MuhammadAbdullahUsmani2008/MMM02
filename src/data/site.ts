@@ -232,28 +232,40 @@ export const nav: NavItem[] = [
 
 export const impactStats = [
   {
-    value: 500,
+    value: 1000000,
     suffix: "+",
-    label: "Patients seen in a single deployment",
-    detail: "Free consultation and medicine, Dera Ghazi Khan",
+    label: "Patients Served",
+    detail: "Free consultation and medicine",
   },
   {
-    value: 19,
-    suffix: " yrs",
-    label: "Of continuous service",
+    value: 16,
+    suffix: "",
+    label: "Annual Medical Conferences Organised",
+    detail: "Educational & professional development",
+  },
+  {
+    value: 20,
+    suffix: "+",
+    label: "Years of Service",
     detail: "Volunteer led, without a paid fundraising arm",
   },
   {
-    value: 4,
-    suffix: "",
-    label: "Provinces reached",
-    detail: "Punjab, Sindh, Balochistan, Khyber Pakhtunkhwa",
+    value: 12,
+    suffix: "+",
+    label: "National Disasters Responded To",
+    detail: "Rapid emergency response across Pakistan",
   },
   {
-    value: 2,
-    suffix: "",
-    label: "Countries served",
-    detail: "Pakistan and Gaza",
+    value: 3,
+    suffix: "+",
+    label: "Years of Service to People of Gaza",
+    detail: "Water, food & medicine for displaced families",
+  },
+  {
+    value: 15,
+    suffix: "+",
+    label: "Regular Flagship Projects",
+    detail: "Standing programmes running year-round",
   },
 ];
 

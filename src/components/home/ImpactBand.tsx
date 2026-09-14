@@ -5,10 +5,36 @@ import { Reveal } from "../Reveal";
 
 const stats = [
   {
-    value: 2005,
+    value: 1000000,
+    suffix: "+",
+    label: "Patients Served",
+    sublabel: "Free consultation & medicine",
+    useGrouping: true,
+    badgeColor: "bg-[#FFECE8] text-[#EF3B19]",
+    icon: (
+      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      </svg>
+    ),
+  },
+  {
+    value: 16,
     suffix: "",
-    label: "Earthquake Founding",
-    sublabel: "Founded in 2005",
+    label: "Annual Medical Conferences",
+    sublabel: "Educational & professional development",
+    useGrouping: false,
+    badgeColor: "bg-[#DCE6FB] text-[#0649B8]",
+    icon: (
+      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+      </svg>
+    ),
+  },
+  {
+    value: 20,
+    suffix: "+",
+    label: "Years of Service",
+    sublabel: "Continuous frontline care",
     useGrouping: false,
     badgeColor: "bg-[#FFECE8] text-[#EF3B19]",
     icon: (
@@ -18,22 +44,24 @@ const stats = [
     ),
   },
   {
-    value: 20,
+    value: 12,
     suffix: "+",
-    label: "Years of Service",
-    sublabel: "Continuous frontline care",
+    label: "Response to National Disasters",
+    sublabel: "Rapid emergency response",
+    useGrouping: false,
     badgeColor: "bg-[#DCE6FB] text-[#0649B8]",
     icon: (
       <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
       </svg>
     ),
   },
   {
-    value: 6,
-    suffix: "",
-    label: "Gaza Relief Programs",
+    value: 3,
+    suffix: "+",
+    label: "Years Serving Gaza",
     sublabel: "Water, food & medicine",
+    useGrouping: false,
     badgeColor: "bg-[#FFECE8] text-[#EF3B19]",
     icon: (
       <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
@@ -42,14 +70,15 @@ const stats = [
     ),
   },
   {
-    value: 4,
-    suffix: "",
-    label: "Membership Ranks",
-    sublabel: "Students to consultants",
+    value: 15,
+    suffix: "+",
+    label: "Flagship Projects",
+    sublabel: "Regular standing programmes",
+    useGrouping: false,
     badgeColor: "bg-[#DCE6FB] text-[#0649B8]",
     icon: (
       <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
       </svg>
     ),
   },
@@ -88,7 +117,7 @@ export function ImpactBand() {
           </div>
 
           {/* Right Metrics (UNDA Circular Stat Badges in Green & Blue) */}
-          <dl className="grid grid-cols-2 gap-5 sm:grid-cols-4 lg:col-span-8">
+          <dl className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:col-span-8">
             {stats.map((stat, i) => (
               <Reveal
                 key={stat.label}
