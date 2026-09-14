@@ -1,8 +1,29 @@
 "use client";
 
+/* ============================================================================
+ * PHOTO GALLERY COMPONENT — HOW IT WORKS
+ * ============================================================================
+ * This component renders the photo library on the Media page. It reads its
+ * data from `src/data/gallery.ts` — you do NOT edit images here, you edit
+ * them in that data file.
+ *
+ * WHAT EACH PIECE DOES
+ * --------------------
+ * - `gallery`      -> the full list of images (from the data file)
+ * - `galleryGroups`-> the filter tab definitions (from the data file)
+ * - `filters`      -> the tab buttons: "Everything" + one per group
+ * - `filter` state  -> which tab is currently selected ("all" = show every image)
+ * - `shown` state   -> how many images are visible (pagination, +24 per click)
+ * - `lightbox`      -> the index of the image open in the full-screen viewer
+ *                      (null = lightbox closed)
+ *
+ * To change which images appear, edit `src/data/gallery.ts`, not this file.
+ * ========================================================================== */
+
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { gallery, galleryGroups } from "@/data/gallery";
 
+// The filter tabs: "Everything" first, then one tab per gallery group.
 const filters = [{ key: "all", label: "Everything" }, ...galleryGroups] as const;
 
 export function Gallery() {
@@ -42,11 +63,14 @@ export function Gallery() {
     [updateArrows],
   );
 
+  // The images to show for the currently selected tab.
+  // "all" -> every image; otherwise only images whose `group` matches the tab.
   const items = useMemo(
     () => (filter === "all" ? gallery : gallery.filter((g) => g.group === filter)),
     [filter],
   );
 
+  // Only the first `shown` images are rendered (pagination).
   const visible = items.slice(0, shown);
 
   const move = useCallback(
@@ -76,11 +100,14 @@ export function Gallery() {
     };
   }, [lightbox, move]);
 
+  // Turns a group `key` into its human-readable tab label (for captions).
   const label = (key: string) =>
     galleryGroups.find((g) => g.key === key)?.label ?? "Field work";
 
   return (
     <div>
+      {/* Filter tabs — one button per group, plus "Everything". Clicking a tab
+          sets `filter`, which re-filters `items` and resets pagination. */}
       {/* Filters */}
       <div className="relative">
         {/* Left scroll arrow (desktop only) */}
@@ -139,6 +166,8 @@ export function Gallery() {
         </button>
       </div>
 
+      {/* The image grid — renders the currently visible images. Each image is a
+          button that opens the lightbox at that image's index. */}
       {/* Masonry style columns keep the portrait and landscape shots honest */}
       <div className="mt-9 columns-1 gap-4 xs:columns-2 md:columns-3 lg:columns-4 [&>*]:mb-4">
         {visible.map((item, i) => (
@@ -166,6 +195,8 @@ export function Gallery() {
         ))}
       </div>
 
+      {/* "Show more" button — only appears when there are more images than the
+          current `shown` count. Each click reveals 24 more. */}
       {shown < items.length && (
         <div className="mt-10 text-center">
           <button
@@ -181,6 +212,8 @@ export function Gallery() {
         </div>
       )}
 
+      {/* Lightbox — the full-screen viewer. Opens when an image is clicked.
+          `lightbox` holds the index of the open image within `items`. */}
       {/* Lightbox */}
       {lightbox !== null && (
         <div

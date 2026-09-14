@@ -330,6 +330,7 @@ export const programs: Program[] = [
       "/media/disaster/disaster-12.jpg",
       "/media/disaster/disaster-03.jpg",
       "/media/disaster/disaster-08.jpg",
+      "/media/disaster/disaster-15.jpeg",
     ],
     accent: "magenta",
     highlights: [
@@ -589,8 +590,8 @@ export const allocation = [
 
 export const reports = [
   {
-    slug: "five-hundred-patients",
-    title: "More than 500 patients given free consultation and medicine in one deployment",
+    slug: "one-million-patients",
+    title: "More than 1,000,000 patients given free consultation and medicine",
     place: "Dera Ghazi Khan & South Punjab",
     kind: "Medical Camps",
     excerpt:

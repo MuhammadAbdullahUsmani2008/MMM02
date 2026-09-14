@@ -12,7 +12,7 @@ export function Mission() {
           <div className="group relative">
             <div className="overflow-hidden rounded-2xl border border-[#DCE2EA] shadow-[0_12px_36px_-12px_rgba(10,16,32,0.1)]">
               <img
-                src="/media/field/free-medical-camp-doctors.jpg"
+                src="/media/disaster/disaster-15.jpeg"
                 alt="Muslim Medical Mission doctors conducting outpatient consultations and providing free medicine at a rural camp"
                 className="aspect-[4/3] w-full object-cover max-h-[420px] transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                 loading="lazy"
