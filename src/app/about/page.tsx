@@ -11,29 +11,49 @@ export const metadata: Metadata = {
 
 const timeline = [
   {
+    year: "2005",
+    title: "The Foundation of MMM",
+    body: "The October 2005 earthquake in northern Pakistan became the catalyst for bringing Muslim healthcare professionals together as the Muslim Medical Mission, formalizing their commitment to healthcare, education, and humanitarian service.",
+  },
+  {
     year: "2006",
-    title: "A meeting in Lahore",
-    body: "A handful of doctors agree to run one free camp a month in districts with no functioning clinic. The rota holds.",
+    title: "From Commitment to Action",
+    body: "MMM began strengthening its programs for healthcare professionals through training sessions, seminars, and specialist lectures, while continuing free medical and community health initiatives.",
   },
   {
     year: "2010",
-    title: "The first flood deployment",
-    body: "Monsoon flooding pushes the group from monthly camps into sustained emergency response along the Indus.",
+    title: "Responding to Disaster",
+    body: "As major floods affected communities across Pakistan, MMM expanded its humanitarian response, providing medical assistance and relief services to people affected by disaster.",
   },
   {
     year: "2015",
-    title: "Training the responders",
-    body: "Paramedic and first responder courses begin, so the first person to reach a casualty is trained rather than improvising.",
+    title: "Strengthening Professional Development",
+    body: "MMM expanded its focus on developing healthcare professionals through professional education, training, medical knowledge, and Islamic guidance, reinforcing the connection between ethical practice and patient care.",
   },
   {
     year: "2022",
-    title: "South Punjab and Balochistan",
-    body: "Teams run camps and ration distributions across Taunsa Sharif, Dera Ghazi Khan, Mangrotha and into Balochistan.",
+    title: "Expanding Humanitarian Outreach",
+    body: "MMM continued its disaster-response work in severely affected regions, providing medical camps, essential supplies, and humanitarian assistance to communities in need.",
   },
   {
-    year: "Now",
-    title: "Pakistan and Gaza",
-    body: "Water trucking, food parcels and winter packages run alongside the standing programme of free camps at home.",
+    year: "2024",
+    title: "A Growing National Network",
+    body: "MMM continued its national programs, bringing healthcare professionals together through medical conferences, educational activities, training, and community healthcare initiatives.",
+  },
+  {
+    year: "2025",
+    title: "Humanitarian Response at Scale",
+    body: "MMM continued its relief operations in Pakistan while expanding humanitarian assistance, including support for flood-affected communities in South Punjab and Balochistan.",
+  },
+  {
+    year: "2026",
+    title: "Serving Beyond Borders",
+    body: "MMM continues its healthcare and humanitarian mission in Pakistan while providing assistance to communities affected by the crisis in Gaza, including food, water, medical services, and other essential relief.",
+  },
+  {
+    year: "Today",
+    title: "Wisdom. Action. Service.",
+    body: "Today, MMM brings together healthcare, professional development, Islamic values, and humanitarian service with a continuing commitment to serve humanity without discrimination.",
   },
 ];
 
@@ -113,11 +133,11 @@ export default function AboutPage() {
             {[
               {
                 k: "Mission",
-                v: "To become dynamic Muslim healthcare professionals who will pioneer social change by acquiring knowledge and wisdom, and by practising Dawah.",
+                v: "To become dynamic Muslim health care professionals who will pioneer social change by acquiring knowledge and wisdom, and practicing Dawah with acumen and communication that is convincing and effective, both professionally and culturally. To orientate health education with Islamic values and the application of these values in patient care.",
               },
               {
                 k: "Vision",
-                v: "That the conduct of a healthcare professional, at home and abroad, is answerable to a higher authority than an employer or a regulator, and should be practised accordingly.",
+                v: "In Surah 'Mohammed', verse 19, Allah Subhanaho wa ta'la addresses you like this: \"Know therefore that there is no god but Allah and ask forgiveness for the fault and for the men and women who believe: for Allah knows how you move about and how you dwell in your homes.\" Respected HCP, the time and the manner of our conducting ourselves at home and out, is all material to the judgment of our conduct by 'The Supreme Judgment Authority' - Allah SWT. Hence, even for nuance in our professional, moral and spiritual progress, we must learn to seek Allah's SWT help and guidance so that we can develop the ability to achieve shades of 'Sibghat-Ullah'.",
               },
             ].map((x, i) => (
               <Reveal key={x.k} delay={i * 90}>
@@ -169,7 +189,7 @@ export default function AboutPage() {
 
           <ol className="mt-8 border-l-2 border-slate-300 pl-6 sm:pl-10">
             {timeline.map((t, i) => (
-              <Reveal key={t.year} delay={i * 70} as="li" className="relative pb-8 last:pb-0">
+              <Reveal key={`${t.year}-${i}`} delay={i * 70} as="li" className="relative pb-8 last:pb-0">
                 <span
                   className="absolute top-1.5 -left-[33px] h-3.5 w-3.5 rounded-full border-4 border-white bg-[#075BD6] sm:-left-[49px]"
                   aria-hidden
@@ -210,9 +230,11 @@ export default function AboutPage() {
                       {r.name}
                     </h3>
                     <p className="mt-2 text-[0.96rem] leading-relaxed text-slate-body">{r.detail}</p>
-                    <p className="mt-4 font-display text-[0.92rem] font-bold text-blue-brand">
-                      {r.focus}
-                    </p>
+                    {r.focus ? (
+                      <p className="mt-4 font-display text-[0.92rem] font-bold text-blue-brand">
+                        {r.focus}
+                      </p>
+                    ) : null}
                   </div>
                 </div>
               </Reveal>

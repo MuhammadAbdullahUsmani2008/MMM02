@@ -1,7 +1,26 @@
 import Link from "next/link";
-import { values } from "@/data/site";
 import { Reveal } from "../Reveal";
 import { Arrow } from "../ui";
+
+// The four points shown under the "A hospital cannot come to the village" heading.
+const creed = [
+  {
+    key: "Who we are",
+    body: "There was a group of Muslim Health Care professionals working on some issues of common interest like free medical camping, free health care clinics",
+  },
+  {
+    key: "Our Mission",
+    body: "To become dynamic Muslim health care professionals who will pioneer social change by acquiring knowledge and wisdom, and practicing Dawah",
+  },
+  {
+    key: "Our Means",
+    body: "Service to humanity without any discrimination of gender or genetics, race or religion, geography or generation, and time or era.",
+  },
+  {
+    key: "Our Vision",
+    body: "Respected HCP, the time and the manner of our conducting ourselves at home and out, is all material to the judgment of our conduct by 'The Supreme'",
+  },
+];
 
 export function Mission() {
   return (
@@ -28,8 +47,10 @@ export function Mission() {
                 <span>Foundational Creed</span>
               </div>
               <p className="mt-2.5 font-quote text-[1.05rem] sm:text-[1.12rem] leading-snug text-[#0A1020] italic">
-                To become dynamic Muslim healthcare professionals who pioneer social change through
-                knowledge, wisdom and practice.
+                To become dynamic Muslim health care professionals who will pioneer social change by
+                acquiring knowledge and wisdom, and practicing Dawah with acumen and communication that
+                is convincing and effective, both professionally and culturally. To orientate health
+                education with Islamic values and the application of these values in patient care.
               </p>
               <p className="mt-3 text-[0.82rem] font-bold text-[#6B7280]">
                 Drafted 2005 • Over 20 years of service
@@ -61,7 +82,7 @@ export function Mission() {
 
           {/* Values with interactive row hover */}
           <ul className="mt-9 divide-y divide-[#DCE2EA] border-t border-[#DCE2EA]">
-            {values.map((v, i) => (
+            {creed.map((v, i) => (
               <Reveal as="li" key={v.key} delay={i * 60} className="group rounded-xl p-3.5 transition-colors duration-200 hover:bg-[#F3F7FF]">
                 <div className="grid gap-2 sm:grid-cols-12 sm:gap-6 items-center">
                   <h3 className="font-display text-[1.08rem] sm:text-[1.15rem] font-black text-[#0A1020] sm:col-span-4 transition-colors group-hover:text-[#075BD6]">

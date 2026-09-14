@@ -63,7 +63,7 @@ const slides: Slide[] = [
     image: "/media/field/pillar-c-conference-40.jpg",
     alt: "Basic Life Support and First Responder Training in collaboration with Punjab Emergency Service Rescue 1122 and Muslim Medical Mission banner",
     headline: "Equipping First Responders",
-    highlight: "in collaboration with Rescue 1122.",
+    highlight: "with required things.",
     subtext: "Hands-on Basic Life Support, Trauma Response, Haemorrhage Control and Disaster Triage Certifying Everyday Volunteers as Frontline Community Lifesavers.",
     subtextMobile: "Hands-on training certifying everyday volunteers as frontline lifesavers.",
     primaryCta: { label: "Explore Responder Courses", href: "/what-we-do/training" },
@@ -148,7 +148,7 @@ export function Hero() {
     setWaveKey((k) => k + 1);
 
     const start = performance.now();
-    const TRANSITION_MS = 1400;
+    const TRANSITION_MS = 500;
     let raf = 0;
 
     const tick = (now: number) => {
@@ -196,7 +196,7 @@ export function Hero() {
               <div className="absolute inset-0 flex items-center pt-24 pb-20 sm:pt-36 sm:pb-28">
                 <div className="shell-wide">
                   {/* Subtle Translucent Navy Hero Text Panel */}
-                  <div className="w-full max-w-[580px] rounded-[14px] border border-white/25 bg-[rgba(5,18,35,0.55)] p-4.5 xs:p-5.5 sm:p-7 md:py-[28px] md:px-[32px] backdrop-blur-md">
+                  <div className="w-full max-w-[580px] rounded-[14px] border border-white/25 bg-[rgba(5,18,35,0.32)] p-4.5 xs:p-5.5 sm:p-7 md:py-[28px] md:px-[32px] backdrop-blur-lg">
                     {/* Pillar Category Badge */}
                     <div
                       key={`badge-${active}`}

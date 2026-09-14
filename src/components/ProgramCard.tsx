@@ -95,8 +95,7 @@ export function ProgramCard({
         {feature && (
           <p className="mt-5 hidden lg:block text-[0.95rem] leading-relaxed text-[#4B5563]">
             Every consultation, diagnosis and full course of medicine is provided free, because a
-            prescription a family cannot fill is not treatment. In a single deployment across Dera
-            Ghazi Khan, senior doctors ran four camps back to back, seeing more than 500 patients.
+            prescription a family cannot fill is not treatment.
           </p>
         )}
 

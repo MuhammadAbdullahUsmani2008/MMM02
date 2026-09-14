@@ -9,8 +9,8 @@ export const org = {
   whatsapp: "https://wa.me/923214244433",
   email: "medicalmissionpak@gmail.com",
   address: {
-    line1: "C Block, Bank Square Market",
-    line2: "Model Town, Lahore",
+    line1: "Building Number 430, Phase 1",
+    line2: "Johar Town, Lahore",
     country: "Punjab, Pakistan",
   },
   social: [
@@ -297,7 +297,7 @@ export const programs: Program[] = [
     body: [
       "When the Indus breaks its banks, the first thing to fail is not the road. It is healthcare. Rural dispensaries flood, staff evacuate with their own families, and a population already living close to the margin is left with standing water, no clean supply and nowhere to take a sick child.",
       "Our teams run free camps through the emergency and after it. The drug list is built for what floods actually produce, gastroenteritis, skin and wound infection, snakebite, respiratory illness and chronic conditions that have gone unmedicated for weeks. Consultation, diagnosis and a full course of medicine are provided free, because a prescription a family cannot fill is not treatment.",
-      "In one deployment across Dera Ghazi Khan, senior doctors ran four camps back to back and more than 500 patients were seen.",
+      "In one deployment across Dera Ghazi Khan, more than 500 patients were seen.",
     ],
     image: "/media/field/pillar-a-camp-01.jpg",
     gallery: [
@@ -592,11 +592,11 @@ export const reports = [
   {
     slug: "one-million-patients",
     title: "More than 1,000,000 patients given free consultation and medicine",
-    place: "Dera Ghazi Khan & South Punjab",
+    place: "Punjab, AJK, Karachi, Tharparkar, Sindh, Balochistan & Gilgit-Baltistan",
     kind: "Medical Camps",
     excerpt:
-      "Senior doctors ran four camps back to back. Every consultation, every diagnostic test, and every full course of medicine was provided completely free at the point of care.",
-    image: "/media/field/free-medical-camp-medicines.jpg",
+      "Free medical camps are held in various cities and towns according to a preset schedule. Local population is also involved for logistic support. A special focus is put on underdeveloped districts and rural areas. In addition to Punjab we have successfully organized free medical camps in Azad Jammu and Kashmir, Karachi, Tharparkar, interior Sindh, Balochistan and Gilgit Baltistan.",
+    image: "/media/field/pillar-a-camp-04.jpg",
   },
   {
     slug: "taunsa-flood-response",
@@ -656,23 +656,43 @@ export const values = [
 
 export const regions = [
   {
+    name: "Lahore",
+    detail: "Professional education, medical conferences, training, and coordination of MMM's national programs.",
+    focus: "",
+  },
+  {
+    name: "Tharparkar",
+    detail: "Free medical care and humanitarian assistance for communities facing drought, disease, and limited healthcare access.",
+    focus: "",
+  },
+  {
+    name: "Chitral",
+    detail: "Emergency medical and humanitarian support for communities affected by devastating floods.",
+    focus: "",
+  },
+  {
     name: "South Punjab",
-    detail: "Dera Ghazi Khan, Taunsa Sharif, Mangrotha and the riverine belt along the Indus.",
-    focus: "Flood response, medical camps, rations",
+    detail: "Medical camps and flood-relief assistance for vulnerable families across underserved communities.",
+    focus: "",
   },
   {
-    name: "Lahore and central Punjab",
-    detail: "Our base of operations, where training, professional development and prison clinics are run.",
-    focus: "Training, prison healthcare, campaigns",
+    name: "Balochistan",
+    detail: "Healthcare outreach and humanitarian relief for remote and disaster-affected communities.",
+    focus: "",
   },
   {
-    name: "Balochistan and Sindh",
-    detail: "Ration and clean water distribution in districts cut off by monsoon flooding.",
-    focus: "Rations, clean water",
+    name: "Gilgit-Baltistan",
+    detail: "Free medical services reaching communities in some of Pakistan's most remote areas.",
+    focus: "",
   },
   {
-    name: "Gaza",
-    detail: "Water trucking, hot meals, food parcels and winter packages into displacement camps.",
-    focus: "Water, food, winter relief",
+    name: "Azad Jammu & Kashmir (AJK)",
+    detail: "MMM has extended its healthcare outreach to underserved communities in AJK through free medical services and community-focused healthcare initiatives.",
+    focus: "",
+  },
+  {
+    name: "Dera Ghazi Khan",
+    detail: "Medical and humanitarian outreach supporting communities affected by poverty, floods, and limited healthcare access.",
+    focus: "",
   },
 ];

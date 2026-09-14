@@ -323,7 +323,7 @@ export function Header() {
                 className="h-[38px] w-[38px] xs:h-[42px] xs:w-[42px] sm:h-12 sm:w-12 md:h-14 md:w-14 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105"
               />
               <div className="flex min-w-0 flex-col justify-center">
-                <span className="truncate font-display text-[0.92rem] xs:text-[1.04rem] sm:text-[1.28rem] md:text-[1.42rem] font-black tracking-tight text-[#0A1020] group-hover:text-[#075BD6] transition-colors leading-[1.08]">
+                <span className="truncate font-display text-[0.82rem] xs:text-[0.9rem] sm:text-[1.05rem] md:text-[1.15rem] font-black tracking-tight text-[#0A1020] group-hover:text-[#075BD6] transition-colors leading-[1.08]">
                   Muslim Medical Mission
                 </span>
                 <span className="mt-0.5 hidden font-display text-[0.68rem] sm:text-[0.76rem] md:text-[0.82rem] font-bold tracking-tight text-[#EF3B19] leading-none sm:block">

@@ -13,26 +13,22 @@ export const metadata: Metadata = {
 const aims = [
   {
     n: "01",
-    text: "To become dynamic Muslim health care professionals.",
+    text: "To become dynamic Muslim health care professionals who will pioneer social change by acquiring knowledge and wisdom, and practicing Dawah with acumen and communication that is convincing and effective, both professionally and culturally.",
   },
   {
     n: "02",
-    text: "To develop pioneers of social change by acquiring knowledge and wisdom.",
+    text: "To orientate health education with Islamic values and the application of these values in patient care.",
   },
   {
     n: "03",
-    text: "To develop individuals practicing da'wah with acumen and communication that is convincing and effective both professionally and culturally.",
-  },
-  {
-    n: "04",
     text: "To provide services to humanity without any discrimination of gender or genetics, race or religion, geography or generation, and time or era.",
   },
   {
-    n: "05",
+    n: "04",
     text: "To develop human resource for peace and disaster management.",
   },
   {
-    n: "06",
+    n: "05",
     text: "To constantly remind and educate the Muslim health care professionals of the Islamic value, morality, etiquettes and ethics in everyday health care and clinical set ups.",
   },
 ];
@@ -504,7 +500,7 @@ export default function MembershipPage() {
                 MEMBERSHIP APPLICATION FORM
               </h3>
               <p className="mt-2 text-xs sm:text-sm text-[#6B7280]">
-                Johar Town, Lahore, Pakistan | MedicalMissionPak@gmail.com | +92 333 7404802
+                Building Number 430, Phase 1, Johar Town, Lahore, Pakistan | MedicalMissionPak@gmail.com | +92 333 7404802
               </p>
             </div>
 
@@ -541,7 +537,7 @@ export default function MembershipPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  <span>347-G III, Johar Town, Lahore-54000, Pakistan</span>
+                  <span>Building Number 430, Phase 1, Johar Town, Lahore, Pakistan</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-[#4B5563]">
