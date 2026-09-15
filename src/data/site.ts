@@ -407,7 +407,6 @@ export const programs: Program[] = [
       "/media/gaza-water/gaza-water-03.jpg",
       "/media/gaza-water/gaza-water-04.jpg",
       "/media/gaza-water/gaza-water-05.jpg",
-      "/media/gaza-water/gaza-water-06.jpg",
     ],
     accent: "blue",
     highlights: [

@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Arrow } from "./ui";
-import { LiquidTransition } from "./LiquidTransition";
 
 const DURATION = 5000; // Exact 5 seconds automatic slide interval
 
@@ -106,8 +105,6 @@ const slides: Slide[] = [
 
 export function Hero() {
   const [active, setActive] = useState(0);
-  const [transitionProgress, setTransitionProgress] = useState(0);
-  const [waveKey, setWaveKey] = useState(0);
   const touchStartX = useRef<number | null>(null);
 
   const nextSlide = () => {
@@ -142,29 +139,6 @@ export function Hero() {
     return () => clearInterval(timer);
   }, [active]);
 
-  // Animate the liquid transition progress whenever the active slide changes
-  useEffect(() => {
-    setTransitionProgress(0);
-    setWaveKey((k) => k + 1);
-
-    const start = performance.now();
-    const TRANSITION_MS = 500;
-    let raf = 0;
-
-    const tick = (now: number) => {
-      const t = Math.min((now - start) / TRANSITION_MS, 1);
-      // easeInOutCubic
-      const eased = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-      setTransitionProgress(eased);
-      if (t < 1) {
-        raf = requestAnimationFrame(tick);
-      }
-    };
-    raf = requestAnimationFrame(tick);
-
-    return () => cancelAnimationFrame(raf);
-  }, [active]);
-
   return (
     <section
       className="relative isolate flex min-h-[100svh] h-[100svh] flex-col overflow-hidden bg-[#0A1020]"
@@ -194,9 +168,14 @@ export function Hero() {
 
               {/* Slide Text Content */}
               <div className="absolute inset-0 flex items-center pt-24 pb-20 sm:pt-36 sm:pb-28">
-                <div className="shell-wide">
-                  {/* Subtle Translucent Navy Hero Text Panel */}
-                  <div className="w-full max-w-[580px] rounded-[14px] border border-white/25 bg-[rgba(5,18,35,0.32)] p-4.5 xs:p-5.5 sm:p-7 md:py-[28px] md:px-[32px] backdrop-blur-lg">
+                {/* Subtle left-to-right gradient overlay behind the hero content */}
+                <div
+                  className="pointer-events-none absolute inset-y-0 left-0 w-[min(720px,100%)] bg-gradient-to-r from-black/80 via-black/45 via-[76%] to-transparent"
+                  aria-hidden
+                />
+                <div className="shell-wide relative">
+                  {/* Hero content (transparent container, no card/panel) */}
+                  <div className="w-full max-w-[580px] p-4.5 xs:p-5.5 sm:p-7 md:py-[28px] md:px-[32px]">
                     {/* Pillar Category Badge */}
                     <div
                       key={`badge-${active}`}
@@ -277,15 +256,6 @@ export function Hero() {
           );
         })}
       </div>
-
-      {/* WebGL Liquid Distortion Transition overlay */}
-      <LiquidTransition
-        currentImage={slides[active].image}
-        nextImage={slides[(active + 1) % slides.length].image}
-        progress={transitionProgress}
-        waveKey={waveKey}
-        className="z-[5]"
-      />
 
       {/* Edge Navigation Arrows for desktop */}
       <div className="pointer-events-none absolute inset-y-0 inset-x-4 sm:inset-x-8 z-20 hidden md:flex items-center justify-between">

@@ -273,7 +273,7 @@ export function Header() {
       >
         {/* Top Utility Row (Simple Light Strip) */}
         <div className="border-b border-[#DCE2EA] bg-[#F5F7FA] text-xs text-[#4B5563] backdrop-blur-sm">
-          <div className="shell-header flex h-[34px] items-center justify-between text-[0.72rem] sm:text-xs">
+          <div className="shell-wide flex h-[34px] items-center justify-between text-[0.72rem] sm:text-xs">
             {/* Left: Contact Information */}
             <div className="flex shrink-0 items-center gap-4 sm:gap-6">
               <a
@@ -294,6 +294,19 @@ export function Header() {
 
             {/* Right: Quick Links */}
             <div className="flex shrink-0 items-center gap-3 sm:gap-4">
+              {/* Search Toggle */}
+              <button
+                type="button"
+                onClick={() => setSearchOpen((s) => !s)}
+                aria-label="Search programmes and field reports"
+                className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-colors cursor-pointer ${
+                  searchOpen
+                    ? "bg-[#E9EEF5] text-[#075BD6]"
+                    : "text-[#4B5563] hover:bg-[#E9EEF5] hover:text-[#075BD6]"
+                }`}
+              >
+                <SearchIcon className="h-3.5 w-3.5 shrink-0" />
+              </button>
               <span className="hidden text-[#6B7280] md:inline">
                 Bank Transfer: UBL 0635338617189
               </span>
@@ -310,20 +323,20 @@ export function Header() {
 
         {/* Main Navigation Bar (Clean Light Modern Design with Balanced Width) */}
         <div className="border-b border-[#DCE2EA] bg-white/95 shadow-[0_2px_12px_rgba(10,16,32,0.04)] backdrop-blur-md">
-          <div className="shell-header flex h-[68px] sm:h-[84px] md:h-[88px] items-center justify-between gap-1.5 xs:gap-2 sm:gap-4 xl:gap-6">
+          <div className="shell-wide flex h-[68px] sm:h-[84px] md:h-[88px] items-center justify-between gap-1.5 xs:gap-2 sm:gap-4 xl:gap-6">
             {/* Logo + Brand Lockup (Responsive emblem + balanced typography) */}
             <Link
               href="/"
               aria-label={`${org.name}, home`}
-              className="group flex min-w-0 shrink items-center gap-2 xs:gap-2.5 sm:gap-3.5 transition-transform duration-200"
+              className="group flex min-w-0 shrink items-center gap-2 xs:gap-2.5 sm:gap-3.5 xl:min-w-[271px] transition-transform duration-200"
             >
               <img
                 src="/media/brand/circle-logo.png"
                 alt={org.name}
                 className="h-[38px] w-[38px] xs:h-[42px] xs:w-[42px] sm:h-12 sm:w-12 md:h-14 md:w-14 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105"
               />
-              <div className="flex min-w-0 flex-col justify-center">
-                <span className="truncate font-display text-[0.82rem] xs:text-[0.9rem] sm:text-[1.05rem] md:text-[1.15rem] font-black tracking-tight text-[#0A1020] group-hover:text-[#075BD6] transition-colors leading-[1.08]">
+              <div className="flex min-w-0 flex-col justify-center xl:w-[201px] xl:shrink-0">
+                <span className="truncate font-display text-[0.82rem] xs:text-[0.9rem] sm:text-[1.05rem] md:text-[1rem] font-black tracking-tight text-[#0A1020] group-hover:text-[#075BD6] transition-colors leading-[1.08] xl:overflow-visible xl:whitespace-nowrap">
                   Muslim Medical Mission
                 </span>
                 <span className="mt-0.5 hidden font-display text-[0.68rem] sm:text-[0.76rem] md:text-[0.82rem] font-bold tracking-tight text-[#EF3B19] leading-none sm:block">
@@ -363,7 +376,6 @@ export function Header() {
                       className="relative"
                       onMouseEnter={() => {
                         cancelClose();
-                        setSearchOpen(false);
                         setOpenMenu(hasPanel ? item.label : null);
                       }}
                     >
@@ -414,22 +426,8 @@ export function Header() {
               </ul>
             </nav>
 
-            {/* Right Side Actions: Search, Donate, Mobile Menu Trigger */}
+            {/* Right Side Actions: Donate, Mobile Menu Trigger */}
             <div className="flex shrink-0 items-center gap-1 xs:gap-1.5 sm:gap-2.5 md:gap-3">
-              {/* Search Toggle */}
-              <button
-                type="button"
-                onClick={() => setSearchOpen((s) => !s)}
-                aria-label="Search programmes and field reports"
-                className={`flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full transition-colors cursor-pointer ${
-                  searchOpen
-                    ? "bg-[#F3F7FF] text-[#075BD6]"
-                    : "text-[#4B5563] hover:bg-[#F5F7FA] hover:text-[#075BD6]"
-                }`}
-              >
-                <SearchIcon className="h-4 w-4 xs:h-[18px] xs:w-[18px] shrink-0" />
-              </button>
-
               {/* Direct Donate Button (UNDA Royal/Electric Blue Style with red hover) */}
               <Link
                 href="/donate"
