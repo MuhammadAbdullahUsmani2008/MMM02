@@ -6,7 +6,6 @@ import { GazaBand } from "@/components/home/GazaBand";
 import { Giving } from "@/components/home/Giving";
 import { Reports } from "@/components/home/Reports";
 import { SocialFeed } from "@/components/home/SocialFeed";
-import { JoinCta } from "@/components/home/JoinCta";
 
 export default function HomePage() {
   return (
@@ -19,7 +18,6 @@ export default function HomePage() {
       <Giving />
       <Reports />
       <SocialFeed />
-      <JoinCta />
     </>
   );
 }

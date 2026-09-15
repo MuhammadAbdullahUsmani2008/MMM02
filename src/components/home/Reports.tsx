@@ -19,7 +19,7 @@ export function Reports() {
           {/* Lead report */}
           <Reveal className="lg:col-span-7" amount={0.08}>
             <Link
-              href="/media"
+              href={`/media/${lead.slug}`}
               className="group block overflow-hidden rounded-2xl bg-white border border-[#DCE2EA] shadow-[0_4px_16px_rgba(10,16,32,0.05)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-[#075BD6]/50 hover:shadow-[0_20px_40px_-12px_rgba(6,73,184,0.14)]"
             >
               <div className="relative aspect-[16/9] overflow-hidden">
@@ -58,7 +58,7 @@ export function Reports() {
               {rest.map((r, i) => (
                 <Reveal as="li" key={r.slug} delay={70 + i * 70} amount={0.08}>
                   <Link
-                    href="/media"
+                    href={`/media/${r.slug}`}
                     className="group flex gap-4 rounded-2xl bg-white p-4.5 border border-[#DCE2EA] shadow-xs transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[#075BD6]/50 hover:shadow-[0_12px_24px_-8px_rgba(6,73,184,0.1)]"
                   >
                     <div className="h-22 w-26 shrink-0 overflow-hidden rounded-xl sm:h-24 sm:w-30">
@@ -75,10 +75,10 @@ export function Reports() {
                         <h3 className="font-display text-[1.05rem] sm:text-[1.12rem] leading-snug font-black text-[#0A1020] transition-colors group-hover:text-[#075BD6]">
                           {r.title}
                         </h3>
-                        <p className="mt-1.5 text-[0.84rem] text-[#6B7280]">
+                        <p className="mt-1.5 flex flex-wrap items-center gap-x-2 text-[0.84rem] text-[#6B7280]">
                           <span className="font-bold text-[#075BD6]">{r.kind}</span>
-                          <span className="px-2 text-slate-300" aria-hidden>•</span>
-                          {r.place}
+                          <span className="text-slate-300" aria-hidden>•</span>
+                          <span>{r.place}</span>
                         </p>
                       </div>
                       <span className="mt-2.5 inline-flex items-center gap-1 font-display text-[0.82rem] xs:text-[0.84rem] font-bold text-[#075BD6] whitespace-nowrap group-hover:text-[#0649B8]">

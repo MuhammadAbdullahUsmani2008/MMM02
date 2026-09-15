@@ -33,8 +33,11 @@ export function CountUp({
     }
 
     let frame = 0;
+    let fired = false;
 
-    const stop = onEnter(el, 0.2, () => {
+    const animate = () => {
+      if (fired) return;
+      fired = true;
       const start = performance.now();
       const tick = (now: number) => {
         const progress = Math.min((now - start) / duration, 1);
@@ -42,7 +45,16 @@ export function CountUp({
         if (progress < 1) frame = requestAnimationFrame(tick);
       };
       frame = requestAnimationFrame(tick);
-    });
+    };
+
+    const stop = onEnter(el, 0.2, animate);
+
+    // If the element is already in (or above) the viewport on mount, animate
+    // immediately rather than waiting for a scroll event that may never come.
+    const rect = el.getBoundingClientRect();
+    if (rect.top < (window.innerHeight || 0) * 0.8) {
+      animate();
+    }
 
     return () => {
       stop();

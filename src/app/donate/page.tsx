@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { allocation, org } from "@/data/site";
 import { DonationPlanner } from "@/components/DonationPlanner";
 import { Reveal } from "@/components/Reveal";
-import { PageHeader, SectionHead } from "@/components/ui";
+import { Button, PageHeader, SectionHead } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Donate",
@@ -62,6 +62,11 @@ export default function DonatePage() {
                   are all applied to households that meet the criteria for Zakat. Tell us when you
                   send it and your gift is kept in a separate pool and distributed accordingly.
                 </p>
+                <div className="mt-6">
+                  <Button href="/zakat-calculator" variant="primary">
+                    Zakat Calculator
+                  </Button>
+                </div>
               </div>
               <ul className="grid gap-3 sm:grid-cols-2 lg:col-span-5">
                 {["Food parcels", "Winter packages", "Water for Life", "Medical treatment"].map(

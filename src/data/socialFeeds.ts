@@ -279,4 +279,15 @@ export const socialChannels = [
     cta: "Follow on X",
     description: "Real-time emergency relief alerts & news",
   },
+  {
+    id: "whatsapp",
+    name: "WhatsApp Channel",
+    handle: "Muslim Medical Mission",
+    href: "https://whatsapp.com/channel/0029VaS4IQS47XeGvrv19o2F",
+    followers: "Join Channel",
+    color: "#25D366",
+    bgLight: "bg-green-50 text-green-600 border-green-200 hover:bg-[#25D366] hover:text-white",
+    cta: "Join on WhatsApp",
+    description: "Instant alerts, camp updates & emergency broadcasts",
+  },
 ] as const;

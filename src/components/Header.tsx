@@ -182,11 +182,11 @@ function SearchPanel({ onClose }: { onClose: () => void }) {
           </button>
         </label>
 
-        {query.trim().length >= 2 && (
+        {query.trim().length >= 1 && (
           <ul className="mt-4 grid gap-1 sm:grid-cols-2">
             {results.length ? (
-              results.map((r) => (
-                <li key={r.href}>
+              results.map((r, i) => (
+                <li key={`${r.href}-${i}`}>
                   <Link
                     href={r.href}
                     onClick={onClose}
@@ -308,7 +308,7 @@ export function Header() {
                 <SearchIcon className="h-3.5 w-3.5 shrink-0" />
               </button>
               <span className="hidden text-[#6B7280] md:inline">
-                Bank Transfer: UBL 0635338617189
+                Bank Transfer: UBL PK50UNIL0109000338617189
               </span>
               <span className="hidden h-3 w-px bg-[#DCE2EA] md:inline" aria-hidden />
               <Link
@@ -433,8 +433,7 @@ export function Header() {
                 href="/donate"
                 className="inline-flex shrink-0 items-center justify-center gap-1 xs:gap-1.5 sm:gap-2 rounded-full bg-[#075BD6] min-h-[36px] sm:min-h-[42px] px-3 py-1.5 xs:px-3.5 xs:py-2 sm:px-5 sm:py-2.5 font-display text-[0.78rem] xs:text-[0.82rem] sm:text-[0.88rem] font-bold text-white shadow-[0_4px_14px_rgba(7,91,214,0.35)] transition-all duration-250 hover:-translate-y-0.5 hover:bg-[#e53935] hover:shadow-[0_6px_18px_rgba(229,57,53,0.4)] active:scale-95 whitespace-nowrap"
               >
-                <span>Donate</span>
-                <span className="hidden md:inline">Now</span>
+                <span>Donate Now</span>
                 <HeartIcon className="h-3 w-3 xs:h-3.5 xs:w-3.5 shrink-0" />
               </Link>
 
@@ -514,7 +513,7 @@ export function Header() {
               className="flex w-full min-h-[44px] items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-xs sm:text-sm font-medium text-slate-500 shadow-xs transition-colors hover:border-[#075BD6] hover:text-[#0A1020] cursor-pointer whitespace-nowrap"
             >
               <SearchIcon className="h-4 w-4 shrink-0 text-[#075BD6]" />
-              <span className="truncate">Search programmes, reports, Zakat...</span>
+              <span className="truncate">Search programmes, reports...</span>
             </button>
           </div>
 

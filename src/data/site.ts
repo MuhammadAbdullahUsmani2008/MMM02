@@ -587,7 +587,18 @@ export const allocation = [
 /* Field reports                                                       */
 /* ------------------------------------------------------------------ */
 
-export const reports = [
+export type Report = {
+  slug: string;
+  title: string;
+  place: string;
+  kind: string;
+  excerpt: string;
+  body: string[];
+  image: string;
+  date: string;
+};
+
+export const reports: Report[] = [
   {
     slug: "one-million-patients",
     title: "More than 1,000,000 patients given free consultation and medicine",
@@ -595,7 +606,13 @@ export const reports = [
     kind: "Medical Camps",
     excerpt:
       "Free medical camps are held in various cities and towns according to a preset schedule. Local population is also involved for logistic support. A special focus is put on underdeveloped districts and rural areas. In addition to Punjab we have successfully organized free medical camps in Azad Jammu and Kashmir, Karachi, Tharparkar, interior Sindh, Balochistan and Gilgit Baltistan.",
+    body: [
+      "Free medical camps are held in various cities and towns according to a preset schedule. Local population is also involved for logistic support. A special focus is put on underdeveloped districts and rural areas, where a district hospital may be a full day's journey away and the cost of a single consultation can be more than a family earns in a week.",
+      "In addition to Punjab we have successfully organized free medical camps in Azad Jammu and Kashmir, Karachi, Tharparkar, interior Sindh, Balochistan and Gilgit Baltistan. Each camp runs on the same discipline: a standing drug list, a volunteer clinical team, and a record of every patient seen so the next deployment is better planned than the last.",
+      "The one-million mark is not a fundraising claim. It is the running count of consultations logged across two decades of camps, each one free at the point of delivery and each one recorded so that the number can be checked rather than assumed.",
+    ],
     image: "/media/field/pillar-a-camp-04.jpg",
+    date: "2026",
   },
   {
     slug: "taunsa-flood-response",
@@ -604,7 +621,13 @@ export const reports = [
     kind: "Disaster Response",
     excerpt:
       "Rapid response disaster teams led by senior clinicians mobilized emergency relief boats, setting up frontline triage and treating waterborne illnesses where roads had washed out.",
+    body: [
+      "When the Indus broke its banks around Taunsa Sharif, the roads went first. Villages that had been reachable by metalled road the week before were islands, and the families who had not evacuated were cut off from the nearest functioning clinic.",
+      "Our rapid response teams, led by senior clinicians, mobilized emergency relief boats to reach households the water had isolated. On the far bank they set up frontline triage, treating waterborne illness, wound infection and the chronic conditions that had gone unmedicated since the water rose.",
+      "The operation ran on the same logic as every deployment: assessment before procurement, local volunteers who know which households are quietly going without, and a record of every patient treated so the response can be measured rather than described.",
+    ],
     image: "/media/field/hero-disaster-response.jpg",
+    date: "2022",
   },
   {
     slug: "surgical-camp-central-jail",
@@ -613,7 +636,13 @@ export const reports = [
     kind: "Surgical Mission",
     excerpt:
       "Volunteer consultant surgeons conducted vital procedures and provided specialized medication for incarcerated and underprivileged patients who otherwise had zero access to surgery.",
+    body: [
+      "Prisoners are among the least visible patients in the country. Overcrowding turns a single case of tuberculosis or hepatitis into an outbreak, and routine complaints go unexamined for months. For a patient who needs surgery, the barrier is higher still: no family to arrange it, no money to pay for it, and no way to reach a theatre.",
+      "Our volunteer consultant surgeons conducted vital procedures inside Central Jail Kot Lakhpat and at district facilities, providing specialized medication for incarcerated and underprivileged patients who otherwise had zero access to surgery.",
+      "The work is unglamorous and it is precisely the work our mission asks of us. Every procedure is recorded, every patient followed through recovery, and the same teams return on a schedule so that care is continuous rather than a one-off visit.",
+    ],
     image: "/media/field/surgical-camp-kotlakhpat.jpg",
+    date: "2025",
   },
   {
     slug: "bls-rescue-1122",
@@ -622,9 +651,17 @@ export const reports = [
     kind: "Responders Training",
     excerpt:
       "Hands-on trauma management, BLS, haemorrhage control, and disaster triage workshops training volunteers to act as certified frontline lifesavers in emergencies.",
+    body: [
+      "In most of the districts we work in, the first person to reach a casualty is not an ambulance crew. It is a neighbour. Training that neighbour properly is the highest return intervention available to us.",
+      "In collaboration with Punjab Emergency Service Rescue 1122, our courses cover hands-on trauma management, basic life support, haemorrhage control, fracture management and disaster triage. They end with an assessment rather than a certificate handed out for attendance.",
+      "Graduates form the standing teams that deploy when a district floods. The training turns everyday volunteers into certified frontline lifesavers, ready to hold a scene, stop a bleed and keep an airway open until a doctor arrives.",
+    ],
     image: "/media/field/bls-rescue-1122.jpg",
+    date: "2025",
   },
 ];
+
+export const reportBySlug = (slug: string) => reports.find((r) => r.slug === slug);
 
 /* ------------------------------------------------------------------ */
 /* Values                                                              */

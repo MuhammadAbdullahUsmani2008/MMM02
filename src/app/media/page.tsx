@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { reports } from "@/data/site";
 import { Gallery } from "@/components/Gallery";
 import { Reveal } from "@/components/Reveal";
-import { PageHeader, SectionHead } from "@/components/ui";
+import { PageHeader, SectionHead, Arrow } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Media and field reports",
@@ -67,7 +68,10 @@ export default function MediaPage() {
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             {reports.map((r, i) => (
               <Reveal key={r.slug} delay={i * 80} amount={0.08}>
-                <article className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-soft ring-1 ring-[#DCE2EA] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-lift hover:ring-[#075BD6]/50">
+                <Link
+                  href={`/media/${r.slug}`}
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-soft ring-1 ring-[#DCE2EA] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-lift hover:ring-[#075BD6]/50"
+                >
                   <div className="aspect-[16/9] overflow-hidden">
                     <img
                       src={r.image}
@@ -89,8 +93,12 @@ export default function MediaPage() {
                       <span className="h-3 w-px bg-[#DCE2EA]" aria-hidden />
                       <span>{r.place}</span>
                     </p>
+                    <span className="mt-5 inline-flex items-center gap-1.5 font-display text-[0.9rem] font-bold text-[#075BD6] group-hover:text-[#0649B8]">
+                      <span>Read the complete report</span>
+                      <Arrow className="h-3.5 w-3.5 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
                   </div>
-                </article>
+                </Link>
               </Reveal>
             ))}
           </div>
