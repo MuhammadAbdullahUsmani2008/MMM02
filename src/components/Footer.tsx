@@ -54,10 +54,19 @@ const columns = [
   },
   {
     heading: "Programmes",
-    links: programs.slice(0, 5).map((p) => ({
-      label: p.title,
-      href: `/what-we-do/${p.slug}`,
-    })),
+    links: [
+      "water-for-life",
+      "gaza-field-clinics",
+      "flood-relief",
+      "food-parcels-gaza",
+      "flood-medical-camps",
+    ]
+      .map((slug) => programs.find((p) => p.slug === slug))
+      .filter(Boolean)
+      .map((p) => ({
+        label: p.title,
+        href: `/what-we-do/${p.slug}`,
+      })),
   },
   {
     heading: "Take part",

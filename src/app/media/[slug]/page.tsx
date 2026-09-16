@@ -80,19 +80,19 @@ export default async function ReportPage({ params }: Params) {
             </div>
 
             <Reveal delay={120}>
-              <div className="mt-10 flex flex-wrap gap-3 sm:gap-4">
+              <div className="mt-10 flex flex-wrap gap-2 sm:gap-4">
                 <Link
                   href="/donate"
-                  className="group inline-flex items-center justify-center gap-2 xs:gap-2.5 rounded-full bg-[#046BD2] px-5 py-2.5 xs:px-6 xs:py-3 sm:px-7 sm:py-3.5 font-display text-[0.84rem] xs:text-[0.9rem] sm:text-[0.95rem] font-bold text-white min-h-[44px] shadow-sm transition-all duration-250 hover:-translate-y-0.5 hover:bg-[#e53935]"
+                  className="group inline-flex flex-1 sm:flex-none items-center justify-center gap-1.5 xs:gap-2 rounded-full bg-[#046BD2] px-2.5 py-2.5 xs:px-3 xs:py-3 sm:px-7 sm:py-3.5 font-display text-[0.72rem] xs:text-[0.76rem] sm:text-[0.95rem] font-bold text-white min-h-[38px] shadow-sm transition-all duration-250 hover:-translate-y-0.5 hover:bg-[#e53935]"
                 >
-                  <span>Support this work</span>
+                  <span className="whitespace-nowrap">Support this work</span>
                   <Arrow className="shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
                 <Link
                   href="/media"
-                  className="inline-flex items-center justify-center gap-2 xs:gap-2.5 rounded-full border-2 border-slate-300 px-5 py-2.5 xs:px-6 xs:py-3 sm:px-7 sm:py-3.5 font-display text-[0.84rem] xs:text-[0.9rem] sm:text-[0.95rem] font-bold text-[#003475] min-h-[44px] transition-all duration-250 hover:border-[#e53935] hover:bg-[#e53935] hover:text-white"
+                  className="inline-flex flex-1 sm:flex-none items-center justify-center gap-1.5 xs:gap-2 rounded-full border-2 border-slate-300 px-2.5 py-2.5 xs:px-3 xs:py-3 sm:px-7 sm:py-3.5 font-display text-[0.72rem] xs:text-[0.76rem] sm:text-[0.95rem] font-bold text-[#003475] min-h-[38px] transition-all duration-250 hover:border-[#e53935] hover:bg-[#e53935] hover:text-white"
                 >
-                  <span>All field reports</span>
+                  <span className="whitespace-nowrap">All field reports</span>
                 </Link>
               </div>
             </Reveal>

@@ -1971,11 +1971,11 @@ export function MembershipForm() {
       )}
 
       {/* Submit Button */}
-      <div className="pt-4 flex flex-wrap items-center gap-3 sm:gap-4 w-full">
+      <div className="pt-4 flex flex-wrap items-center gap-2 sm:gap-4 w-full">
         <button
           type="submit"
           disabled={isSubmitting}
-          className="group relative inline-flex items-center justify-center gap-2.5 rounded-full bg-[#046BD2] px-6 py-3 xs:px-7 xs:py-3.5 sm:px-9 sm:py-4 font-display text-[0.88rem] xs:text-[0.94rem] sm:text-base font-bold text-white whitespace-nowrap min-h-[44px] max-w-full shadow-[0_10px_24px_-8px_rgba(4,107,210,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e53935] hover:shadow-[0_10px_24px_-8px_rgba(229,57,53,0.4)] disabled:cursor-not-allowed disabled:opacity-60"
+          className="group relative inline-flex flex-1 sm:flex-none items-center justify-center gap-1 rounded-full bg-[#046BD2] px-1.5 py-3 xs:px-2 xs:py-3.5 sm:px-9 sm:py-4 font-display text-[0.5625rem] xs:text-[0.6rem] sm:text-base font-bold text-white whitespace-nowrap min-h-[38px] max-w-full shadow-[0_10px_24px_-8px_rgba(4,107,210,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e53935] hover:shadow-[0_10px_24px_-8px_rgba(229,57,53,0.4)] disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isSubmitting ? (
             <>
@@ -1998,9 +1998,9 @@ export function MembershipForm() {
         <a
           href="/MMM_Pakistan_Membership_Application_Form.pdf"
           download
-          className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-5 py-2.5 xs:px-6 xs:py-3 sm:py-3.5 font-display text-[0.84rem] xs:text-sm font-bold text-[#334155] whitespace-nowrap min-h-[44px] max-w-full transition-all duration-300 hover:border-[#e53935] hover:bg-[#e53935] hover:text-white"
+          className="inline-flex flex-1 sm:flex-none items-center justify-center gap-1 rounded-full border-2 border-slate-300 px-1.5 py-2.5 xs:px-2 xs:py-3 sm:py-3.5 font-display text-[0.5625rem] xs:text-[0.6rem] sm:text-sm font-bold text-[#334155] whitespace-nowrap min-h-[38px] max-w-full transition-all duration-300 hover:border-[#e53935] hover:bg-[#e53935] hover:text-white"
         >
-          <svg className="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="h-3 w-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
             <polyline points="7 10 12 15 17 10" />
             <line x1="12" y1="15" x2="12" y2="3" />

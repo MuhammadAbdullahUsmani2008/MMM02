@@ -150,10 +150,10 @@ export default function DisasterResponsePage() {
 
           <Reveal delay={100}>
             <div className="mt-12 flex flex-wrap gap-3 sm:gap-4">
-              <Button href="/donate" variant="primary">
+              <Button href="/donate" variant="primary" className="flex-1 sm:flex-none">
                 Fund the next deployment
               </Button>
-              <Button href="/get-involved" variant="outline">
+              <Button href="/get-involved" variant="outline" className="flex-1 sm:flex-none">
                 Join a response team
               </Button>
             </div>

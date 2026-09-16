@@ -17,10 +17,10 @@ export default function NotFound() {
           The page you were looking for has moved or never existed. The work carries on either way.
         </p>
         <div className="mt-9 flex flex-wrap gap-3 sm:gap-4">
-          <Button href="/" variant="primary">
+          <Button href="/" variant="primary" className="flex-1 sm:flex-none">
             Back to the home page
           </Button>
-          <Button href="/what-we-do" variant="outline">
+          <Button href="/what-we-do" variant="outline" className="flex-1 sm:flex-none">
             See the programmes
           </Button>
         </div>

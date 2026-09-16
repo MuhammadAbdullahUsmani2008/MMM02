@@ -90,21 +90,21 @@ export function Giving() {
                 <p className="mt-2 text-[0.92rem] leading-relaxed text-[#4B5563]">
                   A direct transfer carries zero merchant processing cuts, ensuring every rupee delivers medicine, food, and water. Send the receipt via WhatsApp and our dispatch coordinator will link it directly to the active clinic it funds.
                 </p>
-                <div className="mt-5 flex flex-wrap items-center gap-2.5 sm:gap-3">
+                <div className="mt-5 flex flex-wrap items-center gap-2 sm:gap-3">
                   <a
                     href={org.whatsapp}
                     target="_blank"
                     rel="noreferrer"
-                    className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#075BD6] min-h-[44px] px-4 py-2.5 sm:px-6 sm:py-2.5 font-display text-[0.84rem] sm:text-[0.88rem] font-bold text-white shadow-sm transition-all duration-250 hover:bg-[#e53935] hover:shadow-md active:scale-98"
+                    className="group inline-flex flex-1 sm:flex-none items-center justify-center gap-1 rounded-full bg-[#075BD6] min-h-[38px] px-1.5 py-1.5 xs:px-2 xs:py-2 sm:min-h-[44px] sm:px-6 sm:py-2.5 font-display text-[0.5625rem] xs:text-[0.6rem] sm:text-[0.88rem] font-bold text-white shadow-sm transition-all duration-250 hover:bg-[#e53935] hover:shadow-md active:scale-98"
                   >
-                    <span>WhatsApp a transfer slip</span>
-                    <Arrow className="h-3.5 w-3.5 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
+                    <span className="whitespace-nowrap">WhatsApp a transfer slip</span>
+                    <Arrow className="h-2.5 w-2.5 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
                   </a>
                   <Link
                     href="/donate"
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-[#DCE2EA] bg-white min-h-[44px] px-4 py-2.5 sm:px-5 sm:py-2.5 font-display text-[0.84rem] sm:text-[0.88rem] font-bold text-[#0A1020] transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] hover:text-white active:scale-98"
+                    className="inline-flex flex-1 sm:flex-none items-center justify-center gap-1 rounded-full border border-[#DCE2EA] bg-white min-h-[38px] px-1.5 py-1.5 xs:px-2 xs:py-2 sm:min-h-[44px] sm:px-5 sm:py-2.5 font-display text-[0.5625rem] xs:text-[0.6rem] sm:text-[0.88rem] font-bold text-[#0A1020] transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] hover:text-white active:scale-98"
                   >
-                    <span>All donation methods</span>
+                    <span className="whitespace-nowrap">All donation methods</span>
                   </Link>
                 </div>
               </div>
