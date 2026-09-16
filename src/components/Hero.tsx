@@ -213,7 +213,7 @@ export function Hero() {
                     {/* Subtext (Noto Sans font) */}
                     <p
                       key={`subtext-${active}`}
-                      className="hero-reveal mt-3.5 sm:mt-4 text-[0.6375rem] sm:text-[1.12rem] leading-relaxed text-slate-100"
+                      className="hero-reveal mt-3.5 sm:mt-4 text-[0.825rem] sm:text-[1.12rem] leading-relaxed text-slate-100"
                       style={{ animationDelay: "240ms" }}
                     >
                       {s.subtextMobile ? (
