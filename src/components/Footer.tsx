@@ -79,7 +79,7 @@ export function Footer() {
           {/* Brand block */}
           <div className="lg:col-span-4">
             <Link href="/" className="group inline-flex items-center gap-2.5 sm:gap-3">
-              <img src="/media/brand/circle-logo.png" alt={org.name} className="h-11 w-11 sm:h-12 sm:w-12 shrink-0 object-contain" />
+              <img src="/media/brand/circle-logo.png" alt="" aria-hidden className="h-11 w-11 sm:h-12 sm:w-12 shrink-0 object-contain" />
               <div className="flex flex-col">
                 <span className="font-display text-[1.08rem] sm:text-[1.15rem] font-black text-[#003475] group-hover:text-[#046BD2] transition-colors leading-none">
                   Muslim Medical Mission

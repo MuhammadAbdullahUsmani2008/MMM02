@@ -5,7 +5,7 @@ import { Arrow, SectionHead } from "@/components/ui";
 import { MembershipForm, CATEGORIES } from "@/components/membership/MembershipForm";
 
 export const metadata: Metadata = {
-  title: "Membership | Muslim Medical Mission (MMM) Pakistan",
+  title: "Membership",
   description:
     "Muslim Medical Mission (MMM) Pakistan brings together doctors, dentists, physiotherapists, nurses, pharmacists, allied health professionals, students, and volunteers who share one purpose: serving humanity.",
 };
@@ -164,8 +164,7 @@ export default function MembershipPage() {
         <div className="absolute inset-0 -z-10">
           <img
             src="/media/field/free-medical-camp-doctors.jpg"
-            alt=""
-            aria-hidden
+            alt="Muslim Medical Mission volunteer doctors at a free medical camp"
             className="h-full w-full object-cover opacity-15"
           />
         </div>
@@ -430,13 +429,13 @@ export default function MembershipPage() {
                   <ol className="mt-4 space-y-3 text-sm leading-relaxed text-[#4B5563]">
                     <li className="flex items-start gap-2.5">
                       <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-700">
-                        2
+                        1
                       </span>
                       <span>Download and complete the MMM Pakistan Membership Application Form.</span>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-700">
-                        3
+                        2
                       </span>
                       <span>
                         Attach the required documents - a copy of your CNIC, a recent photograph, and your degree/registration certificate or student ID card, as applicable to your category.
@@ -444,7 +443,7 @@ export default function MembershipPage() {
                     </li>
                     <li className="flex items-start gap-2.5">
                       <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-700">
-                        4
+                        3
                       </span>
                       <span>
                         Submit the completed form to your nearest MMM chapter, or email it to{" "}
@@ -456,7 +455,7 @@ export default function MembershipPage() {
                     </li>
                     <li className="flex items-start gap-2.5">
                       <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-700">
-                        5
+                        4
                       </span>
                       <span>Our membership secretariat will review and verify your details and confirm your membership.</span>
                     </li>

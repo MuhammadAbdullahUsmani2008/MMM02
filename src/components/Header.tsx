@@ -308,7 +308,7 @@ export function Header() {
                 <SearchIcon className="h-3.5 w-3.5 shrink-0" />
               </button>
               <span className="hidden text-[#6B7280] md:inline">
-                Bank Transfer: UBL PK50UNIL0109000338617189
+                Bank Transfer: UBL {org.bank.iban}
               </span>
               <span className="hidden h-3 w-px bg-[#DCE2EA] md:inline" aria-hidden />
               <Link
@@ -332,7 +332,8 @@ export function Header() {
             >
               <img
                 src="/media/brand/circle-logo.png"
-                alt={org.name}
+                alt=""
+                aria-hidden
                 className="h-[38px] w-[38px] xs:h-[42px] xs:w-[42px] sm:h-12 sm:w-12 md:h-14 md:w-14 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105"
               />
               <div className="flex min-w-0 flex-col justify-center xl:w-[201px] xl:shrink-0">
@@ -480,7 +481,7 @@ export function Header() {
           {/* Drawer Header */}
           <div className="flex items-center justify-between border-b border-slate-200/80 px-4 py-3.5 sm:px-5 sm:py-4">
             <Link href="/" onClick={() => setDrawer(false)} className="flex min-w-0 items-center gap-2.5 sm:gap-3">
-              <img src="/media/brand/circle-logo.png" alt={org.name} className="h-10 w-10 sm:h-11 sm:w-11 shrink-0 object-contain" />
+              <img src="/media/brand/circle-logo.png" alt="" aria-hidden className="h-10 w-10 sm:h-11 sm:w-11 shrink-0 object-contain" />
               <div className="flex min-w-0 flex-col">
                 <span className="truncate font-display text-[1rem] sm:text-[1.08rem] font-black text-[#0A1020] leading-tight">
                   Muslim Medical Mission

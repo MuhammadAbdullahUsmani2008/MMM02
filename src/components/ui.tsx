@@ -194,8 +194,7 @@ export function PageHeader({
         {image ? (
           <img
             src={image}
-            alt=""
-            aria-hidden
+            alt={title}
             className="h-full w-full object-cover opacity-20"
           />
         ) : (
