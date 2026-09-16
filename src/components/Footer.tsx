@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { org, programs } from "@/data/site";
+import { org, programs, type Program } from "@/data/site";
 import { Arrow } from "./ui";
 
 function FacebookIcon({ className = "h-4 w-4" }: { className?: string }) {
@@ -62,7 +62,7 @@ const columns = [
       "flood-medical-camps",
     ]
       .map((slug) => programs.find((p) => p.slug === slug))
-      .filter(Boolean)
+      .filter((p): p is Program => p !== undefined)
       .map((p) => ({
         label: p.title,
         href: `/what-we-do/${p.slug}`,
