@@ -167,7 +167,7 @@ export function Hero() {
               />
 
               {/* Slide Text Content */}
-              <div className="absolute inset-0 flex items-end sm:items-center pt-0 pb-24 sm:pt-36 sm:pb-28">
+              <div className="absolute inset-0 flex items-end sm:items-center pt-0 pb-20 sm:pt-36 sm:pb-28">
                 {/* Mobile: subtle bottom-to-top gradient rising behind the content,
                     reaching up to the first line of hero content.
                     Desktop: existing left-to-right gradient (unchanged). */}
