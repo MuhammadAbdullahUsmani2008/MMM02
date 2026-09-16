@@ -167,19 +167,21 @@ export function Hero() {
               />
 
               {/* Slide Text Content */}
-              <div className="absolute inset-0 flex items-center pt-24 pb-20 sm:pt-36 sm:pb-28">
-                {/* Subtle left-to-right gradient overlay behind the hero content */}
+              <div className="absolute inset-0 flex items-end sm:items-center pt-0 pb-24 sm:pt-36 sm:pb-28">
+                {/* Mobile: subtle bottom-to-top gradient rising behind the content,
+                    reaching up to the first line of hero content.
+                    Desktop: existing left-to-right gradient (unchanged). */}
                 <div
-                  className="pointer-events-none absolute inset-y-0 left-0 w-[min(720px,100%)] bg-gradient-to-r from-black/80 via-black/45 via-[76%] to-transparent"
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 via-[40%] to-transparent sm:inset-y-0 sm:left-0 sm:w-[min(720px,100%)] sm:bg-gradient-to-r sm:from-black/80 sm:via-black/45 sm:via-[76%] sm:to-transparent"
                   aria-hidden
                 />
                 <div className="shell-wide relative">
                   {/* Hero content (transparent container, no card/panel) */}
-                  <div className="w-full max-w-[580px] p-4.5 xs:p-5.5 sm:p-7 md:py-[28px] md:px-[32px]">
-                    {/* Pillar Category Badge */}
+                  <div className="mx-auto w-full max-w-[580px] p-4.5 xs:p-5.5 sm:mx-0 sm:p-7 md:py-[28px] md:px-[32px]">
+                    {/* Pillar Category Badge (hidden on mobile, shown on sm+) */}
                     <div
                       key={`badge-${active}`}
-                      className="hero-reveal mb-3.5 flex w-fit max-w-full flex-wrap items-center gap-x-2 gap-y-1 rounded-full border border-white/20 bg-[#0A1020]/80 px-3 py-1 backdrop-blur-md"
+                      className="hero-reveal mb-3.5 hidden sm:flex w-fit max-w-full flex-wrap items-center gap-x-2 gap-y-1 rounded-full border border-white/20 bg-[#0A1020]/80 px-3 py-1 backdrop-blur-md"
                       style={{ animationDelay: "0ms" }}
                     >
                       <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#EF3B19] animate-pulse" />
@@ -199,11 +201,7 @@ export function Hero() {
                     {/* Headline with Brand Red Highlight (Noto Serif font) */}
                     <h1
                       key={`headline-${active}`}
-                      className={`hero-reveal mt-4 sm:mt-5 font-display font-black leading-[1.08] text-white ${
-                        s.id === "conference"
-                          ? "text-[clamp(1.7rem,3.2vw,2.8rem)]"
-                          : "text-[clamp(2.15rem,4vw,3.5rem)]"
-                      }`}
+                      className={`hero-reveal mt-4 sm:mt-5 font-display font-black leading-[1.08] text-white ${s.id === "conference" ? "hero-headline--compact" : "hero-headline"}`}
                       style={{ animationDelay: "120ms" }}
                     >
                       {s.headline}{" "}
@@ -215,7 +213,7 @@ export function Hero() {
                     {/* Subtext (Noto Sans font) */}
                     <p
                       key={`subtext-${active}`}
-                      className="hero-reveal mt-3.5 sm:mt-4 text-[1.02rem] sm:text-[1.12rem] leading-relaxed text-slate-100"
+                      className="hero-reveal mt-3.5 sm:mt-4 text-[0.6375rem] sm:text-[1.12rem] leading-relaxed text-slate-100"
                       style={{ animationDelay: "240ms" }}
                     >
                       {s.subtextMobile ? (
@@ -228,25 +226,25 @@ export function Hero() {
                       )}
                     </p>
 
-                    {/* Dual Call To Actions (Responsive: stacked/wrapped on mobile, side-by-side on desktop) */}
+                    {/* Dual Call To Actions (Responsive: side-by-side on one line on mobile, side-by-side on desktop) */}
                     <div
                       key={`ctas-${active}`}
-                      className="hero-reveal mt-5 sm:mt-7 flex flex-wrap items-center gap-2.5 sm:gap-3.5 w-full"
+                      className="hero-reveal mt-5 sm:mt-7 flex flex-wrap items-center justify-center gap-2 sm:gap-3.5 w-full"
                       style={{ animationDelay: "360ms" }}
                     >
                       <Link
                         href={s.primaryCta.href}
-                      className="group inline-flex w-full sm:w-auto shrink-0 items-center justify-center gap-1.5 sm:gap-2 rounded-full bg-[#075BD6] min-h-[44px] px-4 py-2.5 xs:px-5 xs:py-3 sm:px-6 sm:py-3.5 font-display text-[0.82rem] xs:text-[0.88rem] sm:text-[0.94rem] font-bold text-white transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] active:scale-98 text-center"
+                      className="group inline-flex flex-1 sm:flex-none shrink-0 items-center justify-center gap-1 sm:gap-2 rounded-full bg-[#075BD6] min-h-[38px] px-1.5 py-1.5 xs:px-2 xs:py-2 sm:min-h-[44px] sm:px-6 sm:py-3.5 font-display text-[0.5rem] xs:text-[0.54rem] sm:text-[0.94rem] font-bold text-white transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] active:scale-98 text-center"
                     >
-                      <span className="whitespace-normal">{s.primaryCta.label}</span>
-                      <Arrow className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 transition-transform duration-250 ease-out group-hover:translate-x-1.5" />
+                      <span className="whitespace-nowrap">{s.primaryCta.label}</span>
+                      <Arrow className="h-2.5 w-2.5 sm:h-4 sm:w-4 shrink-0 transition-transform duration-250 ease-out group-hover:translate-x-1.5" />
                     </Link>
                     <Link
                       href={s.secondaryCta.href}
-                      className="group inline-flex w-full sm:w-auto shrink-0 items-center justify-center gap-1.5 sm:gap-2 rounded-full border border-white/50 bg-black/35 min-h-[44px] px-3.5 py-2.5 xs:px-4.5 xs:py-3 sm:px-5.5 sm:py-3.5 font-display text-[0.82rem] xs:text-[0.88rem] sm:text-[0.94rem] font-bold text-white backdrop-blur-md transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] hover:text-white active:scale-98 text-center"
+                      className="group inline-flex flex-1 sm:flex-none shrink-0 items-center justify-center gap-1 sm:gap-2 rounded-full border border-white/50 bg-black/35 min-h-[38px] px-1.5 py-1.5 xs:px-2 xs:py-2 sm:min-h-[44px] sm:px-5.5 sm:py-3.5 font-display text-[0.5rem] xs:text-[0.54rem] sm:text-[0.94rem] font-bold text-white backdrop-blur-md transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] hover:text-white active:scale-98 text-center"
                     >
-                      <span className="whitespace-normal">{s.secondaryCta.label}</span>
-                      <Arrow className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 transition-transform duration-250 ease-out group-hover:translate-x-1.5" />
+                      <span className="whitespace-nowrap">{s.secondaryCta.label}</span>
+                      <Arrow className="h-2.5 w-2.5 sm:h-4 sm:w-4 shrink-0 transition-transform duration-250 ease-out group-hover:translate-x-1.5" />
                     </Link>
                   </div>
                 </div>
