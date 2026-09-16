@@ -234,14 +234,14 @@ export function Hero() {
                     >
                       <Link
                         href={s.primaryCta.href}
-                      className="group inline-flex flex-1 sm:flex-none shrink-0 items-center justify-center gap-1 sm:gap-2 rounded-full bg-[#075BD6] min-h-[38px] px-1.5 py-1.5 xs:px-2 xs:py-2 sm:min-h-[44px] sm:px-6 sm:py-3.5 font-display text-[0.5rem] xs:text-[0.54rem] sm:text-[0.94rem] font-bold text-white transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] active:scale-98 text-center"
+                      className="group inline-flex flex-1 sm:flex-none shrink-0 items-center justify-center gap-1 sm:gap-2 rounded-full bg-[#075BD6] min-h-[38px] px-1.5 py-1.5 xs:px-2 xs:py-2 sm:min-h-[44px] sm:px-6 sm:py-3.5 font-display text-[0.5625rem] xs:text-[0.6rem] sm:text-[0.94rem] font-bold text-white transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] active:scale-98 text-center"
                     >
                       <span className="whitespace-nowrap">{s.primaryCta.label}</span>
                       <Arrow className="h-2.5 w-2.5 sm:h-4 sm:w-4 shrink-0 transition-transform duration-250 ease-out group-hover:translate-x-1.5" />
                     </Link>
                     <Link
                       href={s.secondaryCta.href}
-                      className="group inline-flex flex-1 sm:flex-none shrink-0 items-center justify-center gap-1 sm:gap-2 rounded-full border border-white/50 bg-black/35 min-h-[38px] px-1.5 py-1.5 xs:px-2 xs:py-2 sm:min-h-[44px] sm:px-5.5 sm:py-3.5 font-display text-[0.5rem] xs:text-[0.54rem] sm:text-[0.94rem] font-bold text-white backdrop-blur-md transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] hover:text-white active:scale-98 text-center"
+                      className="group inline-flex flex-1 sm:flex-none shrink-0 items-center justify-center gap-1 sm:gap-2 rounded-full border border-white/50 bg-black/35 min-h-[38px] px-1.5 py-1.5 xs:px-2 xs:py-2 sm:min-h-[44px] sm:px-5.5 sm:py-3.5 font-display text-[0.5625rem] xs:text-[0.6rem] sm:text-[0.94rem] font-bold text-white backdrop-blur-md transition-all duration-250 hover:bg-[#e53935] hover:border-[#e53935] hover:text-white active:scale-98 text-center"
                     >
                       <span className="whitespace-nowrap">{s.secondaryCta.label}</span>
                       <Arrow className="h-2.5 w-2.5 sm:h-4 sm:w-4 shrink-0 transition-transform duration-250 ease-out group-hover:translate-x-1.5" />
