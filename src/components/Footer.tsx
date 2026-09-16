@@ -107,7 +107,7 @@ export function Footer() {
                 className="block font-display font-bold text-[#003475] transition-colors hover:text-[#046BD2]"
               >
                 {org.phone}
-              </a>
+              </a><br />
               <a
                 href={`mailto:${org.email}`}
                 className="block text-[#7A7A7A] transition-colors hover:text-[#046BD2]"
