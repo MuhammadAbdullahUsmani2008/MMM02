@@ -172,7 +172,7 @@ export function Hero() {
                     reaching up to the first line of hero content.
                     Desktop: existing left-to-right gradient (unchanged). */}
                 <div
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 via-[40%] to-transparent sm:inset-y-0 sm:left-0 sm:w-[min(720px,100%)] sm:bg-gradient-to-r sm:from-black/80 sm:via-black/45 sm:via-[76%] sm:to-transparent"
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 via-[40%] to-transparent sm:inset-y-0 sm:left-0 sm:w-[min(720px,100%)] sm:bg-gradient-to-r sm:from-black/80 sm:via-black/45 sm:via-[76%] sm:to-transparent"
                   aria-hidden
                 />
                 <div className="shell-wide relative">
