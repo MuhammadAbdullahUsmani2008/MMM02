@@ -28,7 +28,7 @@ const slides: Slide[] = [
     id: "humanitarian",
     pillar: "Pillar A • Free Healthcare & Outpatient Care",
     badge: "Mercy in Motion",
-    image: "/media/field/free-medical-camp-medicines.jpg",
+    image: "/media/disaster/hero-p1.png",
     alt: "Muslim Medical Mission doctors providing free consultations and medicine at a rural outpatient medical camp with official banner",
     headline: "Mercy in Motion:",
     highlight: "Free healthcare for those in need.",
