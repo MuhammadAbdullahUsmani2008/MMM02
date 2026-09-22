@@ -5,7 +5,8 @@ import { PageHeader } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
 
 const ZAKAT_RATE = 0.025;
-const NISAB_TOLA = 52.5;
+const SILVER_NISAB_TOLA = 52.5;
+const GOLD_NISAB_TOLA = 7.5;
 // 1 tola = 11.6638 g; 1 troy ounce = 31.1035 g
 const TROY_OZ_PER_TOLA = 11.6638 / 31.1035;
 
@@ -22,7 +23,9 @@ export default function ZakatCalculatorPage() {
   const [result, setResult] = useState<number | null>(null);
   const [calculatedAmount, setCalculatedAmount] = useState<number | null>(null);
   const [silverPerTola, setSilverPerTola] = useState<number | null>(null);
+  const [goldPerTola, setGoldPerTola] = useState<number | null>(null);
   const [nisab, setNisab] = useState<number | null>(null);
+  const [goldNisab, setGoldNisab] = useState<number | null>(null);
   const [rateLoading, setRateLoading] = useState(true);
   const [rateError, setRateError] = useState<string | null>(null);
 
@@ -31,21 +34,27 @@ export default function ZakatCalculatorPage() {
 
     async function loadRates() {
       try {
-        const [spotRes, fxRes] = await Promise.all([
+        const [silverRes, goldRes, fxRes] = await Promise.all([
           fetch("https://api.gold-api.com/price/XAG"),
+          fetch("https://api.gold-api.com/price/XAU"),
           fetch("https://open.er-api.com/v6/latest/USD"),
         ]);
-        const spot = await spotRes.json();
+        const silverSpot = await silverRes.json();
+        const goldSpot = await goldRes.json();
         const fx = await fxRes.json();
-        const silverUsdPerOz = spot?.price;
+        const silverUsdPerOz = silverSpot?.price;
+        const goldUsdPerOz = goldSpot?.price;
         const usdToPkr = fx?.rates?.PKR;
-        if (!silverUsdPerOz || !usdToPkr) throw new Error("Missing rate data");
-        const perTola = silverUsdPerOz * TROY_OZ_PER_TOLA * usdToPkr;
+        if (!silverUsdPerOz || !goldUsdPerOz || !usdToPkr) throw new Error("Missing rate data");
+        const silverTola = silverUsdPerOz * TROY_OZ_PER_TOLA * usdToPkr;
+        const goldTola = goldUsdPerOz * TROY_OZ_PER_TOLA * usdToPkr;
         if (cancelled) return;
-        setSilverPerTola(perTola);
-        setNisab(perTola * NISAB_TOLA);
+        setSilverPerTola(silverTola);
+        setGoldPerTola(goldTola);
+        setNisab(silverTola * SILVER_NISAB_TOLA);
+        setGoldNisab(goldTola * GOLD_NISAB_TOLA);
       } catch {
-        if (!cancelled) setRateError("Could not fetch today's silver rate.");
+        if (!cancelled) setRateError("Could not fetch today's silver and gold rates.");
       } finally {
         if (!cancelled) setRateLoading(false);
       }
@@ -98,7 +107,6 @@ export default function ZakatCalculatorPage() {
       setCalculatedAmount(null);
       return;
     }
-
     setError(null);
     setResult(value * ZAKAT_RATE);
     setCalculatedAmount(value);
@@ -192,38 +200,54 @@ export default function ZakatCalculatorPage() {
                   </button>
                 </form>
 
-                {/* Live silver rate & Nisab */}
+                {/* Live silver & gold rates + Nisab */}
                 <div className="mt-6 rounded-xl border border-[#DCE2EA] bg-[#F5F7FA] p-5">
                   <div className="flex items-center justify-between gap-3">
                     <p className="font-display text-[0.95rem] font-extrabold text-[#0A1020]">
-                      Today's Nisab (52.5 tola silver)
+                      Today's Live Metal Rates
                     </p>
                     {rateLoading ? (
                       <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#6B7280]">
                         <span className="h-2 w-2 animate-pulse rounded-full bg-[#075BD6]" />
-                        Fetching live rate…
+                        Fetching live rates…
                       </span>
                     ) : null}
                   </div>
 
                   {rateError ? (
                     <p className="mt-2 text-[0.85rem] font-semibold text-[#EF3B19]">{rateError}</p>
-                  ) : nisab !== null ? (
+                  ) : silverPerTola !== null && goldPerTola !== null ? (
                     <div className="mt-2 grid gap-2 sm:grid-cols-2">
                       <div className="rounded-lg bg-white px-3.5 py-2.5 shadow-xs">
                         <p className="text-[0.72rem] font-bold uppercase tracking-wider text-[#6B7280]">
                           Silver / tola
                         </p>
                         <p className="mt-0.5 font-display text-[1.05rem] font-black text-[#0A1020]">
-                          Rs. {formatPKR(silverPerTola ?? 0)}
+                          Rs. {formatPKR(silverPerTola)}
                         </p>
                       </div>
                       <div className="rounded-lg bg-white px-3.5 py-2.5 shadow-xs">
                         <p className="text-[0.72rem] font-bold uppercase tracking-wider text-[#6B7280]">
-                          Nisab threshold
+                          Gold / tola
+                        </p>
+                        <p className="mt-0.5 font-display text-[1.05rem] font-black text-[#0A1020]">
+                          Rs. {formatPKR(goldPerTola)}
+                        </p>
+                      </div>
+                      <div className="rounded-lg bg-white px-3.5 py-2.5 shadow-xs">
+                        <p className="text-[0.72rem] font-bold uppercase tracking-wider text-[#6B7280]">
+                          Nisab (52.5 tola silver)
                         </p>
                         <p className="mt-0.5 font-display text-[1.05rem] font-black text-[#075BD6]">
-                          Rs. {formatPKR(nisab)}
+                          Rs. {formatPKR(nisab ?? 0)}
+                        </p>
+                      </div>
+                      <div className="rounded-lg bg-white px-3.5 py-2.5 shadow-xs">
+                        <p className="text-[0.72rem] font-bold uppercase tracking-wider text-[#6B7280]">
+                          Nisab (7.5 tola gold)
+                        </p>
+                        <p className="mt-0.5 font-display text-[1.05rem] font-black text-[#075BD6]">
+                          Rs. {formatPKR(goldNisab ?? 0)}
                         </p>
                       </div>
                     </div>
@@ -231,7 +255,8 @@ export default function ZakatCalculatorPage() {
 
                   <p className="mt-3 text-[0.8rem] leading-relaxed text-[#6B7280]">
                     Zakat becomes obligatory once your Zakat-eligible wealth reaches the Nisab
-                    threshold, based on today's live silver price in Pakistan.
+                    threshold. The calculator uses the silver Nisab (52.5 tola) as the threshold for
+                    your calculation; the gold Nisab (7.5 tola) is shown for reference.
                   </p>
                 </div>
 
