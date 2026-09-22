@@ -43,7 +43,7 @@ const slides: Slide[] = [
     id: "disaster",
     pillar: "Pillar B • Disasters & Emergency Relief",
     badge: "First to Reach",
-    image: "/media/disaster/disaster-16.jpeg",
+    image: "/media/disaster/hero-1.jpg",
     alt: "Muslim Medical Mission emergency rapid response team navigating flood waters with banner on rescue boat",
     headline: "When Calamity Strikes,",
     highlight: "we are already moving.",
