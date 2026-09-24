@@ -8,7 +8,8 @@
     "start": "node preview.mjs",
     "lint": "next lint",
     "preview": "next build && node preview.mjs",
-    "deploy": "next build && wrangler deploy"
+    "deploy": "next build && wrangler deploy",
+    "deploy:x-feed": "wrangler deploy --config workers/social-feed-x/wrangler.jsonc"
   },
   "dependencies": {
     "@types/three": "^0.185.4",

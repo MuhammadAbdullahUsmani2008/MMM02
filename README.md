@@ -33,6 +33,21 @@ npm run deploy
 plus a few security headers. Cloudflare picks it up automatically on both
 Workers static assets and Pages.
 
+### X feed worker
+
+The homepage can load live posts from the separate worker in
+`workers/social-feed-x`. Create an X Developer project with read access, then
+set the bearer token as a Cloudflare secret and deploy the worker:
+
+```bash
+npx wrangler secret put X_BEARER_TOKEN --config workers/social-feed-x/wrangler.jsonc
+npm run deploy:x-feed
+```
+
+Set `NEXT_PUBLIC_X_FEED_URL` to the deployed worker URL before building the
+site, for example `https://muslim-medical-mission-x-feed.<account>.workers.dev/feed`.
+Without that variable, the site uses the existing curated X posts.
+
 ## How it is put together
 
 ```

@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "muslim-medical-mission-x-feed",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-31",
+  "vars": {
+    "X_USERNAME": "MAbdullah95441"
+  }
+}

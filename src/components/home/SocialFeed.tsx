@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { socialFeeds, socialChannels, type Platform, type SocialPost } from "@/data/socialFeeds";
 import { Reveal } from "../Reveal";
@@ -64,11 +64,25 @@ const platformBadgeClasses: Record<Platform, { bg: string; text: string; label: 
 export function SocialFeed() {
   const [activeTab, setActiveTab] = useState<"all" | Platform | "embed">("all");
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [liveXPosts, setLiveXPosts] = useState<SocialPost[]>([]);
+
+  useEffect(() => {
+    const endpoint = process.env.NEXT_PUBLIC_X_FEED_URL;
+    if (!endpoint) return;
+
+    fetch(endpoint)
+      .then((response) => (response.ok ? response.json() : Promise.reject(new Error("X feed unavailable"))))
+      .then((data: { posts?: SocialPost[] }) => setLiveXPosts(data.posts ?? []))
+      .catch(() => undefined);
+  }, []);
+
+  const xPosts = liveXPosts.length > 0 ? liveXPosts : socialFeeds.filter((post) => post.platform === "x");
+  const feedPosts = [...socialFeeds.filter((post) => post.platform !== "x"), ...xPosts];
 
   const filteredPosts =
     activeTab === "all" || activeTab === "embed"
-      ? socialFeeds
-      : socialFeeds.filter((p) => p.platform === activeTab);
+      ? feedPosts
+      : feedPosts.filter((p) => p.platform === activeTab);
 
   return (
     <section id="social-feed" className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-24 border-b border-[#DCE2EA]">
