@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { socialFeeds, socialChannels, type Platform, type SocialPost } from "@/data/socialFeeds";
+import { socialFeeds, socialChannels, type Platform } from "@/data/socialFeeds";
 import { Reveal } from "../Reveal";
 import { Arrow } from "../ui";
 
@@ -64,19 +64,21 @@ const platformBadgeClasses: Record<Platform, { bg: string; text: string; label: 
 export function SocialFeed() {
   const [activeTab, setActiveTab] = useState<"all" | Platform | "embed">("all");
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
-  const [liveXPosts, setLiveXPosts] = useState<SocialPost[]>([]);
 
+  // Load the official X timeline embed widget (platform.x.com/widgets.js).
+  // The widget renders the live timeline inside the .twitter-timeline anchor.
   useEffect(() => {
-    const endpoint = process.env.NEXT_PUBLIC_X_FEED_URL;
-    if (!endpoint) return;
-
-    fetch(endpoint)
-      .then((response) => (response.ok ? response.json() : Promise.reject(new Error("X feed unavailable"))))
-      .then((data: { posts?: SocialPost[] }) => setLiveXPosts(data.posts ?? []))
-      .catch(() => undefined);
+    const id = "twitter-wjs";
+    if (document.getElementById(id)) return;
+    const script = document.createElement("script");
+    script.id = id;
+    script.src = "https://platform.x.com/widgets.js";
+    script.async = true;
+    script.charset = "utf-8";
+    document.body.appendChild(script);
   }, []);
 
-  const xPosts = liveXPosts.length > 0 ? liveXPosts : socialFeeds.filter((post) => post.platform === "x");
+  const xPosts = socialFeeds.filter((post) => post.platform === "x");
   const feedPosts = [...socialFeeds.filter((post) => post.platform !== "x"), ...xPosts];
 
   const filteredPosts =
@@ -293,15 +295,15 @@ export function SocialFeed() {
                   <p className="text-xs sm:text-[0.88rem] leading-relaxed text-[#4B5563]">
                     Emergency dispatches, volunteer alerts, and breaking humanitarian updates are broadcast directly on our official X handle.
                   </p>
-                  <a
-                    href="https://x.com/MMMPakOfficial"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-black min-h-[40px] px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-slate-800 whitespace-nowrap max-w-full"
-                  >
-                    <XIcon className="h-3.5 w-3.5 shrink-0" />
-                    <span>Follow @MMMPakOfficial on X</span>
-                  </a>
+                  <div className="flex items-center justify-center rounded-xl border border-[#DCE2EA] bg-[#F5F7FA] py-6">
+                    <a
+                      href="https://x.com/MMMPakOfficial?ref_src=twsrc%5Etfw"
+                      className="twitter-follow-button"
+                      data-show-count="false"
+                    >
+                      Follow @MMMPakOfficial
+                    </a>
+                  </div>
                 </div>
               </div>
 

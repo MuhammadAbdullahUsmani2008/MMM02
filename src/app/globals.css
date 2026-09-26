@@ -232,6 +232,16 @@
   to { transform: scale(1.06); }
 }
 
+/* First slide only — reverse zoom (108% → 100%), same 5s duration/easing. */
+.hero-kenburns-first {
+  animation: hero-kenburns-zoom-first 5000ms linear forwards;
+}
+
+@keyframes hero-kenburns-zoom-first {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+
 /* Staggered text reveal — each element slides up + fades in sequence. */
 @keyframes hero-reveal {
   from { transform: translateY(8px); opacity: 0; }
@@ -294,6 +304,7 @@
     animation: none !important;
   }
   .hero-kenburns,
+  .hero-kenburns-first,
   .hero-reveal {
     animation: none !important;
   }

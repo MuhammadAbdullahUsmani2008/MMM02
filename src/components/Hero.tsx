@@ -28,7 +28,7 @@ const slides: Slide[] = [
     id: "humanitarian",
     pillar: "Pillar A • Free Healthcare & Outpatient Care",
     badge: "Mercy in Motion",
-    image: "/media/disaster/hero-p1.2.jpg",
+    image: "/media/disaster/hero-p1.jpg",
     alt: "Muslim Medical Mission doctors providing free consultations and medicine at a rural outpatient medical camp with official banner",
     headline: "Mercy in Motion:",
     highlight: "Free healthcare for those in need.",
@@ -162,7 +162,9 @@ export function Hero() {
               <img
                 src={s.image}
                 alt={s.alt}
-                className={`h-full w-full object-cover ${on ? "hero-kenburns" : ""}`}
+                className={`h-full w-full object-cover ${
+                  on ? (i % 2 === 0 ? "hero-kenburns-first" : "hero-kenburns") : ""
+                }`}
                 loading={i === 0 ? "eager" : "lazy"}
               />
 
