@@ -40,6 +40,31 @@ embed for `@MMMPakOfficial` using the platform's own widget script
 (`https://platform.x.com/widgets.js`). No API keys or workers are needed — the
 widget loads the live timeline directly in the browser.
 
+### Facebook feed worker
+
+The social-feed cards load live Facebook posts from the worker in
+`workers/social-feed-fb`. It reads posts via the Graph API and returns them
+already projected into the card shape (`SocialCard`).
+
+It supports two modes (set `FB_FEED_MODE` in `wrangler.jsonc`):
+
+- `profile` — reads `/me/posts` (a personal profile; needs a User Access Token
+  with `user_posts`).
+- `page` — reads `/{FB_PAGE_ID}/feed` (a Page; needs a Page Access Token with
+  `pages_read_engagement`).
+
+Set the access token as a Cloudflare secret, then deploy:
+
+```bash
+npx wrangler secret put FB_ACCESS_TOKEN --config workers/social-feed-fb/wrangler.jsonc
+npm run deploy:fb-feed
+```
+
+Set `NEXT_PUBLIC_FB_FEED_URL` to the deployed worker URL before building the
+site, for example
+`https://muslim-medical-mission-fb-feed.<account>.workers.dev/feed`.
+Without that variable, the site uses the curated Facebook posts.
+
 ## How it is put together
 
 ```

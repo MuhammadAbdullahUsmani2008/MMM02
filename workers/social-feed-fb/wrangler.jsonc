@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "muslim-medical-mission-fb-feed",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-31",
+  "vars": {
+    "FB_FEED_MODE": "profile",
+    "FB_PAGE_ID": "MMMPakOfficial"
+  }
+}

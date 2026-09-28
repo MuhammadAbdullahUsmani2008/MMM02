@@ -1,5 +1,57 @@
 export type Platform = "youtube" | "facebook" | "instagram" | "x";
 
+/**
+ * The lean shape the social-feed cards actually render. This is the "view
+ * model" — it carries only the fields the card consumes, so a live API
+ * response (e.g. the Facebook feed worker) can be projected down to exactly
+ * what the UI needs and nothing more.
+ */
+export type SocialCard = {
+  id: string;
+  platform: Platform;
+  author: {
+    name: string;
+    handle: string;
+    avatar: string;
+    verified: boolean;
+  };
+  content: string;
+  relativeTime: string;
+  url: string;
+  tags: string[];
+  media?: {
+    url: string;
+    thumbnail?: string;
+    duration?: string;
+    youtubeId?: string;
+  };
+};
+
+/**
+ * Project a full `SocialPost` (or a mapped API response) down to the card
+ * shape. Fields the card ignores — `date`, `metrics`, `media.type`,
+ * `media.aspectRatio` — are dropped here.
+ */
+export function toSocialCard(post: SocialPost): SocialCard {
+  return {
+    id: post.id,
+    platform: post.platform,
+    author: post.author,
+    content: post.content,
+    relativeTime: post.relativeTime,
+    url: post.url,
+    tags: post.tags,
+    media: post.media
+      ? {
+          url: post.media.url,
+          thumbnail: post.media.thumbnail,
+          duration: post.media.duration,
+          youtubeId: post.media.youtubeId,
+        }
+      : undefined,
+  };
+}
+
 export type SocialPost = {
   id: string;
   platform: Platform;

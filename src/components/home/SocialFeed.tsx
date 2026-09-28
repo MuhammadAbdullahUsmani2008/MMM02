@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { socialFeeds, socialChannels, type Platform } from "@/data/socialFeeds";
+import { socialFeeds, socialChannels, toSocialCard, type Platform, type SocialCard } from "@/data/socialFeeds";
 import { Reveal } from "../Reveal";
 import { Arrow } from "../ui";
 
@@ -64,6 +64,7 @@ const platformBadgeClasses: Record<Platform, { bg: string; text: string; label: 
 export function SocialFeed() {
   const [activeTab, setActiveTab] = useState<"all" | Platform | "embed">("all");
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [liveFbPosts, setLiveFbPosts] = useState<SocialCard[]>([]);
 
   // Load the official X timeline embed widget (platform.x.com/widgets.js).
   // The widget renders the live timeline inside the .twitter-timeline anchor.
@@ -78,8 +79,23 @@ export function SocialFeed() {
     document.body.appendChild(script);
   }, []);
 
-  const xPosts = socialFeeds.filter((post) => post.platform === "x");
-  const feedPosts = [...socialFeeds.filter((post) => post.platform !== "x"), ...xPosts];
+  // Load live Facebook posts from the feed worker. Falls back to the curated
+  // Facebook posts when the worker is not configured or unreachable.
+  useEffect(() => {
+    const endpoint = process.env.NEXT_PUBLIC_FB_FEED_URL;
+    if (!endpoint) return;
+
+    fetch(endpoint)
+      .then((response) => (response.ok ? response.json() : Promise.reject(new Error("FB feed unavailable"))))
+      .then((data: { posts?: SocialCard[] }) => setLiveFbPosts(data.posts ?? []))
+      .catch(() => undefined);
+  }, []);
+
+  const fbPosts = liveFbPosts.length > 0 ? liveFbPosts : socialFeeds.filter((post) => post.platform === "facebook").map(toSocialCard);
+  const feedPosts: SocialCard[] = [
+    ...socialFeeds.filter((post) => post.platform !== "facebook").map(toSocialCard),
+    ...fbPosts,
+  ];
 
   const filteredPosts =
     activeTab === "all" || activeTab === "embed"
