@@ -341,8 +341,8 @@ export const programs: Program[] = [
     summary:
       "Paramedic and clinical teams running consultations, dressings, dispensing and paediatric care inside shelters and tented clinics.",
     body: [
-      "Our Gaza clinics operate where a health system has effectively stopped. Teams work out of shelter rooms and tented treatment areas, seeing whoever presents, with a caseload dominated by wound care, respiratory infection, skin disease, malnutrition and untreated chronic illness.",
-      "The work is unglamorous and repetitive and it is what keeps people alive: dressings changed properly, antibiotics dispensed as a full course rather than a partial one, blood pressures taken, children weighed, and referral arranged for anything beyond what a tent can hold.",
+      "Muslim Medical Mission operates field clinics in Gaza, providing consultations, wound care, medicines and paediatric care through paramedic and clinical teams working in shelters and tented treatment areas.",
+      "Teams work in shelter rooms and tented treatment areas, seeing patients with wound care needs, respiratory infections, skin disease, malnutrition and chronic conditions. Services include proper dressings, full antibiotic courses, vital sign monitoring and child weight checks, with referrals arranged for care beyond what a tent can hold.",
       "Everything is carried under one banner, emergency relief from the people of Pakistan to the people of Gaza, and delivered by Pakistani clinicians alongside local staff.",
     ],
     image: "/media/medical/medical-45.jpg",
@@ -416,7 +416,7 @@ export const programs: Program[] = [
     summary:
       "Quilts, blankets and warm clothing for families living under canvas through a Gaza winter.",
     body: [
-      "A tent gives shelter from rain and almost nothing against cold. Winter kills infants and the elderly in canvas shelters every year, and it does so quietly, without making the news.",
+      "A tent gives shelter from rain and almost nothing against cold.",
       "Each package contains a heavy quilt, blankets and warm clothing sized for the children in the household. Distribution is recorded the same way food is, so coverage can be checked rather than assumed.",
     ],
     image: "/media/gaza-winter/gaza-winter-01.jpg",
@@ -440,7 +440,7 @@ export const programs: Program[] = [
     summary:
       "Public awareness work on outbreaks, hygiene, maternal health and vaccination, delivered through mosques, schools and community halls.",
     body: [
-      "Most of the illness our doctors see in the field was preventable. Clean water handling, hand hygiene, recognising the warning signs in a sick infant and knowing when a fever needs a clinic rather than a home remedy will save more lives than any single camp.",
+      "Most of the illness our doctors see in the field was preventable. Clean water handling, hand hygiene, recognising the warning signs in a sick infant and knowing when a fever needs a clinic rather than a home remedy are key aspects of health education.",
       "We run campaigns through the institutions people already trust, mosques, schools and community elders, in the language they actually speak, and we return to the same places so the message is not a one off visit.",
     ],
     image: "/media/brand/health-campaign.jpg",
@@ -460,7 +460,7 @@ export const programs: Program[] = [
       "Continuing education for Muslim healthcare professionals, and the ethical grounding that sits underneath the clinical work.",
     body: [
       "Our founding purpose is not only to treat people. It is to form healthcare professionals whose conduct at home and abroad reflects the faith they profess, and who understand that the way a patient is spoken to is part of the treatment.",
-      "We run continuing education sessions, mentoring for students and junior doctors, and study circles on Islamic medical ethics, because a mission that trains no successors ends with its founders.",
+      "Muslim Medical Mission provides continuing education, mentoring and study sessions for students, junior doctors and practising healthcare professionals. The programme also includes Islamic medical ethics as part of MMM's approach to professional development.",
     ],
     image: "/media/field/pillar-c-conference-01.jpg",
     gallery: [
@@ -518,7 +518,7 @@ export const programs: Program[] = [
     summary:
       "Turning volunteers into people who can hold a scene, stop a bleed and keep an airway open until a doctor arrives.",
     body: [
-      "In most of the districts we work in, the first person to reach a casualty is not an ambulance crew. It is a neighbour. Training that neighbour properly is the highest return intervention available to us.",
+      "In most of the districts we work in, the first person to reach a casualty is not an ambulance crew. It is a neighbour. Training that neighbour properly is valuable for emergency response.",
       "Our courses cover basic life support, haemorrhage control, fracture management, safe transport and triage, and they end with an assessment rather than a certificate handed out for attendance. Graduates form the standing teams that deploy when a district floods.",
     ],
     image: "/media/field/bls-rescue-1122.jpg",
@@ -642,11 +642,11 @@ export const reports: Report[] = [
     place: "Lahore & Regional Hubs",
     kind: "Responders Training",
     excerpt:
-      "Hands-on trauma management, BLS, haemorrhage control, and disaster triage workshops training volunteers to act as certified frontline lifesavers in emergencies.",
+      "Hands-on trauma management, BLS, haemorrhage control, and disaster triage workshops training volunteers to act as certified lifesavers in emergencies.",
     body: [
-      "In most of the districts we work in, the first person to reach a casualty is not an ambulance crew. It is a neighbour. Training that neighbour properly is the highest return intervention available to us.",
+      "In most of the districts we work in, the first person to reach a casualty is not an ambulance crew. It is a neighbour. Training that neighbour properly is valuable for emergency response.",
       "In collaboration with Punjab Emergency Service Rescue 1122, our courses cover hands-on trauma management, basic life support, haemorrhage control, fracture management and disaster triage. They end with an assessment rather than a certificate handed out for attendance.",
-      "Graduates form the standing teams that deploy when a district floods. The training turns everyday volunteers into certified frontline lifesavers, ready to hold a scene, stop a bleed and keep an airway open until a doctor arrives.",
+      "Graduates form the standing teams that deploy when a district floods. The training turns everyday volunteers into certified lifesavers, ready to hold a scene, stop a bleed and keep an airway open until a doctor arrives.",
     ],
     image: "/media/field/bls-rescue-1122.jpg",
     date: "2025",

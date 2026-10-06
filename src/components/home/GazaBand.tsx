@@ -25,7 +25,7 @@ export function GazaBand() {
               The same teams, four thousand kilometres away
             </h2>
             <p className="mt-4 max-w-2xl text-[1.05rem] leading-relaxed text-[#4B5563] sm:text-[1.12rem]">
-              Our Gaza operation runs on the logic that keeps people alive when a health system has
+              Our Gaza operation runs on the logic that provides essential healthcare when a health system has
               stopped functioning. Water before medicine, food before comfort, and a heavy quilt
               before the cold arrives rather than after it.
             </p>
