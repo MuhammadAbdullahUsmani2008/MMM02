@@ -98,7 +98,7 @@ export const nav: NavItem[] = [
           { label: "Free medical camps", href: "/what-we-do/flood-medical-camps" },
           { label: "Welfare & prison clinics", href: "/what-we-do/prison-healthcare" },
           { label: "Surgical missions", href: "/what-we-do/save-vision" },
-          { label: "Nutrition & food relief", href: "/what-we-do/flood-relief" },
+          { label: "Nutrition and flood relief", href: "/what-we-do/flood-relief" },
           { label: "Water is Life", href: "/what-we-do/water-for-life" },
         ],
       },
@@ -293,11 +293,9 @@ export const programs: Program[] = [
     title: "Flood emergency medical camps",
     region: "Pakistan",
     summary:
-      "Medical teams deploy into the riverine belt while the water is still standing, running free clinics out of whatever building has a dry floor.",
+      "During flood emergencies, Muslim Medical Mission provides free medical camps in affected communities. Teams offer medical consultations, basic treatment, essential medicines, and referrals where further care is needed.",
     body: [
-      "When the Indus breaks its banks, the first thing to fail is not the road. It is healthcare. Rural dispensaries flood, staff evacuate with their own families, and a population already living close to the margin is left with standing water, no clean supply and nowhere to take a sick child.",
-      "Our teams run free camps through the emergency and after it. The drug list is built for what floods actually produce, gastroenteritis, skin and wound infection, snakebite, respiratory illness and chronic conditions that have gone unmedicated for weeks. Consultation, diagnosis and a full course of medicine are provided free, because a prescription a family cannot fill is not treatment.",
-      "In one deployment across Dera Ghazi Khan, more than 500 patients were seen.",
+      "During flood emergencies, Muslim Medical Mission provides free medical camps in affected communities. Teams offer medical consultations, basic treatment, essential medicines, and referrals where further care is needed.",
     ],
     image: "/media/field/pillar-a-camp-01.jpg",
     gallery: [
@@ -308,9 +306,9 @@ export const programs: Program[] = [
     ],
     accent: "blue",
     highlights: [
-      { label: "One patient, seen and medicated", value: "PKR 600" },
-      { label: "Patients in one deployment", value: "500+" },
-      { label: "Charge to the patient", value: "Nothing" },
+      { label: "Medical camps", value: "Free in affected communities" },
+      { label: "Consultations", value: "Medical teams provide exams" },
+      { label: "Referrals", value: "Where further care is needed" },
     ],
   },
   {
@@ -318,25 +316,22 @@ export const programs: Program[] = [
     title: "Flood relief distribution",
     region: "Pakistan",
     summary:
-      "Staple food, clean water and cash reach households in South Punjab and Balochistan through volunteers who know which families lost everything.",
+      "Muslim Medical Mission provides flood relief to affected communities in South Punjab and Balochistan. Support includes staple food, clean drinking water, and cash assistance for households facing significant losses.",
     body: [
-      "Homes built of mud and cane do not survive standing water. In villages such as Mangrotha, on the edge of Taunsa city, families came back to a flattened plot and a season of income gone with it.",
-      "Distribution runs through local volunteers rather than a list handed down from a city office, because the people who know which household is quietly going without are the people who live next door to it. Bulk purchase before the local market price climbs is the difference between supplying one family and supplying three.",
-      "Alongside food we distribute clean drinking water and, where a household has lost its livelihood entirely, direct cash assistance.",
+      "Muslim Medical Mission provides flood relief to affected communities in South Punjab and Balochistan. Support includes staple food, clean drinking water, and cash assistance for households facing significant losses.",
     ],
     image: "/media/disaster/disaster-13.jpg",
     gallery: [
       "/media/disaster/disaster-07.jpg",
       "/media/disaster/disaster-12.jpg",
-      "/media/disaster/disaster-03.jpg",
       "/media/disaster/disaster-08.jpg",
       "/media/disaster/disaster-15.jpeg",
     ],
     accent: "magenta",
     highlights: [
-      { label: "Reached", value: "South Punjab and Balochistan" },
-      { label: "Distributed by", value: "Local volunteers" },
-      { label: "Bought", value: "In bulk, before prices rise" },
+      { label: "Regions", value: "South Punjab and Balochistan" },
+      { label: "Staple food", value: "Provided to affected households" },
+      { label: "Cash assistance", value: "For families facing significant losses" },
     ],
   },
   {
@@ -396,10 +391,9 @@ export const programs: Program[] = [
     title: "Water for Life",
     region: "Gaza",
     summary:
-      "Drinking water trucked into displacement camps where the mains are broken and the alternative is contaminated groundwater.",
+      "Muslim Medical Mission provides drinking water to communities affected by damaged or unavailable water infrastructure. Water tankers supply camps and shelters with water for household and communal use.",
     body: [
-      "When water infrastructure fails, disease follows within days. Our tankers run drinking water into displacement camps and shelters, filling household containers and communal tanks on a fixed rota.",
-      "It is the least complicated intervention we fund and, in a camp of several thousand people with no functioning mains, the one that prevents the most illness. Each tanker is branded so people know who to hold accountable if it does not arrive.",
+      "Muslim Medical Mission provides drinking water to communities affected by damaged or unavailable water infrastructure. Water tankers supply camps and shelters with water for household and communal use.",
     ],
     image: "/media/gaza-water/gaza-water-01.jpg",
     gallery: [
@@ -410,9 +404,9 @@ export const programs: Program[] = [
     ],
     accent: "blue",
     highlights: [
-      { label: "One water tanker", value: "PKR 45,000" },
-      { label: "Serves", value: "Several hundred people" },
-      { label: "Prevents", value: "Waterborne outbreaks" },
+      { label: "Water tankers", value: "Supply camps and shelters" },
+      { label: "Household use", value: "Water provided for families" },
+      { label: "Communal use", value: "Water for shared facilities" },
     ],
   },
   {
@@ -486,18 +480,17 @@ export const programs: Program[] = [
     title: "Save Vision",
     region: "Pakistan",
     summary:
-      "Cataract screening, spectacles and referral for surgery, aimed at rural elders who lose their sight to a condition that takes twenty minutes to correct.",
+      "Save Vision provides basic eye screening at medical camps, distributes reading glasses where needed, and refers patients requiring cataract surgery to partner hospitals for further treatment.",
     body: [
-      "Avoidable blindness is one of the cruellest inequalities in rural Pakistan. Cataract is straightforward to operate on and the surgery is short, yet thousands of older people lose their independence to it because nobody screened them and nobody could get them to a theatre.",
-      "Save Vision screens at the camps we run, dispenses reading glasses on the spot and refers surgical cases into partner hospitals, following each patient through to the operation rather than handing over a slip of paper and hoping.",
+      "Save Vision provides basic eye screening at medical camps, distributes reading glasses where needed, and refers patients requiring cataract surgery to partner hospitals for further treatment.",
     ],
     image: "/media/field/free-medical-camp-doctors.jpg",
     gallery: ["/media/field/surgical-camp-rajanpur.jpg"],
     accent: "cyan",
     highlights: [
-      { label: "Screening", value: "At every camp" },
-      { label: "Spectacles", value: "Dispensed on site" },
-      { label: "Surgical cases", value: "Followed to theatre" },
+      { label: "Screening", value: "At medical camps" },
+      { label: "Reading glasses", value: "Distributed on site" },
+      { label: "Cataract surgery", value: "Referred to partner hospitals" },
     ],
   },
   {
@@ -505,18 +498,17 @@ export const programs: Program[] = [
     title: "Medical care in prisons",
     region: "Pakistan",
     summary:
-      "Scheduled clinical rounds inside correctional facilities, where healthcare is thin and communicable disease moves quickly.",
+      "Muslim Medical Mission provides scheduled medical care in correctional facilities, including clinical consultations, basic treatment, communicable disease screening, and hospital referrals when further care is required.",
     body: [
-      "Prisoners are among the least visible patients in the country. Overcrowding turns a single case of tuberculosis or hepatitis into an outbreak, and routine complaints go unexamined for months.",
-      "Our teams hold scheduled clinics inside correctional facilities, treat what can be treated on site, screen for communicable disease and press for transfer where a case needs a hospital. It is unglamorous work, and it is precisely the work our mission asks of us.",
+      "Muslim Medical Mission provides scheduled medical care in correctional facilities, including clinical consultations, basic treatment, communicable disease screening, and hospital referrals when further care is required.",
     ],
     image: "/media/field/surgical-camp-kotlakhpat.jpg",
     gallery: ["/media/field/field-tent-clinic.jpg"],
     accent: "navy",
     highlights: [
-      { label: "Priority", value: "Communicable disease" },
-      { label: "Model", value: "Scheduled clinical rounds" },
-      { label: "Escalation", value: "Hospital referral" },
+      { label: "Clinical consultations", value: "Scheduled rounds in correctional facilities" },
+      { label: "Basic treatment", value: "On-site care provided" },
+      { label: "Referrals", value: "When further care is required" },
     ],
   },
   {
