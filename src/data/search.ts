@@ -1,4 +1,4 @@
-import { programs, reports, regions, values, givingTiers } from "./site";
+import { programs, reports, regions, means, givingTiers } from "./site";
 import { socialFeeds } from "./socialFeeds";
 import { galleryGroups } from "./gallery";
 
@@ -125,12 +125,12 @@ const regionEntries: SearchEntry[] = regions.map((r) => ({
   terms: `${r.detail} ${r.focus}`.toLowerCase(),
 }));
 
-const valueEntries: SearchEntry[] = values.map((v) => ({
-  title: v.key,
-  href: "/about#mission",
-  section: "Our values",
-  terms: `${v.key} ${v.body}`.toLowerCase(),
-}));
+const meansEntry: SearchEntry = {
+  title: "Our means",
+  href: "/about#means",
+  section: "About",
+  terms: means.join(" ").toLowerCase(),
+};
 
 const givingEntries: SearchEntry[] = givingTiers.map((g) => ({
   title: g.title,
@@ -157,7 +157,7 @@ export const searchIndex: SearchEntry[] = [
   ...programEntries,
   ...reportEntries,
   ...regionEntries,
-  ...valueEntries,
+  meansEntry,
   ...givingEntries,
   ...socialEntries,
   ...galleryEntries,

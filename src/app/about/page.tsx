@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { org, regions, values } from "@/data/site";
+import { org, regions, means } from "@/data/site";
 import { Reveal } from "@/components/Reveal";
 import { PageHeader, SectionHead, Button } from "@/components/ui";
 
@@ -157,25 +157,27 @@ export default function AboutPage() {
       <section id="means" className="bg-white py-12 sm:py-14 lg:py-16 border-b border-slate-200/80">
         <div className="shell-wide">
           <SectionHead
-            title="Our means"
-            lead="Four words carried in the logo. They are also the sequence a deployment actually follows."
+            title="Our Means"
+            lead="– under the guidance of the Quran and Sunnah"
           />
 
-          <ol className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {values.map((v, i) => (
-              <Reveal key={v.key} delay={i * 80} as="li">
-                <div className="h-full rounded-2xl bg-[#F0F5FA] border border-slate-200/80 p-6">
-                  <span className="font-display text-[2.4rem] leading-none font-extrabold text-[#075BD6]/25">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="mt-3 font-display text-[1.18rem] font-black text-[#0A1020]">
-                    {v.key}
-                  </h3>
-                  <p className="mt-2 text-[0.96rem] leading-relaxed text-[#4B5563]">{v.body}</p>
+          <div className="mt-8 max-w-4xl">
+            <Reveal delay={80}>
+              <div className="rounded-2xl border border-blue-100 bg-white p-7 shadow-soft">
+                <h3 className="font-display text-[1.25rem] font-black text-[#075BD6]">Means</h3>
+                <div className="mt-4">
+                  {means.map((m, i) => (
+                    <p
+                      key={m}
+                      className={`${i > 0 ? "mt-4 " : ""}font-quote text-[1.18rem] sm:text-[1.28rem] leading-snug text-[#0A1020] italic`}
+                    >
+                      {m}
+                    </p>
+                  ))}
                 </div>
-              </Reveal>
-            ))}
-          </ol>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 

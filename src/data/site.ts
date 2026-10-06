@@ -664,26 +664,13 @@ export const reports: Report[] = [
 export const reportBySlug = (slug: string) => reports.find((r) => r.slug === slug);
 
 /* ------------------------------------------------------------------ */
-/* Values                                                              */
+/* Our means - under the guidance of the Quran and Sunnah              */
 /* ------------------------------------------------------------------ */
 
-export const values = [
-  {
-    key: "Wisdom",
-    body: "We go where the need is measured, not where the coverage is best. Every deployment starts with an assessment and ends with a count.",
-  },
-  {
-    key: "Action",
-    body: "Our teams are on the ground in the first week of an emergency, because relief that arrives after the cameras leave is not relief.",
-  },
-  {
-    key: "Service",
-    body: "Care is free at the point of delivery, without exception, and without asking a patient what they believe or who they voted for.",
-  },
-  {
-    key: "For Allah",
-    body: "The work is worship. That is the whole reason it continues in districts where no funder is watching and no reporter will visit.",
-  },
+export const means = [
+  "Service to humanity without any discrimination of gender or genetics, race or religion, geography or generation, and time or era.",
+  "Human resource development for peace and disaster.",
+  "Developing and practicing medical science and technology for peace.",
 ];
 
 /* ------------------------------------------------------------------ */
