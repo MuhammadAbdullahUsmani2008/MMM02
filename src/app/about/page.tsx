@@ -70,32 +70,33 @@ export default function AboutPage() {
         image="/media/field/hero-humanitarian-relief.jpg"
       />
 
-      {/* Story */}
+      {/* Who we are */}
       <section className="bg-white py-12 sm:py-14 lg:py-16 border-b border-slate-200/80">
         <div className="shell-wide grid gap-8 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <Reveal>
               <h2 className="font-display text-[clamp(2.05rem,3.4vw,2.85rem)] leading-[1.1] font-black text-[#0A1020]">
-                The problem was never the medicine
+                Who we are
               </h2>
             </Reveal>
             <div className="rich mt-6 text-[1.04rem] sm:text-[1.12rem] leading-relaxed text-[#4B5563]">
               <Reveal as="p" delay={60}>
-                Pakistan trains excellent doctors. It has pharmaceutical manufacturing, teaching
-                hospitals and a diaspora of specialists. What it does not have is a way of getting
-                any of that to a village four hours from a metalled road.
+                There was a group of Muslim Health Care professionals working on some issues of
+                common interest like free medical camping, free health care clinics, and health
+                awareness seminars with the core mission of promoting a better understanding of
+                Islam and Medical practice within the framework of Islam. Meanwhile, northern areas
+                of Pakistan were struck by a devastating earthquake in October 2005 which became
+                the inciting stimulus for the organization of these Health Care Professionals into
+                the Muslim Medical Mission (MMM).
               </Reveal>
               <Reveal as="p" delay={100} className="mt-4">
-                Muslim Medical Mission was formed to close that gap by the least sophisticated means
-                available. We take the doctor to the village. We carry the medicine with us. We
-                charge nothing, we treat whoever arrives, and we record what we did so the next
-                deployment is better planned than the last.
-              </Reveal>
-              <Reveal as="p" delay={140} className="mt-4">
-                The organisation has stayed deliberately light. Almost everyone involved is a
-                practising clinician giving time they do not really have, which is why{" "}
-                <strong className="text-[#0A1020]">the overwhelming share of every donation goes into the field</strong> rather
-                than into running the organisation that sends it.
+                The organization imparts, educational and research programs relating to the Islamic
+                code of conduct by arranging training sessions, seminars, symposia, and specialist
+                lectures for the health care professionals of all medical fields as well as for the
+                general public. It also offers humanitarian services such as relief operations,
+                welfare clinics, and surgical camps to those who are in need of disaster without any
+                discrimination of race & religion. We believe in evidence-based medical &
+                religious practice.
               </Reveal>
             </div>
           </div>
