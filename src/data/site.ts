@@ -106,7 +106,6 @@ export const nav: NavItem[] = [
         heading: "Pillar B: First to Reach",
         links: [
           { label: "Rapid deployment teams", href: "/disaster-response" },
-          { label: "2005 Kashmir earthquake", href: "/disaster-response" },
           { label: "Flood emergency camps", href: "/what-we-do/flood-medical-camps" },
           { label: "Gaza field clinics", href: "/what-we-do/gaza-field-clinics" },
           { label: "Winter packages", href: "/what-we-do/winter-packages" },
@@ -139,7 +138,6 @@ export const nav: NavItem[] = [
       {
         heading: "Emergency Operations",
         links: [
-          { label: "Kashmir earthquake 2005", href: "/disaster-response" },
           { label: "Flood emergency medical camps", href: "/what-we-do/flood-medical-camps" },
           { label: "Ration & food relief", href: "/what-we-do/flood-relief" },
           { label: "Tharparkar drought clinics", href: "/what-we-do/flood-medical-camps" },
