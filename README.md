@@ -33,37 +33,24 @@ npm run deploy
 plus a few security headers. Cloudflare picks it up automatically on both
 Workers static assets and Pages.
 
-### Live X timeline
+### Homepage social feed
 
-The homepage's "Official Live Widgets" tab renders the official X timeline
-embed for `@MMMPakOfficial` using the platform's own widget script
-(`https://platform.x.com/widgets.js`). No API keys or workers are needed — the
-widget loads the live timeline directly in the browser.
+The homepage social-media section loads the published Curator.io feed on the
+client, in the `#curator-feed-default-feed-layout` container. Its published
+script is:
 
-### Facebook feed worker
+`https://cdn.curator.io/published/f9841e7b-8940-4fd0-a510-caece623c48d.js`
 
-The social-feed cards load live Facebook posts from the worker in
-`workers/social-feed-fb`. It reads posts via the Graph API and returns them
-already projected into the card shape (`SocialCard`).
+The feed's own embed styling and layout are used. Its current published
+configuration requests 12 posts per page; the website does not override that
+setting.
 
-It supports two modes (set `FB_FEED_MODE` in `wrangler.jsonc`):
+### Legacy Facebook feed worker
 
-- `profile` — reads `/me/posts` (a personal profile; needs a User Access Token
-  with `user_posts`).
-- `page` — reads `/{FB_PAGE_ID}/feed` (a Page; needs a Page Access Token with
-  `pages_read_engagement`).
+`workers/social-feed-fb` remains in the repository but is no longer connected
+to the homepage. Its deployment script and Cloudflare configuration are
+retained; review them separately before any future cleanup.
 
-Set the access token as a Cloudflare secret, then deploy:
-
-```bash
-npx wrangler secret put FB_ACCESS_TOKEN --config workers/social-feed-fb/wrangler.jsonc
-npm run deploy:fb-feed
-```
-
-Set `NEXT_PUBLIC_FB_FEED_URL` to the deployed worker URL before building the
-site, for example
-`https://muslim-medical-mission-fb-feed.<account>.workers.dev/feed`.
-Without that variable, the site uses the curated Facebook posts.
 
 ## How it is put together
 

@@ -2,8 +2,8 @@
  * Facebook feed worker for Muslim Medical Mission.
  *
  * Reads the latest posts from a Facebook profile or page via the Graph API and
- * returns them already projected into the exact shape the site's social-feed
- * cards render (see `SocialCard` in src/data/socialFeeds.ts).
+ * returns them in the shape used by the former custom homepage feed. This
+ * worker is currently retained but is not connected to the homepage.
  *
  * Secrets (set with `wrangler secret put`):
  *   FB_ACCESS_TOKEN — a User Access Token (with `user_posts`) for profile mode,

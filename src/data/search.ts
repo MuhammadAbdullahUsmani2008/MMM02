@@ -1,5 +1,4 @@
 import { programs, reports, regions, means, givingTiers } from "./site";
-import { socialFeeds } from "./socialFeeds";
 import { galleryGroups } from "./gallery";
 
 export type SearchEntry = {
@@ -139,13 +138,6 @@ const givingEntries: SearchEntry[] = givingTiers.map((g) => ({
   terms: `${g.amount} ${g.body}`.toLowerCase(),
 }));
 
-const socialEntries: SearchEntry[] = socialFeeds.map((s) => ({
-  title: s.author.name,
-  href: s.url,
-  section: "Social feed",
-  terms: `${s.content} ${s.tags.join(" ")} ${s.platform}`.toLowerCase(),
-}));
-
 const galleryEntries: SearchEntry[] = galleryGroups.map((g) => ({
   title: g.label,
   href: "/media#gallery",
@@ -159,7 +151,6 @@ export const searchIndex: SearchEntry[] = [
   ...regionEntries,
   meansEntry,
   ...givingEntries,
-  ...socialEntries,
   ...galleryEntries,
   ...pages,
 ];
