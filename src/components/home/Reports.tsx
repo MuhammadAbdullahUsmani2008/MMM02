@@ -53,13 +53,19 @@ export function Reports() {
           </Reveal>
 
           {/* Secondary reports */}
-          <div className="lg:col-span-5">
-            <ul className="space-y-4">
+          <div className="lg:col-span-5 lg:flex">
+            <ul className="space-y-4 lg:flex lg:h-full lg:flex-1 lg:flex-col lg:space-y-0 lg:gap-4">
               {rest.map((r, i) => (
-                <Reveal as="li" key={r.slug} delay={70 + i * 70} amount={0.08}>
+                <Reveal
+                  as="li"
+                  key={r.slug}
+                  delay={70 + i * 70}
+                  amount={0.08}
+                  className="lg:min-h-0 lg:flex-1"
+                >
                   <Link
                     href={`/media/${r.slug}`}
-                    className="group flex gap-4 rounded-2xl bg-white p-4.5 border border-[#DCE2EA] shadow-xs transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[#075BD6]/50 hover:shadow-[0_12px_24px_-8px_rgba(6,73,184,0.1)]"
+                    className="group flex h-full gap-4 rounded-2xl bg-white p-4.5 border border-[#DCE2EA] shadow-xs transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[#075BD6]/50 hover:shadow-[0_12px_24px_-8px_rgba(6,73,184,0.1)]"
                   >
                     <div className="h-22 w-26 shrink-0 overflow-hidden rounded-xl sm:h-24 sm:w-30">
                       <img

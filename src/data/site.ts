@@ -649,6 +649,20 @@ export const reports: Report[] = [
     image: "/media/field/bls-rescue-1122.jpg",
     date: "2025",
   },
+  {
+    slug: "gaza-food-parcels-and-hot-meals",
+    title: "Food parcels and hot meals for displaced families in Gaza",
+    place: "Gaza",
+    kind: "Food Distribution",
+    excerpt:
+      "Family food parcels are delivered to displaced households, with hot meals provided where families have no way to cook.",
+    body: [
+      "A displaced family living in a tent has no reliable way to store or cook food. Parcels are built around what a household can prepare, and where nothing can be prepared, meals are cooked and delivered ready to eat.",
+      "Food parcels are distributed household by household, while hot meals are cooked in bulk and served on a fixed rota. These two approaches help reach families facing different conditions in displacement shelters.",
+    ],
+    image: "/media/gaza-food/gaza-food-01.jpg",
+    date: "Ongoing",
+  },
 ];
 
 export const reportBySlug = (slug: string) => reports.find((r) => r.slug === slug);

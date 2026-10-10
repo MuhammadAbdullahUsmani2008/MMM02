@@ -54,7 +54,7 @@ export default async function ReportPage({ params }: Params) {
             {[
               { k: "Report type", v: report.kind },
               { k: "Location", v: report.place },
-              { k: "Year", v: report.date },
+              { k: report.date === "Ongoing" ? "Period" : "Year", v: report.date },
             ].map((x, i) => (
               <Reveal key={x.k} delay={i * 80} as="div" className="p-7">
                 <dt className="text-[0.88rem] text-slate-muted">{x.k}</dt>
