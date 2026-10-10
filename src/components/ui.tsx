@@ -214,7 +214,7 @@ export function PageHeader({
           <ol className="flex flex-wrap items-center gap-2 text-[0.88rem] font-semibold text-[#6B7280]">
             {crumb.map((c, i) => (
               <li key={c.href} className="flex items-center gap-2">
-                {i > 0 && <span className="text-slate-300">/</span>}
+                {i > 0 && <Arrow className="h-3 w-3 text-[#1F2937]" />}
                 <Link href={c.href} className="transition-colors hover:text-[#075BD6]">
                   {c.label}
                 </Link>
