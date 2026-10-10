@@ -103,8 +103,8 @@ export default function AboutPage() {
 
           <Reveal from="right" className="lg:col-span-4 lg:col-start-9">
             <img
-              src="/media/field/hero-national-conference.jpg"
-              alt="Muslim Medical Mission National Conference"
+              src="/media/disaster/new-hero-s1.jpeg"
+              alt="Muslim Medical Mission disaster response image"
               className="w-full rounded-2xl object-cover shadow-md"
               loading="lazy"
             />
